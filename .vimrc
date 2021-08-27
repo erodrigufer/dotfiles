@@ -15,8 +15,10 @@ autocmd FileType python map <SPACE><SPACE> :w<CR>:!clear;python3 %<CR>
 " 2) https://stackoverflow.com/questions/8373710/vim-on-mac-os-x-function-key-mapping-not-working
 autocmd FileType sh map <SPACE><SPACE> :w<CR>:!clear;./%<CR>
 
+" Map <SPACE>g in normal mode to saving the current file and then running in the terminal 
+" ga <current file name>
+" ga stands for gitAutomator, which will ask for a commit message and will commit the current file
 map <SPACE>g :w<CR>:!ga %:t
-"map <SPACE>g :echo expand('%')
 
 " Set backspace key as backspace, this change was necessary after updating vim with homebrew
 set backspace=2
