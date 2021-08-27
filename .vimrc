@@ -15,6 +15,9 @@ autocmd FileType python map <SPACE><SPACE> :w<CR>:!clear;python3 %<CR>
 " 2) https://stackoverflow.com/questions/8373710/vim-on-mac-os-x-function-key-mapping-not-working
 autocmd FileType sh map <SPACE><SPACE> :w<CR>:!clear;./%<CR>
 
+map <SPACE>g :w<CR>:!ga %:t
+"map <SPACE>g :echo expand('%')
+
 " Set backspace key as backspace, this change was necessary after updating vim with homebrew
 set backspace=2
 " activate clipboard yank in Mac OS
