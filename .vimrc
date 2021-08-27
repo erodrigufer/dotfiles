@@ -18,7 +18,7 @@ autocmd FileType sh map <SPACE><SPACE> :w<CR>:!clear;./%<CR>
 " Map <SPACE>g in normal mode to saving the current file and then running in the terminal 
 " ga <current file name>
 " ga stands for gitAutomator, which will ask for a commit message and will commit the current file
-map <SPACE>g :w<CR>:!ga %:t
+map <SPACE>g :w<CR>:!ga %:t<CR>
 
 " Set backspace key as backspace, this change was necessary after updating vim with homebrew
 set backspace=2
