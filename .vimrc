@@ -22,6 +22,7 @@ autocmd FileType sh map <SPACE><SPACE> :w<CR>:!clear;./%<CR>
 map <SPACE>g :w<CR>:!ga -p %:t<CR>
 
 " the same as above, but this time the commits will be pushed
+" <SPACE>p stands for Push
 map <SPACE>p :w<CR>:!ga %:t<CR> 
 
 " Set backspace key as backspace, this change was necessary after updating vim with homebrew
