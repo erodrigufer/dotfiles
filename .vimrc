@@ -16,9 +16,13 @@ autocmd FileType python map <SPACE><SPACE> :w<CR>:!clear;python3 %<CR>
 autocmd FileType sh map <SPACE><SPACE> :w<CR>:!clear;./%<CR>
 
 " Map <SPACE>g in normal mode to saving the current file and then running in the terminal 
-" ga <current file name>
+" ga -p <current file name>
 " ga stands for gitAutomator, which will ask for a commit message and will commit the current file
-map <SPACE>g :w<CR>:!ga %:t<CR>
+" without pushing the commits to the remote repo, because we are using the -p flag
+map <SPACE>g :w<CR>:!ga -p %:t<CR>
+
+" the same as above, but this time the commits will be pushed
+map <SPACE>p :w<CR>:!ga %:t<CR> 
 
 " Set backspace key as backspace, this change was necessary after updating vim with homebrew
 set backspace=2
