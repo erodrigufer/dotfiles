@@ -43,6 +43,7 @@ set hlsearch
 set tabstop=4
 
 " 'Levels of indentation', where a level of indentation is shiftwidth columns of whitespace. That is, the shift-left-right commands, the formatting commands, and the behavior of vim with cindent or autoindent set is determined by this setting.
+" Reference: https://arisweedler.medium.com/tab-settings-in-vim-1ea0863c5990
 set shiftwidth=4
 
 " turns on the “auto indent” feature. This causes vim to indent a new line the same amount as the line just typed. This speeds up typing on many kinds of program- ming constructs. To stop indentation, type Ctrl-d.
