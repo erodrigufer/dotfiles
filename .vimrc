@@ -31,16 +31,19 @@ set backspace=2
 set clipboard=unnamed 
 
 " activate numbering of lines per default
-  set nu
+set nu
 " activate syntax highlighting default, so that for example
 " shell scripts will after the shebang get automatic highlighting
-  syntax on
+syntax on
 
 " if text is searched it will be highlighted throughout the whole text
-  set hlsearch
+set hlsearch
 
 " sets the number of columns occupied by a tab character. The default is 8 columns. Setting the value to 4 (which is a common practice) allows long lines to fit more easily on the screen.
-set tabstop=2
+set tabstop=4
+
+" 'Levels of indentation', where a level of indentation is shiftwidth columns of whitespace. That is, the shift-left-right commands, the formatting commands, and the behavior of vim with cindent or autoindent set is determined by this setting.
+set shiftwidth=4
 
 " turns on the “auto indent” feature. This causes vim to indent a new line the same amount as the line just typed. This speeds up typing on many kinds of program- ming constructs. To stop indentation, type Ctrl-d.
 set autoindent
