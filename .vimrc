@@ -51,22 +51,26 @@ set autoindent
 
 " --------------------------------------------------------
 " Enhanced keyboard mappings for F-Keys
-" in normal mode F1 will save the file
-nmap <F1> :w<CR>
-" in insert mode F1 will exit insert, save, enters insert again
-imap <F1> <ESC>:w<CR>i
-" Map <F2> in normal mode to saving the current file and then running in the terminal 
+" in normal mode F1 will save the file and exit
+nmap <F1> :wq!<CR>
+" in insert mode F1 will exit insert, save, and exit vim
+imap <F1> <ESC>:wq!<CR>
+" in normal mode F2 will save the file
+nmap <F2> :w<CR>
+" in insert mode F2 will exit insert, save, and return to insert mode
+imap <F2> <ESC>:w<CR>i
+" Map <F3> in normal mode to saving the current file and then running in the terminal 
 " ga -p <current file name>
 " ga stands for gitAutomator, which will ask for a commit message and will commit the current file
 " without pushing the commits to the remote repo, because we are using the -p flag
-map <F2> :w<CR>:!ga -p %:t<CR>
+map <F3> :w<CR>:!ga -p %:t<CR>
 " the same as above, but this time the commits will be pushed
 " <F4> stands for Push
 map <F4> :w<CR>:!ga %:t<CR> 
-" switch between header/source with F5
+" switch between header/source with F5 (only on C files)
 " Reference explaining key mapping:
 " https://stackoverflow.com/questions/22144668/vim-help-in-understanding-x123x
-map <F5> :e %:p:s,.h$,.X123X,:s,.c$,.h,:s,.X123X$,.c,<CR>
+autocmd FileType c map <F5> :e %:p:s,.h$,.X123X,:s,.c$,.h,:s,.X123X$,.c,<CR>
 " save and build using make with <F8>
 map <F8> :w<CR>:make<CR>
 " clean using make with <S-F8>
