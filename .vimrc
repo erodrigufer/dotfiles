@@ -56,6 +56,8 @@ nmap <F1> :w<CR>
 " in insert mode F1 will exit insert, save, enters insert again
 imap <F1> <ESC>:w<CR>i
 " switch between header/source with F4
+" Reference explaining key mapping:
+" https://stackoverflow.com/questions/22144668/vim-help-in-understanding-x123x
 map <F4> :e %:p:s,.h$,.X123X,:s,.c$,.h,:s,.X123X$,.c,<CR>
 " save and build using make with <F8>
 map <F8> :w<CR>:make<CR>
