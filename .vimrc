@@ -50,11 +50,19 @@ set shiftwidth=4
 set autoindent
 
 " --------------------------------------------------------
-" Enhanced keyboard mappings
+" Enhanced keyboard mappings for F-Keys
 " in normal mode F1 will save the file
 nmap <F1> :w<CR>
 " in insert mode F1 will exit insert, save, enters insert again
 imap <F1> <ESC>:w<CR>i
+" Map <F2> in normal mode to saving the current file and then running in the terminal 
+" ga -p <current file name>
+" ga stands for gitAutomator, which will ask for a commit message and will commit the current file
+" without pushing the commits to the remote repo, because we are using the -p flag
+map <F2> :w<CR>:!ga -p %:t<CR>
+" the same as above, but this time the commits will be pushed
+" <F4> stands for Push
+map <F4> :w<CR>:!ga %:t<CR> 
 " switch between header/source with F5
 " Reference explaining key mapping:
 " https://stackoverflow.com/questions/22144668/vim-help-in-understanding-x123x
@@ -66,16 +74,7 @@ map <F8> :w<CR>:make<CR>
 " map <S-F8> :make clean<CR>
 " save, build and run using make with <F9>
 map <F9> :w<CR>:!make run<CR>
-
-" Map <F2> in normal mode to saving the current file and then running in the terminal 
-" ga -p <current file name>
-" ga stands for gitAutomator, which will ask for a commit message and will commit the current file
-" without pushing the commits to the remote repo, because we are using the -p flag
-map <F2> :w<CR>:!ga -p %:t<CR>
-
-" the same as above, but this time the commits will be pushed
-" <F4> stands for Push
-map <F4> :w<CR>:!ga %:t<CR> 
+" --------------------------------------------------------
 " Map <BS> Backspace in Normal-mode, to going to first non-whitespace character in line '_' and then
 " get into insert mode 'i'
 map <BS> _i
