@@ -81,4 +81,13 @@ map <F9> :w<CR>:!make run<CR>
 " --------------------------------------------------------
 " Map <BS> Backspace in Normal-mode, to going to first non-whitespace character in line '_' and then
 " get into insert mode 'i'
-map <BS> _i
+"map <BS> _i
+
+" add ' /* c */ and then go back 2 words and substitute the letter 'c' to insert a comment
+autocmd FileType c map <BS> :call AddComment()<CR>bbs
+
+" This functions adds '/* c */' right after the current cursor position
+function AddComment()
+	:normal! a/* c */
+endfunction
+
