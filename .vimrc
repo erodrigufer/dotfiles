@@ -58,7 +58,7 @@ imap <F1> <ESC>:w<CR>i
 " switch between header/source with F4
 " Reference explaining key mapping:
 " https://stackoverflow.com/questions/22144668/vim-help-in-understanding-x123x
-map <F4> :e %:p:s,.h$,.X123X,:s,.c$,.h,:s,.X123X$,.c,<CR>
+map <F5> :e %:p:s,.h$,.X123X,:s,.c$,.h,:s,.X123X$,.c,<CR>
 " save and build using make with <F8>
 map <F8> :w<CR>:make<CR>
 " clean using make with <S-F8>
@@ -66,3 +66,15 @@ map <F8> :w<CR>:make<CR>
 " map <S-F8> :make clean<CR>
 " save, build and run using make with <F9>
 map <F9> :w<CR>:!make run<CR>
+
+" Map <F2> in normal mode to saving the current file and then running in the terminal 
+" ga -p <current file name>
+" ga stands for gitAutomator, which will ask for a commit message and will commit the current file
+" without pushing the commits to the remote repo, because we are using the -p flag
+map <F2> :w<CR>:!ga -p %:t<CR>
+
+" the same as above, but this time the commits will be pushed
+" <F4> stands for Push
+map <F4> :w<CR>:!ga %:t<CR> 
+
+
