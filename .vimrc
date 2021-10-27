@@ -88,6 +88,8 @@ autocmd FileType c map <BS> :call AddComment()<CR>bbs
 
 " This functions adds '/* c */' right after the current cursor position
 function AddComment()
+" normal! is like typing the following letters in normal mode
+" so 'a' will append '/* c */' to the current cursor position
 	:normal! a/* c */
 endfunction
 
