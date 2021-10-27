@@ -55,7 +55,7 @@ set autoindent
 nmap <F1> :w<CR>
 " in insert mode F1 will exit insert, save, enters insert again
 imap <F1> <ESC>:w<CR>i
-" switch between header/source with F4
+" switch between header/source with F5
 " Reference explaining key mapping:
 " https://stackoverflow.com/questions/22144668/vim-help-in-understanding-x123x
 map <F5> :e %:p:s,.h$,.X123X,:s,.c$,.h,:s,.X123X$,.c,<CR>
@@ -76,5 +76,6 @@ map <F2> :w<CR>:!ga -p %:t<CR>
 " the same as above, but this time the commits will be pushed
 " <F4> stands for Push
 map <F4> :w<CR>:!ga %:t<CR> 
-
-
+" Map <BS> Backspace in Normal-mode, to going to first non-whitespace character in line '_' and then
+" get into insert mode 'i'
+map <BS> _i
