@@ -60,6 +60,7 @@ map <F4> :e %:p:s,.h$,.X123X,:s,.c$,.h,:s,.X123X$,.c,<CR>
 " save and build using make with <F8>
 map <F8> :w<CR>:make<CR>
 " clean using make with <S-F8>
-map <S-F8> :make clean<CR>
+" DISABLED, because it is not working with Shift 
+" map <S-F8> :make clean<CR>
 " save, build and run using make with <F9>
 map <F9> :w<CR>:!make run<CR>
