@@ -84,7 +84,7 @@ map <F9> :w<CR>:!make run<CR>
 "map <BS> _i
 
 " add ' /* c */ and then go back 2 words and substitute the letter 'c' to insert a comment
-autocmd FileType c map <BS> :call AddComment()<CR>bbs
+autocmd FileType c,cpp map <BS> :call AddComment()<CR>bbs
 
 " This functions adds '/* c */' right after the current cursor position
 function AddComment()
