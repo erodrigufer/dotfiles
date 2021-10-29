@@ -25,6 +25,9 @@ map <SPACE>g :w<CR>:!ga -p %:t<CR>
 " <SPACE>p stands for Push
 map <SPACE>p :w<CR>:!ga %:t<CR> 
 
+" use gitAutomator to push, use the 'w' flag to open the GitHub Actions job status after pushing
+map <SPACE>w :w<CR>:!ga -w %:t<CR>
+
 " Set backspace key as backspace, this change was necessary after updating vim with homebrew
 set backspace=2
 " activate clipboard yank in Mac OS
