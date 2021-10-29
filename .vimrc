@@ -67,17 +67,19 @@ map <F3> :w<CR>:!ga -p %:t<CR>
 " the same as above, but this time the commits will be pushed
 " <F4> stands for Push
 map <F4> :w<CR>:!ga %:t<CR> 
-" switch between header/source with F5 (only on C files)
+" use gitAutomator to push, use the 'w' flag to open the GitHub Actions job status after pushing
+map <F5> :w<CR>:!ga -w %:t<CR>
+" switch between header/source with (only on C files)
 " Reference explaining key mapping:
 " https://stackoverflow.com/questions/22144668/vim-help-in-understanding-x123x
-autocmd FileType c map <F5> :e %:p:s,.h$,.X123X,:s,.c$,.h,:s,.X123X$,.c,<CR>
-" save and build using make with <F8>
-map <F8> :w<CR>:make<CR>
+autocmd FileType c map <F8> :e %:p:s,.h$,.X123X,:s,.c$,.h,:s,.X123X$,.c,<CR>
+" save and build using make with
+map <F9> :w<CR>:make<CR>
 " clean using make with <S-F8>
 " DISABLED, because it is not working with Shift 
 " map <S-F8> :make clean<CR>
-" save, build and run using make with <F9>
-map <F9> :w<CR>:!make run<CR>
+" save, build and run using make with
+map <F10> :w<CR>:!make run<CR>
 " --------------------------------------------------------
 " Map <BS> Backspace in Normal-mode, to going to first non-whitespace character in line '_' and then
 " get into insert mode 'i'
