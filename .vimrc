@@ -30,7 +30,7 @@ map <SPACE>w :w<CR>:!ga -w %:t<CR>
 
 " use markdownConverter to create html version of currently opened markdown file
 " and open html in browser
-autocmd FileType markdown map <F8> :!markdownConverter --html %:t <CR>
+autocmd FileType markdown map <F8> :w<CR>:!markdownConverter --html %:t <CR>
 
 " Set backspace key as backspace, this change was necessary after updating vim with homebrew
 set backspace=2
