@@ -45,6 +45,8 @@ syntax on
 
 " if text is searched it will be highlighted throughout the whole text
 set hlsearch
+" by pressing <Leader> (backslash) and space, the current search will not be highlighted anymore
+map <Leader><Space> :noh<CR>
 
 " sets the number of columns occupied by a tab character. The default is 8 columns. Setting the value to 4 (which is a common practice) allows long lines to fit more easily on the screen.
 set tabstop=4
@@ -101,4 +103,3 @@ function AddComment()
 " so 'a' will append '/* c */' to the current cursor position
 	:normal! a/* c */
 endfunction
-
