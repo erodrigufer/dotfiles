@@ -103,3 +103,9 @@ function AddComment()
 " so 'a' will append '/* c */' to the current cursor position
 	:normal! a/* c */
 endfunction
+" --------------------------------------------------------
+" Configure tmux to show file name on pane, after accessing file
+" Check for more info: https://vi.stackexchange.com/questions/3897/how-to-label-tmux-tabs-with-the-name-of-the-file-edited-in-vim
+" It goes back to normal automatic pane-renaming after leaving vim
+autocmd BufReadPost,FileReadPost,BufNewFile,BufEnter * call system("tmux rename-window '[vim]: " . expand("%:t") . "'")
+autocmd VimLeave * call system("tmux setw automatic-rename")
