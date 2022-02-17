@@ -56,7 +56,16 @@ set tabstop=4
 set shiftwidth=4
 
 " turns on the “auto indent” feature. This causes vim to indent a new line the same amount as the line just typed. This speeds up typing on many kinds of program- ming constructs. To stop indentation, type Ctrl-d.
-set autoindent
+"set autoindent
+" indentation depending on the language being written
+set smartindent
+
+" incremental search, starts searching right away when writing a search query
+set incsearch
+
+" add a colour column at 100 characters, to limit program width
+set colorcolumn=80
+highlight ColorColumn ctermbg=lightcyan guibg=blue
 
 " --------------------------------------------------------
 " Enhanced keyboard mappings for F-Keys
