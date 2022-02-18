@@ -96,15 +96,45 @@ endif
 " --------------------------------------------------------
 "nnoremap: in normal mode non-recursive remap
 " non-recursive because the key will not be remaped inside the remap
-" for example if remapping n, it will not have the same meaning inside the remap
+" for example if remapping n, it will not have the same meaning 
+" inside the remap
 " Yank till the end of the line with Y
 nnoremap Y y$
 " n=next | zz=center cursor on the screen | zv=open folds for this line
 nnoremap n nzzzv
 nnoremap N Nzzzv
-" mz=set a mark | J=move the line below to the end of the current line | `z=move
+" mz=set a mark | J=move the line below to the end of the current line | 
+" `z=move
 " back to where you put the mark originally
 nnoremap J mzJ`z
+" --------------------------------------------------------
+" Plugins section
+" Run ':PlugInstall' after saving and sourcing the .vimrc file to install a
+" new plugin
+call plug#begin('~/.vim/plugged')
+
+" Color scheme 
+Plug 'gruvbox-community/gruvbox'
+" THE plugin for Go development
+" vim-go needs to install binaries
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+" Auto-completion for Go
+Plug 'maralla/completor.vim'
+call plug#end()
+
+" Activate gruvbox as colorscheme
+"colorscheme gruvbox
+"set background=dark
+" --------------------------------------------------------
+"  Go IDE section
+" Use vim 8.2 popup windows for Go Doc
+" Press K over an identifier and a pop-up window with the docs will show up
+let g:go_doc_popup_window = 1
+" Change color of autocompletion pop-up window
+hi Pmenu ctermbg=lightcyan
+" Enable lsp for Go by using gopls (autocompletion)
+let g:completor_filetype_map = {}
+let g:completor_filetype_map.go = {'ft': 'lsp', 'cmd': 'gopls-remote=auto'}
 " --------------------------------------------------------
 " Enhanced keyboard mappings for F-Keys
 " in normal mode F1 will save the file and exit
