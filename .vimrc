@@ -15,24 +15,28 @@ autocmd FileType python map <SPACE><SPACE> :w<CR>:!clear;python3 %<CR>
 " 2) https://stackoverflow.com/questions/8373710/vim-on-mac-os-x-function-key-mapping-not-working
 autocmd FileType sh map <SPACE><SPACE> :w<CR>:!clear;./%<CR>
 
+" use markdownConverter to create html version of currently opened markdown file
+" and open html in browser
+autocmd FileType markdown map <F8> :w<CR>:!markdownConverter --html %:t <CR>
+
+
 " Map <SPACE>g in normal mode to saving the current file and then running in the terminal 
 " ga -p <current file name>
 " ga stands for gitAutomator, which will ask for a commit message and will commit the current file
-" without pushing the commits to the remote repo, because we are using the -p flag
+" without pushing the commits to the remote repo (-p flag)
 map <SPACE>g :w<CR>:!ga -p %:t<CR>
 
 " the same as above, but this time the commits will be pushed
 " <SPACE>p stands for Push
 map <SPACE>p :w<CR>:!ga %:t<CR> 
 
-" use gitAutomator to push, use the 'w' flag to open the GitHub Actions job status after pushing
+" use gitAutomator to push, use the 'w' flag to open the GitHub Actions job 
+" status after pushing
 map <SPACE>w :w<CR>:!ga -w %:t<CR>
 
-" use markdownConverter to create html version of currently opened markdown file
-" and open html in browser
-autocmd FileType markdown map <F8> :w<CR>:!markdownConverter --html %:t <CR>
-
-" Set backspace key as backspace, this change was necessary after updating vim with homebrew
+" --------------------------------------------------------
+" Set backspace key as backspace, this change was necessary after updating vim 
+" with homebrew
 set backspace=2
 " activate clipboard yank in Mac OS
 set clipboard=unnamed 
@@ -51,12 +55,18 @@ map <Leader><Space> :noh<CR>
 " sets the number of columns occupied by a tab character. The default is 8 columns. Setting the value to 4 (which is a common practice) allows long lines to fit more easily on the screen.
 set tabstop=4
 
-" 'Levels of indentation', where a level of indentation is shiftwidth columns of whitespace. That is, the shift-left-right commands, the formatting commands, and the behavior of vim with cindent or autoindent set is determined by this setting.
+" 'Levels of indentation', where a level of indentation is shiftwidth columns 
+" of whitespace. That is, the shift-left-right commands, the formatting 
+" commands, and the behavior of vim with cindent or autoindent set is 
+" determined by this setting.
 " Reference: https://arisweedler.medium.com/tab-settings-in-vim-1ea0863c5990
 set shiftwidth=4
 
-" turns on the “auto indent” feature. This causes vim to indent a new line the same amount as the line just typed. This speeds up typing on many kinds of program- ming constructs. To stop indentation, type Ctrl-d.
+" turns on the “auto indent” feature. This causes vim to indent a new line the 
+" same amount as the line just typed. This speeds up typing on many kinds of 
+" programming constructs. To stop indentation, type Ctrl-d.
 "set autoindent
+
 " indentation depending on the language being written
 set smartindent
 
@@ -67,6 +77,25 @@ set incsearch
 set colorcolumn=80
 highlight ColorColumn ctermbg=lightcyan guibg=blue
 
+" this makes possible to do undo/redo changes, after closing vim or even after
+" restarting the computer (persistent undo/redo)
+if has('persistent_undo')		" check if your vim version supports feature
+	set undodir=~/.vim/undo		" directory where the undo files will be stored
+	set undofile				" turn on the feature
+endif
+
+" --------------------------------------------------------
+"nnoremap: in normal mode non-recursive remap
+" non-recursive because the key will not be remaped inside the remap
+" for example if remapping n, it will not have the same meaning inside the remap
+" Yank till the end of the line with Y
+nnoremap Y y$
+" n=next | zz=center cursor on the screen | zv=open folds for this line
+nnoremap n nzzzv
+nnoremap N Nzzzv
+" mz=set a mark | J=move the line below to the end of the current line | `z=move
+" back to where you put the mark originally
+nnoremap J mzJ`z
 " --------------------------------------------------------
 " Enhanced keyboard mappings for F-Keys
 " in normal mode F1 will save the file and exit
