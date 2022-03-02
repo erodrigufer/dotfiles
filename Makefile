@@ -10,3 +10,5 @@ link:
 	@#  can occur
 	@ln -sf $(REPO)/.tmux.conf ~/.tmux.conf
 	@ln -sf $(REPO)/.vimrc ~/.vimrc
+
+.PHONY : link
