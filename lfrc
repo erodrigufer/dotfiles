@@ -12,3 +12,5 @@ cmd open ${{
 		*) for f in $fx; do open $f; done;;
 	esac
 }}
+
+map <enter> shell
