@@ -13,4 +13,4 @@ cmd open ${{
 	esac
 }}
 
-map <enter> shell
+map <enter> shell-wait
