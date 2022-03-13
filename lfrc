@@ -13,4 +13,6 @@ cmd open ${{
 	esac
 }}
 
-map <enter> shell-wait
+map <enter> shell-wait # shell-wait equals to using '!'
+# just defining it as 'shell', would mean the shell command would run
+# without prompting a new window outside of lf
