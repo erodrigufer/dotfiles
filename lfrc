@@ -1,6 +1,12 @@
 # lf config file
 # partly based on 
 # https://github.com/LukeSmithxyz/voidrice/blob/master/.config/lf/lfrc
+#
+# Check lf -doc for more info on customizations
+
+# Show hidden files
+# set hidden on
+# set hiddenfiles ".*"
 
 cmd open ${{
 	# $f is selected file
