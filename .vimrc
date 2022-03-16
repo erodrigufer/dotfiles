@@ -114,7 +114,7 @@ nnoremap J mzJ`z
 call plug#begin('~/.vim/plugged')
 
 " Color scheme 
-# Plug 'gruvbox-community/gruvbox'
+" Plug 'gruvbox-community/gruvbox'
 " THE plugin for Go development
 " vim-go needs to install binaries
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
@@ -127,6 +127,22 @@ call plug#end()
 "set background=dark
 " --------------------------------------------------------
 "  Go IDE section
+"  Check: https://github.com/fatih/vim-go/wiki/Tutorial#build-it
+"  For more tips on how to improve vim for golang
+"
+" Enable colourful syntax highlighting
+" Highlight types
+let g:go_highlight_types = 1 
+let g:go_highlight_extra_types = 1
+" Highlight struct fields
+let g:go_highlight_fields = 1
+" Highlight functions and functions' calls
+let g:go_highlight_functions = 1
+let g:go_highlight_function_calls = 1
+" Highlight operator
+let g:go_highlight_operators = 1
+" Highlight build tags
+let g:go_highlight_build_constraints = 1
 " Use vim 8.2 popup windows for Go Doc
 " Press K over an identifier and a pop-up window with the docs will show up
 let g:go_doc_popup_window = 1
