@@ -114,7 +114,6 @@ nnoremap J mzJ`z
 call plug#begin('~/.vim/plugged')
 
 " Color scheme 
-Plug 'gruvbox-community/gruvbox'
 " THE plugin for Go development
 " vim-go needs to install binaries
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
