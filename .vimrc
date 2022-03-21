@@ -120,6 +120,8 @@ call plug#begin('~/.vim/plugged')
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 " Auto-completion for Go
 Plug 'maralla/completor.vim'
+" Required for ':GoDecls' abd ':GoDeclsDir'
+Plug 'ctrlpvim/ctrlp.vim'
 call plug#end()
 
 " Activate gruvbox as colorscheme
