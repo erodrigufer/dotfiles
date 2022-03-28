@@ -15,6 +15,8 @@ link:
 	@# vimrc
 	@ln -sf $(REPO)/.vimrc ~/.vimrc
 	@# lfrc
+	@# Create file directory if it does not exist
+	@mkdir -p ~/.config/lf
 	@ln -sf $(REPO)/lfrc ~/.config/lf/lfrc
 
 .PHONY : link
