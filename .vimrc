@@ -135,9 +135,9 @@ call plug#end()
 " Display all buffers when there is only one tab open
 let g:airline#extensions#tabline#enabled = 1
 
-" Activate gruvbox as colorscheme
-"colorscheme gruvbox
-"set background=dark
+" Activate solarized as colorscheme
+" colorscheme solarized
+" set background=dark
 " --------------------------------------------------------
 "  Go IDE section
 "  Check: https://github.com/fatih/vim-go/wiki/Tutorial#build-it
