@@ -26,7 +26,6 @@ autocmd FileType sh map <SPACE><SPACE> :w<CR>:!clear;./%<CR>
 " and open html in browser
 autocmd FileType markdown map <F8> :w<CR>:!markdownConverter --html %:t <CR>
 
-
 " Map <SPACE>g in normal mode to saving the current file and 
 " then running in the terminal 'ga -p <current file name>'
 " ga stands for gitAutomator, which will ask for a commit message and 
@@ -43,6 +42,9 @@ map <SPACE>p :w<CR>:!ga %:t<CR>
 map <SPACE>w :w<CR>:!ga -w %:t<CR>
 
 " --------------------------------------------------------
+" Necessary to use buffers effectively, otherwise  vim stops the user before 
+" changing between buffers and not saving a buffer
+set hidden
 set encoding=utf-8
 " Set backspace key as backspace, this change was necessary after updating vim 
 " with homebrew
