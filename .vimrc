@@ -99,7 +99,7 @@ if has('persistent_undo')		" check if your vim version supports feature
 endif
 
 " --------------------------------------------------------
-"nnoremap: in normal mode non-recursive remap
+" nnoremap: in normal mode non-recursive remap
 " non-recursive because the key will not be remaped inside the remap
 " for example if remapping n, it will not have the same meaning 
 " inside the remap
@@ -112,6 +112,15 @@ nnoremap N Nzzzv
 " `z=move
 " back to where you put the mark originally
 nnoremap J mzJ`z
+" --------------------------------------------------------
+" Remaps for buffers
+" Pressing Leader+b let's the user write part of the name of the file in a
+" buffer that it wants to switch to
+nnoremap <Leader>b :b<SPACE>
+" Switch to previous buffer
+nnoremap <Leader>[ :bp<CR>
+" Switch to next buffer
+nnoremap <Leader>] :bn<CR>
 " --------------------------------------------------------
 " Plugins section
 " Run ':PlugInstall' after saving and sourcing the .vimrc file to install a
