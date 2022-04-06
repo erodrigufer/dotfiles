@@ -121,6 +121,12 @@ nnoremap <Leader>b :b<SPACE>
 nnoremap <Leader>[ :bp<CR>
 " Switch to next buffer
 nnoremap <Leader>] :bn<CR>
+" Open new buffer with a particular file, wait for user input on file name
+nnoremap <Leader>= :badd 
+" Close only the current buffer without closing all other buffers
+" Reference:
+" https://stackoverflow.com/questions/1444322/how-can-i-close-a-buffer-without-closing-the-window
+nnoremap <Leader>; :b#<bar>bd#<CR>
 " --------------------------------------------------------
 " Remaps for window managing
 " <bar> denotes | ('pipe')
@@ -135,8 +141,23 @@ nnoremap <silent> <Leader>- :vertical resize -10<CR>
 nnoremap <silent> <Leader><BS> :%bdelete<CR>:q<CR>
 " --------------------------------------------------------
 " Plugins section
+" Automatic installation of 'Plug' if it missing in the system
+" Reference:
+" https://github.com/junegunn/vim-plug/wiki/tips#automatic-installation
+" The '--sync' call stops the vimrc initialization until PlugInstall is done
+let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
+if empty(glob(data_dir . '/autoload/plug.vim'))
+	silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+	autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
 " Run ':PlugInstall' after saving and sourcing the .vimrc file to install a
 " new plugin
+" Automatic installation of missing plugins
+" Reference: https://github.com/junegunn/vim-plug/wiki/tips#automatic-installation
+" Run PlugInstall if there are missing plugins
+autocmd VimEnter * if len(filter(values(g:plugs),'!isdirectory(v:val.dir)'))
+	\| PlugInstall --sync | source $MYVIMRC
+\| endif
 call plug#begin('~/.vim/plugged')
 
 " Color scheme 
@@ -154,6 +175,8 @@ Plug 'vim-airline/vim-airline'
 Plug 'tpope/vim-fugitive'
 " Show VCS diff in sign column
 Plug 'mhinz/vim-signify'
+" Vim/Tmux pane navigation integration
+Plug 'christoomey/vim-tmux-navigator'
 call plug#end()
 " Display all buffers when there is only one tab open
 let g:airline#extensions#tabline#enabled = 1
