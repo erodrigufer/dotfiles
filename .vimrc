@@ -62,7 +62,7 @@ syntax on
 set hlsearch
 " by pressing <Leader> (backslash) and space, the current search will not be 
 " highlighted anymore
-map <Leader><Space> :noh<CR>
+map <silent> <Leader><Space> :noh<CR>
 
 " sets the number of columns occupied by a tab character. 
 " The default is 8 columns. Setting the value to 4 (which is a common practice) 
@@ -121,6 +121,18 @@ nnoremap <Leader>b :b<SPACE>
 nnoremap <Leader>[ :bp<CR>
 " Switch to next buffer
 nnoremap <Leader>] :bn<CR>
+" --------------------------------------------------------
+" Remaps for window managing
+" <bar> denotes | ('pipe')
+" <silent> do not show command after executing
+" Vertical split of window 
+nnoremap <silent> <Leader><bar> :vs<CR> 
+nnoremap <silent> <Leader>+ :vertical resize +10<CR>
+nnoremap <silent> <Leader>- :vertical resize -10<CR>
+" <BS> Backspace
+" :%bdelete := delete all buffers
+" Close all buffers, and close vim if changes are safe to close window
+nnoremap <silent> <Leader><BS> :%bdelete<CR>:q<CR>
 " --------------------------------------------------------
 " Plugins section
 " Run ':PlugInstall' after saving and sourcing the .vimrc file to install a
