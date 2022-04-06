@@ -41,6 +41,7 @@ map <SPACE>p :w<CR>:!ga %:t<CR>
 map <SPACE>w :w<CR>:!ga -w %:t<CR>
 
 " --------------------------------------------------------
+set encoding=utf-8
 " Set backspace key as backspace, this change was necessary after updating vim 
 " with homebrew
 set backspace=2
@@ -122,7 +123,13 @@ Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'maralla/completor.vim'
 " Required for ':GoDecls' abd ':GoDeclsDir'
 Plug 'ctrlpvim/ctrlp.vim'
+" vim-airline, status bar UI
+Plug 'vim-airline/vim-airline'
+" VCS Git integration
+Plug 'tpope/vim-fugitive'
 call plug#end()
+" Display all buffers when there is only one tab open
+let g:airline#extensions#tabline#enabled = 1
 
 " Activate gruvbox as colorscheme
 "colorscheme gruvbox
