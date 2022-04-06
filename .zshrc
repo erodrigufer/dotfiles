@@ -54,6 +54,8 @@ lfcd () {
 bindkey -s '^o' '^ulfcd\n'
 
 alias v=vim
+# e for edit
+alias e=vim
 
 alias gss='git status'
 # ls should output only one element per row and display a '/' if element is a folder
