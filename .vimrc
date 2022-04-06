@@ -1,3 +1,5 @@
+" vimrc @erodrigufer
+"
 " Run python scripts in normal mode after pressing <Space> twice
 " Stores the program, then ENTER=<CR> [Carriage Return] -> Run python3 in 
 " terminal with file name (%)
@@ -127,6 +129,8 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'vim-airline/vim-airline'
 " VCS Git integration
 Plug 'tpope/vim-fugitive'
+" Show VCS diff in sign column
+Plug 'mhinz/vim-signify'
 call plug#end()
 " Display all buffers when there is only one tab open
 let g:airline#extensions#tabline#enabled = 1
