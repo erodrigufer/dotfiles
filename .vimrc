@@ -156,9 +156,6 @@ call plug#begin('~/.vim/plugged')
 " vim-go needs to install binaries
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
-" Auto-completion for Go
-Plug 'maralla/completor.vim'
-
 " Required for ':GoDecls' abd ':GoDeclsDir'
 Plug 'ctrlpvim/ctrlp.vim'
 
@@ -167,6 +164,9 @@ Plug 'vim-airline/vim-airline'
 
 " VCS Git integration
 Plug 'tpope/vim-fugitive'
+
+" Git commit browser
+Plug 'junegunn/gv.vim'
 
 " Show VCS diff in sign column
 Plug 'mhinz/vim-signify'
@@ -179,6 +179,9 @@ Plug 'preservim/nerdtree'
 
 call plug#end()
 
+" --------------------------------------------------------
+" 				Key mappings for plugins
+" --------------------------------------------------------
 " vim-airline
 " Display all buffers when there is only one tab open
 let g:airline#extensions#tabline#enabled = 1
@@ -188,6 +191,10 @@ let g:airline#extensions#tabline#enabled = 1
 autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
 " Mapping to open NERDTree
 nnoremap <Leader>t :NERDTree<CR>  
+
+" junegunn/gv.vim
+" Open the commit history for the current file
+nnoremap <Leader>g :GV!<CR>
 
 " --------------------------------------------------------
 " 				Go IDE section
