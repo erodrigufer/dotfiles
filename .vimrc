@@ -62,13 +62,23 @@ endif
 " Properly configuring Omnicomplete
 " Reference: 
 " https://stackoverflow.com/questions/35837990/how-to-trigger-omnicomplete-auto-completion-on-keystrokes-in-insert-mode
-" Automatically call Omnicomplete on character pressed in insert mode
+" I removed the !pumvisible() part from the original answer, so that the auto-
+" complete function updates every time I press a key with the whole menu. Before
+" this change I was not seeing the whole suggestions pop-up window the whole 
+" time
+" Automatically call Omnicomplete on character pressed in insert mode, the
+" characters which are recognized are the whole alphabet and period '.'
 function! OpenCompletion()
-	if !pumvisible() && ((v:char >= 'a' && v:char <= 'z') || (v:char >= 'A' && v:char <= 'Z'))
+	if ((v:char >= 'a' && v:char <= 'z') || (v:char >= 'A' && v:char <= 'Z') || (v:char == '.'))
 		call feedkeys("\<C-x>\<C-o>", "n")
 	endif
 endfunction
-autocmd InsertCharPre * call OpenCompletion()
+" If filetype (&ft) equals go enable the autocompletion with every key pressed
+if &ft=='go'
+	autocmd InsertCharPre * call OpenCompletion()
+endif
+" Show function preview below the screen
+" set splitbelow
 set completeopt+=menuone,noselect,noinsert
 
 " --------------------------------------------------------
