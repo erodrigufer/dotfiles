@@ -127,32 +127,43 @@ endif
 autocmd VimEnter * if len(filter(values(g:plugs),'!isdirectory(v:val.dir)'))
 	\| PlugInstall --sync | source $MYVIMRC
 \| endif
+
 call plug#begin('~/.vim/plugged')
 
-" Color scheme 
-" Plug 'gruvbox-community/gruvbox'
 " THE plugin for Go development
 " vim-go needs to install binaries
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+
 " Auto-completion for Go
 Plug 'maralla/completor.vim'
+
 " Required for ':GoDecls' abd ':GoDeclsDir'
 Plug 'ctrlpvim/ctrlp.vim'
+
 " vim-airline, status bar UI
 Plug 'vim-airline/vim-airline'
+
 " VCS Git integration
 Plug 'tpope/vim-fugitive'
+
 " Show VCS diff in sign column
 Plug 'mhinz/vim-signify'
+
 " Vim/Tmux pane navigation integration
 Plug 'christoomey/vim-tmux-navigator'
+
+" Filesystem navigator pane
+Plug 'preservim/nerdtree'
+
 call plug#end()
+
+" vim-airline
 " Display all buffers when there is only one tab open
 let g:airline#extensions#tabline#enabled = 1
 
-" Activate solarized as colorscheme
-" colorscheme solarized
-" set background=dark
+" NERDTree
+" Exit Vim if NERDTree is the only window remaining in the only tab.
+autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
 
 " --------------------------------------------------------
 " 				Go IDE section
