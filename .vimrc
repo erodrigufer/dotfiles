@@ -1,46 +1,7 @@
 " vimrc @erodrigufer
 "
-" Run python scripts in normal mode after pressing <Space> twice
-" Stores the program, then ENTER=<CR> [Carriage Return] -> Run python3 in 
-" terminal with file name (%)
-" The script activates itself automatically, only when running a python 
-" script 'autocmd FileType python'
-" References:
-" 1) https://stackoverflow.com/questions/18948491/running-python-code-in-vim
-" 2) https://stackoverflow.com/questions/8373710/vim-on-mac-os-x-function-key-mapping-not-working
-autocmd FileType python map <SPACE><SPACE> :w<CR>:!clear;python3 %<CR>
-
-" Run sh/bash scripts in normal mode after pressing <Space> twice
-" Stores the program, then ENTER=<CR> [Carriage Return] 
-" -> Run in terminal with file name (%)
-" The script activates itself automatically, only when running a 
-" sh/bash script 'autocmd FileType sh'
-" The script must have the file extension .sh or be represented as a sh/bash 
-" script with a shebang '#!/bin/bash'
-" References:
-" 1) https://stackoverflow.com/questions/18948491/running-python-code-in-vim
-" 2) https://stackoverflow.com/questions/8373710/vim-on-mac-os-x-function-key-mapping-not-working
-autocmd FileType sh map <SPACE><SPACE> :w<CR>:!clear;./%<CR>
-
-" use markdownConverter to create html version of currently opened markdown file
-" and open html in browser
-autocmd FileType markdown map <F8> :w<CR>:!markdownConverter --html %:t <CR>
-
-" Map <SPACE>g in normal mode to saving the current file and 
-" then running in the terminal 'ga -p <current file name>'
-" ga stands for gitAutomator, which will ask for a commit message and 
-" will commit the current file
-" without pushing the commits to the remote repo (-p flag)
-map <SPACE>g :w<CR>:!ga -p %:t<CR>
-
-" the same as above, but this time the commits will be pushed
-" <SPACE>p stands for Push
-map <SPACE>p :w<CR>:!ga %:t<CR> 
-
-" use gitAutomator to push, use the 'w' flag to open the GitHub Actions job 
-" status after pushing
-map <SPACE>w :w<CR>:!ga -w %:t<CR>
-
+" --------------------------------------------------------
+"  				General configuration
 " --------------------------------------------------------
 " Necessary to use buffers effectively, otherwise  vim stops the user before 
 " changing between buffers and not saving a buffer
@@ -99,6 +60,8 @@ if has('persistent_undo')		" check if your vim version supports feature
 endif
 
 " --------------------------------------------------------
+" 				General remaps
+" --------------------------------------------------------
 " nnoremap: in normal mode non-recursive remap
 " non-recursive because the key will not be remaped inside the remap
 " for example if remapping n, it will not have the same meaning 
@@ -112,8 +75,10 @@ nnoremap N Nzzzv
 " `z=move
 " back to where you put the mark originally
 nnoremap J mzJ`z
+
 " --------------------------------------------------------
-" Remaps for buffers
+" 				Remaps for buffers
+" --------------------------------------------------------
 " Pressing Leader+b let's the user write part of the name of the file in a
 " buffer that it wants to switch to
 nnoremap <Leader>b :b<SPACE>
@@ -127,8 +92,10 @@ nnoremap <Leader>= :badd
 " Reference:
 " https://stackoverflow.com/questions/1444322/how-can-i-close-a-buffer-without-closing-the-window
 nnoremap <Leader>; :b#<bar>bd#<CR>
+
 " --------------------------------------------------------
-" Remaps for window managing
+" 				Remaps for window managing
+" --------------------------------------------------------
 " <bar> denotes | ('pipe')
 " <silent> do not show command after executing
 " Vertical split of window 
@@ -139,8 +106,10 @@ nnoremap <silent> <Leader>- :vertical resize -10<CR>
 " :%bdelete := delete all buffers
 " Close all buffers, and close vim if changes are safe to close window
 nnoremap <silent> <Leader><BS> :%bdelete<CR>:q<CR>
+
 " --------------------------------------------------------
-" Plugins section
+" 				Plugings section
+" --------------------------------------------------------
 " Automatic installation of 'Plug' if it missing in the system
 " Reference:
 " https://github.com/junegunn/vim-plug/wiki/tips#automatic-installation
@@ -184,10 +153,12 @@ let g:airline#extensions#tabline#enabled = 1
 " Activate solarized as colorscheme
 " colorscheme solarized
 " set background=dark
+
 " --------------------------------------------------------
-"  Go IDE section
-"  Check: https://github.com/fatih/vim-go/wiki/Tutorial#build-it
-"  For more tips on how to improve vim for golang
+" 				Go IDE section
+" --------------------------------------------------------
+" Check: https://github.com/fatih/vim-go/wiki/Tutorial#build-it
+" For more tips on how to improve vim for golang
 "
 " Enable colourful syntax highlighting
 " Highlight types
@@ -210,8 +181,28 @@ hi Pmenu ctermbg=lightcyan
 " Enable lsp for Go by using gopls (autocompletion)
 let g:completor_filetype_map = {}
 let g:completor_filetype_map.go = {'ft': 'lsp', 'cmd': 'gopls-remote=auto'}
+
 " --------------------------------------------------------
-" Enhanced keyboard mappings for F-Keys
+"  				gitAutomator integration
+" --------------------------------------------------------
+" Map <SPACE>g in normal mode to saving the current file and 
+" then running in the terminal 'ga -p <current file name>'
+" ga stands for gitAutomator, which will ask for a commit message and 
+" will commit the current file
+" without pushing the commits to the remote repo (-p flag)
+map <SPACE>g :w<CR>:!ga -p %:t<CR>
+
+" the same as above, but this time the commits will be pushed
+" <SPACE>p stands for Push
+map <SPACE>p :w<CR>:!ga %:t<CR> 
+
+" use gitAutomator to push, use the 'w' flag to open the GitHub Actions job 
+" status after pushing
+map <SPACE>w :w<CR>:!ga -w %:t<CR>
+
+" --------------------------------------------------------
+" 			Enhanced mappings for F-Keys
+" --------------------------------------------------------
 " in normal mode F1 will save the file and exit
 nmap <F1> :wq!<CR>
 " in insert mode F1 will exit insert, save, and exit vim
@@ -232,10 +223,6 @@ map <F4> :w<CR>:!ga %:t<CR>
 " use gitAutomator to push, use the 'w' flag to open the GitHub Actions job 
 " status after pushing
 map <F5> :w<CR>:!ga -w %:t<CR>
-" switch between header/source with (only on C files)
-" Reference explaining key mapping:
-" https://stackoverflow.com/questions/22144668/vim-help-in-understanding-x123x
-autocmd FileType c map <F8> :e %:p:s,.h$,.X123X,:s,.c$,.h,:s,.X123X$,.c,<CR>
 " save and build using make with
 map <F9> :w<CR>:make<CR>
 " clean using make with <S-F8>
@@ -243,7 +230,16 @@ map <F9> :w<CR>:make<CR>
 " map <S-F8> :make clean<CR>
 " save, build and run using make with
 map <F10> :w<CR>:!make run<CR>
+
 " --------------------------------------------------------
+" 				C-specific key bindings
+" --------------------------------------------------------
+" switch between header/source with (only on C files)
+" Reference explaining key mapping:
+" https://stackoverflow.com/questions/22144668/vim-help-in-understanding-x123x
+autocmd FileType c map <F8> :e %:p:s,.h$,.X123X,:s,.c$,.h,:s,.X123X$,.c,<CR>
+
+" Insert a comment in C
 " add ' /* c */ and then go back 2 words and substitute the letter 'c' to 
 " insert a comment
 autocmd FileType c,cpp map <BS> :call AddComment()<CR>bbs
@@ -254,6 +250,44 @@ function AddComment()
 " so 'a' will append '/* c */' to the current cursor position
 	:normal! a/* c */
 endfunction
+
+" --------------------------------------------------------
+" 				python-specific key bindings
+" --------------------------------------------------------
+" Run python scripts in normal mode after pressing <Space> twice
+" Stores the program, then ENTER=<CR> [Carriage Return] -> Run python3 in 
+" terminal with file name (%)
+" The script activates itself automatically, only when running a python 
+" script 'autocmd FileType python'
+" References:
+" 1) https://stackoverflow.com/questions/18948491/running-python-code-in-vim
+" 2) https://stackoverflow.com/questions/8373710/vim-on-mac-os-x-function-key-mapping-not-working
+autocmd FileType python map <SPACE><SPACE> :w<CR>:!clear;python3 %<CR>
+
+" --------------------------------------------------------
+" 				shell-specific key bindings
+" --------------------------------------------------------
+" Run sh/bash scripts in normal mode after pressing <Space> twice
+" Stores the program, then ENTER=<CR> [Carriage Return] 
+" -> Run in terminal with file name (%)
+" The script activates itself automatically, only when running a 
+" sh/bash script 'autocmd FileType sh'
+" The script must have the file extension .sh or be represented as a sh/bash 
+" script with a shebang '#!/bin/bash'
+" References:
+" 1) https://stackoverflow.com/questions/18948491/running-python-code-in-vim
+" 2) https://stackoverflow.com/questions/8373710/vim-on-mac-os-x-function-key-mapping-not-working
+autocmd FileType sh map <SPACE><SPACE> :w<CR>:!clear;./%<CR>
+
+" --------------------------------------------------------
+" 				markdown-specific key bindings
+" --------------------------------------------------------
+" use markdownConverter to create html version of currently opened markdown file
+" and open html in browser
+autocmd FileType markdown map <F8> :w<CR>:!markdownConverter --html %:t <CR>
+
+" --------------------------------------------------------
+" 					tmux integration
 " --------------------------------------------------------
 " Configure tmux to show file name on pane, after accessing file
 " Check for more info: 
