@@ -59,6 +59,18 @@ if has('persistent_undo')		" check if your vim version supports feature
 	set undofile				" turn on the feature
 endif
 
+" Properly configuring Omnicomplete
+" Reference: 
+" https://stackoverflow.com/questions/35837990/how-to-trigger-omnicomplete-auto-completion-on-keystrokes-in-insert-mode
+" Automatically call Omnicomplete on character pressed in insert mode
+function! OpenCompletion()
+	if !pumvisible() && ((v:char >= 'a' && v:char <= 'z') || (v:char >= 'A' && v:char <= 'Z'))
+		call feedkeys("\<C-x>\<C-o>", "n")
+	endif
+endfunction
+autocmd InsertCharPre * call OpenCompletion()
+set completeopt+=menuone,noselect,noinsert
+
 " --------------------------------------------------------
 " 				General remaps
 " --------------------------------------------------------
