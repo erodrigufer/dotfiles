@@ -225,6 +225,13 @@ let g:completor_filetype_map = {}
 let g:completor_filetype_map.go = {'ft': 'lsp', 'cmd': 'gopls-remote=auto'}
 
 " --------------------------------------------------------
+" 				Go-specific key bindings
+" --------------------------------------------------------
+" Rename the identifier under the cursor to a desired new name. Very useful, 
+" because it automatically renames the identifier across the whole package.
+autocmd FileType go nmap <Leader>r <Plug>(go-rename)
+
+" --------------------------------------------------------
 "  				gitAutomator integration
 " --------------------------------------------------------
 " Map <SPACE>g in normal mode to saving the current file and 
