@@ -183,15 +183,27 @@ Plug 'preservim/nerdtree'
 " see: https://github.com/iamcco/markdown-preview.nvim/issues/50
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 
+" Generate TOC (Table of Contents) in Markdown files
+Plug 'mzlogin/vim-markdown-toc'
+
 call plug#end()
 
 " --------------------------------------------------------
-" 				Key mappings for plugins
+" 			General configurations for plugins
 " --------------------------------------------------------
 " vim-airline
 " Display all buffers when there is only one tab open
 let g:airline#extensions#tabline#enabled = 1
 
+" vim-markdown-toc
+" In the TOC cycle through different symbols for the different levels (*, -
+" and +)
+let g:vmt_cycle_list_item_markers = 1
+
+
+" --------------------------------------------------------
+" 				Key mappings for plugins
+" --------------------------------------------------------
 " NERDTree
 " Exit Vim if NERDTree is the only window remaining in the only tab.
 autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
@@ -256,7 +268,7 @@ map <SPACE>p :w<CR>:!ga %:t<CR>
 map <SPACE>w :w<CR>:!ga -w %:t<CR>
 
 " --------------------------------------------------------
-" 			Config for markdown-preview
+" 			Config for markdown files
 " --------------------------------------------------------
 " set to 1, nvim will open the preview window after entering the markdown
 " buffer
