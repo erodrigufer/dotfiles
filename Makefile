@@ -9,11 +9,11 @@ link:
 	@# -f: (force) if the target file already exists, unlink it, so that the 
 	@# link can be made again
 	@# Config file for zsh
-	@ln -sf $(REPO)/.zshrc ~/.zshrc
+	@ln -sf $(REPO)/zshrc ~/.zshrc
 	@# tmux.conf
-	@ln -sf $(REPO)/.tmux.conf ~/.tmux.conf
+	@ln -sf $(REPO)/tmux.conf ~/.tmux.conf
 	@# vimrc
-	@ln -sf $(REPO)/.vimrc ~/.vimrc
+	@ln -sf $(REPO)/vimrc ~/.vimrc
 	@# lfrc
 	@# Create file directory if it does not exist
 	@mkdir -p ~/.config/lf
