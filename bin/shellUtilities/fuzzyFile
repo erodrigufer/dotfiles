@@ -1,0 +1,27 @@
+#!/bin/sh
+# Open a text file in vim using fzf for fuzzy search
+
+# Inspired by The Primeagen
+# Reference:
+# https://github.com/ThePrimeagen/.dotfiles/blob/master/bin/.local/bin/tmux-sessionizer
+
+# If the script receives just one argument as parameter, then use it as 
+# the file to open
+if [[ $# -eq 1 ]]; then
+	selectedFile=$1
+else
+	# Source file with directories where to look for files	
+	source directories.secrets
+	# Show all regular files (-type f) with a maxdepth of 4 in DIRECTORIES
+	# pipe the output to fzf, to pick one single file
+	# the output of fzf is stored in selectedFile
+	selectedFile=$(find ${DIRECTORIES} -mindepth 1 -maxdepth 4 -type f | fzf)
+fi
+
+# the selected file variable is empty, exit
+if [[ -z $selectedFile ]]; then
+	exit 0 
+fi
+
+# open selected file in vim
+	vim ${selectedFile}

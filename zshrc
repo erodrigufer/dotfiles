@@ -61,6 +61,11 @@ bindkey -s '^f' '^ufuzzyDirectory\n'
 # Ctrl+space: print Git status
 bindkey -s '^ ' 'git status --short\n'
 
+# bind '^v' = Control + v to:
+# 1. clearing the line '^u' = Control + u 
+# 2. running the shell-utility script fuzzyFile
+bindkey -s '^v' '^ufuzzyFile\n'
+
 alias v=vim
 # e for edit
 alias e=vim

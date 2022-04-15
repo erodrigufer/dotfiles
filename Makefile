@@ -21,6 +21,7 @@ link:
 	@# Create file directory if it does not exist
 	@mkdir -p ~/bin/shellUtilities
 	@ln -sf $(REPO)/bin/shellUtilities/fuzzyDirectory ~/bin/shellUtilities/fuzzyDirectory
+	@ln -sf $(REPO)/bin/shellUtilities/fuzzyFile ~/bin/shellUtilities/fuzzyFile
 	@ln -sf $(REPO)/bin/shellUtilities/directories.secrets ~/bin/shellUtilities/directories.secrets
 
 .PHONY : link
