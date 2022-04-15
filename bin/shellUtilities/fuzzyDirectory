@@ -16,7 +16,7 @@ source directories.secrets
 	# Show all directories (-type d) with a maxdepth of 1 in DIRECTORIES
 	# pipe the output to fzf, to pick one single directory
 	# the output of fzf is stored in selectedDir
-	selectedDir=$(find ${DIRECTORIES} -mindepth 1 -maxdepth 1 -type d | fzf)
+	selectedDir=$(find ${DIRECTORIES} -mindepth 1 -maxdepth 4 -type d | fzf)
 fi
 
 # the selected directory variable is empty, exit
