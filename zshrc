@@ -1,5 +1,5 @@
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin:$HOME/bin:$PATH:$HOME/go/bin
+export PATH=$HOME/bin:/usr/local/bin:$HOME/bin:$HOME/bin/shellUtilities:$PATH:$HOME/go/bin
 
 # Standard file editor
 export VISUAL=vim
@@ -52,6 +52,14 @@ lfcd () {
 # 1. clearing the line '^u' = Control + u 
 # 2. opening lf in last-dir-path mode, using lfcd()
 bindkey -s '^o' '^ulfcd\n'
+
+# bind '^h' = Control + h to:
+# 1. clearing the line '^u' = Control + u 
+# 2. running the shell-utility script fuzzyDirectory
+bindkey -s '^f' '^ufuzzyDirectory\n'
+
+# Ctrl+space: print Git status
+bindkey -s '^ ' 'git status --short\n'
 
 alias v=vim
 # e for edit

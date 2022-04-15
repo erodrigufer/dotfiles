@@ -18,5 +18,8 @@ link:
 	@# Create file directory if it does not exist
 	@mkdir -p ~/.config/lf
 	@ln -sf $(REPO)/lfrc ~/.config/lf/lfrc
+	@# Create file directory if it does not exist
+	@mkdir -p ~/bin/shellUtilities
+	@ln -sf $(REPO)/bin/shellUtilities/fuzzyDirectory ~/bin/shellUtilities/fuzzyDirectory
 
 .PHONY : link
