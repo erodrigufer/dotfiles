@@ -6,15 +6,13 @@
 # Reference:
 # https://github.com/ThePrimeagen/.dotfiles/blob/master/bin/.local/bin/tmux-sessionizer
 
-# Where to look for directories
-DIRECTORIES="${HOME}/Documents ${HOME}/Documents/Development \
-	${HOME}/Documents/Buerokratie"
-
 # If the script receives just one argument as parameter, then use it as 
 # the directory to switch to
 if [[ $# -eq 1 ]]; then
 	selectedDir=$1
 else
+
+source directories.secrets
 	# Show all directories (-type d) with a maxdepth of 1 in DIRECTORIES
 	# pipe the output to fzf, to pick one single directory
 	# the output of fzf is stored in selectedDir
