@@ -90,6 +90,8 @@ set completeopt+=menuone,noselect,noinsert
 " inside the remap
 " Yank till the end of the line with Y
 nnoremap Y y$
+" Remove the newline from the 'yy' yank
+nnoremap yy 0y$
 " n=next | zz=center cursor on the screen | zv=open folds for this line
 nnoremap n nzzzv
 nnoremap N Nzzzv
@@ -101,15 +103,14 @@ nnoremap J mzJ`z
 " --------------------------------------------------------
 " 				Remaps for buffers
 " --------------------------------------------------------
-" Pressing Leader+b let's the user write part of the name of the file in a
-" buffer that it wants to switch to
-nnoremap <Leader>b :b<SPACE>
+" Pressing Leader+b let's the user switch to another buffer with fzf
+nnoremap <Leader>b :Buffers<CR> 
 " Switch to previous buffer
 nnoremap <Leader>[ :bp<CR>
 " Switch to next buffer
 nnoremap <Leader>] :bn<CR>
 " Open new buffer with a particular file, wait for user input on file name
-nnoremap <Leader>= :badd 
+nnoremap <Leader>= :Files<CR>
 " Close only the current buffer without closing all other buffers
 " Reference:
 " https://stackoverflow.com/questions/1444322/how-can-i-close-a-buffer-without-closing-the-window
@@ -185,6 +186,10 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': 
 
 " Generate TOC (Table of Contents) in Markdown files
 Plug 'mzlogin/vim-markdown-toc'
+
+" Install fzf in Vim as well
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 
 call plug#end()
 
