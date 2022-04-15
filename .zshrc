@@ -82,3 +82,6 @@ alias hn='lynx https://news.ycombinator.com'
 # \$ prints a $ if not super-user
 # Export variable to make it available in the personal shell
 #export PS1
+
+# Automatically added fzf keybindings during installation of fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
