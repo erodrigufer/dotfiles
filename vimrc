@@ -191,6 +191,10 @@ Plug 'mzlogin/vim-markdown-toc'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
+" Comment and un-comment more easily, works in almost all languages.
+" Use gcc to comment/un-comment a line, or gc+movement.
+Plug 'tpope/vim-commentary'
+
 call plug#end()
 
 " --------------------------------------------------------
