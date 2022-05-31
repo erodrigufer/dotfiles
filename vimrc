@@ -127,8 +127,10 @@ nnoremap <silent> <Leader>+ :vertical resize +10<CR>
 nnoremap <silent> <Leader>- :vertical resize -10<CR>
 " <BS> Backspace
 " :%bdelete := delete all buffers
-" Close all buffers, and close vim if changes are safe to close window
-nnoremap <silent> <Leader><BS> :%bdelete<CR>:q<CR>
+" Close all buffers, and close vim if changes are safe to close window.
+" nnoremap <silent> <Leader><BS> :%bdelete<CR>:q<CR>
+" Close any preview windows that have been open.
+nnoremap <silent> <Leader><BS> :pc<CR>
 
 " --------------------------------------------------------
 " 				Plugings section
