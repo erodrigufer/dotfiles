@@ -123,8 +123,8 @@ nnoremap <Leader>; :b#<bar>bd#<CR>
 " <silent> do not show command after executing
 " Vertical split of window 
 nnoremap <silent> <Leader><bar> :vs<CR> 
-nnoremap <silent> <Leader>+ :vertical resize +10<CR>
-nnoremap <silent> <Leader>- :vertical resize -10<CR>
+nnoremap <silent> <Leader>+ :vertical resize +5<CR>
+nnoremap <silent> <Leader>- :vertical resize -5<CR>
 " <BS> Backspace
 " :%bdelete := delete all buffers
 " Close all buffers, and close vim if changes are safe to close window.
