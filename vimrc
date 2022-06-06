@@ -259,7 +259,9 @@ let g:completor_filetype_map.go = {'ft': 'lsp', 'cmd': 'gopls-remote=auto'}
 " Rename the identifier under the cursor to a desired new name. Very useful, 
 " because it automatically renames the identifier across the whole package.
 autocmd FileType go nmap <Leader>r <Plug>(go-rename)
-
+" Show all the declarations (methods, functions, types) in the current
+" directory and jump directly to them.
+autocmd FileType go nmap <Leader>? <Plug>(go-decls-dir)
 " --------------------------------------------------------
 "  				gitAutomator integration
 " --------------------------------------------------------
