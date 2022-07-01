@@ -261,7 +261,7 @@ let g:completor_filetype_map.go = {'ft': 'lsp', 'cmd': 'gopls-remote=auto'}
 autocmd FileType go nmap <Leader>r <Plug>(go-rename)
 " Show all the declarations (methods, functions, types) in the current
 " directory and jump directly to them.
-autocmd FileType go nmap <Leader>? <Plug>(go-decls-dir)
+autocmd FileType go nmap <Leader>, <Plug>(go-decls-dir)
 " Save the current file and perform a build of the package.
 autocmd FileType go nmap <SPACE><SPACE> :w!<CR><Plug>(go-build)
 
