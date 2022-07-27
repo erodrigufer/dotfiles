@@ -15,7 +15,10 @@ else
 	# Show all regular files (-type f) with a maxdepth of 4 in DIRECTORIES
 	# pipe the output to fzf, to pick one single file
 	# the output of fzf is stored in selectedFile
-	selectedFile=$(find ${DIRECTORIES} -mindepth 1 -maxdepth 4 -type f | fzf)
+	# do not recursively look for hidden (dotfiles) -not -path '*/\.*'
+	# Check:
+	# https://askubuntu.com/questions/266179/how-to-exclude-ignore-hidden-files-and-directories-in-a-wildcard-embedded-find
+	selectedFile=$(find ${DIRECTORIES} -not -path '*/\.*' -mindepth 1 -maxdepth 4 -type f | fzf --preview 'bat --color=always {}' --preview-window down)
 fi
 
 # the selected file variable is empty, exit
