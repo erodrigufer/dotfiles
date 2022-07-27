@@ -20,6 +20,9 @@ ZSH_THEME="apple"
 # Uncomment the following line to disable bi-weekly auto-update checks.
 DISABLE_AUTO_UPDATE="true"
 
+# Theme used by bat.
+export BAT_THEME="gruvbox-light"
+
 # source is a shell built-in command that executes the content of the file 
 # passed as argument in the current shell.
 source $ZSH/oh-my-zsh.sh
