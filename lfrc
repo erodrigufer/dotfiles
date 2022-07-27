@@ -10,7 +10,7 @@
 
 cmd open ${{
 	# $f is selected file
-	# test if file exists and is a szmbolic link 
+	# test if file exists and is a symbolic link 
 	# ('test -L'), if so readlink, update f
 	test -L $f && f=$(readlink -f $f)
 	case $(file --mime-type $f -b) in
