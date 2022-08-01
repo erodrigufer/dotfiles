@@ -252,6 +252,11 @@ hi Pmenu ctermbg=lightcyan
 " Enable lsp for Go by using gopls (autocompletion)
 let g:completor_filetype_map = {}
 let g:completor_filetype_map.go = {'ft': 'lsp', 'cmd': 'gopls-remote=auto'}
+" Continually show the type information of the object under the cursor.
+let g:go_auto_type_info = 1
+" Delay before running some jobs, e.g. showing the type info of an object
+" under the cursor (in [ms]). 
+let g:go_updatetime = 300
 
 " --------------------------------------------------------
 " 				Go-specific key bindings
