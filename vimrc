@@ -220,6 +220,8 @@ let g:vmt_cycle_list_item_markers = 1
 autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
 " Mapping to open NERDTree
 nnoremap <Leader>t :NERDTree<CR>  
+" close NERDTree after a file is opened
+let g:NERDTreeQuitOnOpen=1
 
 " junegunn/gv.vim
 " Open the commit history for the current file
