@@ -197,7 +197,7 @@ Plug 'junegunn/fzf.vim'
 " Use gcc to comment/un-comment a line, or gc+movement.
 Plug 'tpope/vim-commentary'
 
-" vim-emmet improves the HTML/CSS workflow.
+" emmet-vim improves the HTML/CSS workflow.
 Plug 'mattn/emmet-vim'
 
 call plug#end()
@@ -214,8 +214,8 @@ let g:airline#extensions#tabline#enabled = 1
 " and +)
 let g:vmt_cycle_list_item_markers = 1
 
-" vim-emmet
-" Enable vim-emmet just for HTML, CSS and Go HTML templates.
+" emmet-vim
+" Enable emmet-vim just for HTML, CSS and Go HTML templates.
 let g:user_emmet_install_global = 0
 autocmd FileType html,css,gohtmltmpl EmmetInstall
 " Redefine trigger key to Control-X
