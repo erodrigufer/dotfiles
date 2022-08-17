@@ -200,6 +200,9 @@ Plug 'tpope/vim-commentary'
 " emmet-vim improves the HTML/CSS workflow.
 Plug 'mattn/emmet-vim'
 
+" Automatically re-name HTML tags.
+Plug 'AndrewRadev/tagalong.vim'
+
 call plug#end()
 
 " --------------------------------------------------------
@@ -220,6 +223,11 @@ let g:user_emmet_install_global = 0
 autocmd FileType html,css,gohtmltmpl EmmetInstall
 " Redefine trigger key to Control-X
 let g:user_emmet_leader_key='<C-X>'
+
+" tagalong.vim
+" The plugin should also be active with Go HTML template files.
+let g:tagalong_additional_filetypes = ['gohtmltmpl']
+let g:tagalong_verbose = 1
 
 " --------------------------------------------------------
 " 				Key mappings for plugins
