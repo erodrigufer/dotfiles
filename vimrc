@@ -203,6 +203,9 @@ Plug 'mattn/emmet-vim'
 " Automatically re-name HTML tags.
 Plug 'AndrewRadev/tagalong.vim'
 
+" Change 'surrounds' of objects more easily: tags, ', ", ] or any symbol.
+Plug 'tpope/vim-surround'
+
 call plug#end()
 
 " --------------------------------------------------------
