@@ -13,6 +13,9 @@ set backspace=2
 " activate clipboard yank in Mac OS
 set clipboard=unnamed 
 
+" supress all bells
+set belloff=all
+
 " activate numbering of lines per default
 set nu
 " activate syntax highlighting default, so that for example
