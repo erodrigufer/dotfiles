@@ -18,7 +18,8 @@ set belloff=all
 
 " activate numbering of lines per default
 " set nu
-" turn hybrid line numbers on
+
+" Activate hybrid line numbering.
 set number relativenumber
 
 " activate syntax highlighting default, so that for example
