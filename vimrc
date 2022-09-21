@@ -17,7 +17,10 @@ set clipboard=unnamed
 set belloff=all
 
 " activate numbering of lines per default
-set nu
+" set nu
+" turn hybrid line numbers on
+set number relativenumber
+
 " activate syntax highlighting default, so that for example
 " shell scripts will after the shebang get automatic highlighting
 syntax on
