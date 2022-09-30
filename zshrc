@@ -102,3 +102,10 @@ alias hn='lynx https://news.ycombinator.com'
 
 # Automatically added fzf keybindings during installation of fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Environment variables to configure difft. 
+# Check the usage of difft `difft --help` for more information.
+# Display results side by side and show both.
+export DFT_DISPLAY="side-by-side-show-both"
+# Use a light background.
+export DFT_BACKGROUND="light"
