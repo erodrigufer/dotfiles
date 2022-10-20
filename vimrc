@@ -298,6 +298,10 @@ autocmd FileType go nmap <Leader>r <Plug>(go-rename)
 autocmd FileType go nmap <Leader>, <Plug>(go-decls-dir)
 " Save the current file and perform a build of the package.
 autocmd FileType go nmap <SPACE><SPACE> :w!<CR><Plug>(go-vet)<Plug>(go-build)
+" Show referrers of object under cursor.
+autocmd FileType go nmap gt <Plug>(go-referrers)
+" Close all location lists (lcl) and quickfix lists (ccl) in the current window.
+autocmd FileType go nmap <silent> gT :ccl <bar> lcl<CR>
 
 " --------------------------------------------------------
 "  				gitAutomator integration
