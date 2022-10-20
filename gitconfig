@@ -1,0 +1,29 @@
+# This is Git's per-user configuration file.
+[merge]
+	tool = diffmerge
+[mergetool "diffmerge"]
+	trustExitCode = true
+	cmd = /usr/local/bin/diffmerge --merge --result=\"$MERGED\" \"$LOCAL\" \"$BASE\" \"$REMOTE\"
+[filter "lfs"]
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+[credential]
+	helper = osxkeychain
+[core]
+	editor = vim
+[init]
+	defaultBranch = main
+[diff]
+	external = difft
+
+[diff "difft"]
+	command = difft --background light --display side-by-side-show-both
+
+[alias]
+	# `git le` instead of `git log -p --ext-diff`.
+	le = log -p --ext-diff
+	# `git se` instead of `git show --ext-diff`.
+	se = show --ext-diff
+	df = diff

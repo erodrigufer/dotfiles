@@ -30,8 +30,23 @@ source $ZSH/oh-my-zsh.sh
 # source is a shell built-in command that executes the content of the file 
 # passed as argument in the current shell.
 # store personal aliases, with sensitive server and username information in this
-# file, so that it is not pushed to the open repo
+# file, so that it is not pushed to the open repo.
 source $HOME/.personalAliases
+
+# store personal aliases, with sensitive server and username information in this
+# file, so that it is not pushed to the open repo, e.g. the email in the git
+# config file.
+source $HOME/.secrets
+
+# Configure email used by git (requires sourcing `~/.secrets` file).
+# By running this command I am not exposing my email publically in the repo,
+# since otherwise I would have to explicitly write the email in the `.gitconfig`
+# file.
+# IMPORTANT: This actually did not work, it copies my email to the per-user
+# gitconfig file. So I had to write my email directly into the gitconfig file
+# at /usr/local/etc. Maybe I find in the future another command that writes
+# that file instead of the one at $HOME.
+# git config --global user.email ${EMAIL_GIT}
 
 # Use lf to switch directories and bind it to ctrl-o
 lfcd () {
