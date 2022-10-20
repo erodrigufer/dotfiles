@@ -140,6 +140,37 @@ nnoremap <silent> <Leader>- :vertical resize -5<CR>
 nnoremap <silent> <Leader><BS> :pc<CR>
 
 " --------------------------------------------------------
+" 				Vimgrep, location list 
+" 				and quick-fix list section
+" --------------------------------------------------------
+" Vim documentation about creating commands:
+" https://vimdoc.sourceforge.net/htmldoc/usr_40.html#40.2
+
+" command TODO accepts 0 arguments: -nargs=0, and checks all files 
+command! -nargs=0 TODO execute 'silent vimgrep! /TODO/ `git ls-files`' | copen
+
+" https://vonheikemen.github.io/devlog/tools/vim-and-the-quickfix-list/
+" :Grep - search and then open the window
+" command! -nargs=+ Grep execute 'silent vimgrep! <args> `git-ls-files`' | copen
+command! -nargs=1 Grep execute 'silent vimgrep! <q-args> `git ls-files`' | copen
+" command! -nargs=1 Grep execute 'silent vimgrep! <q-args> `git ls-tree --full-tree -r --name-only HEAD`' | copen
+
+" Go to the previous quick-fix list location.
+nnoremap <silent> [q :cprev<CR>
+" Go to the next quick-fix list location.
+nnoremap <silent> ]q :cnext<CR>
+" Go to the previous location list location.
+nnoremap <silent> [z :lprev<CR>
+" Go to the next location list location.
+nnoremap <silent> ]z :lnext<CR>
+
+" Show the quickfix window.
+nnoremap <silent> <Leader>co :copen<CR>
+" Hide the quickfix/location window.
+nnoremap <silent> <Leader>cc :cclose <bar> :lclose <CR>
+
+
+" --------------------------------------------------------
 " 				Plugings section
 " --------------------------------------------------------
 " Automatic installation of 'Plug' if it missing in the system
