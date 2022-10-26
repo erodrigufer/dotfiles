@@ -16,6 +16,10 @@ link:
 	@ln -sf $(REPO)/tmux.conf ~/.tmux.conf
 	@# vimrc
 	@ln -sf $(REPO)/vimrc ~/.vimrc
+	@# yabairc
+	@ln -sf $(REPO)/yabairc ~/.yabairc
+	@# skhd
+	@ln -sf $(REPO)/skhdrc ~/.skhdrc
 	@# lfrc
 	@# Create file directory if it does not exist
 	@mkdir -p ~/.config/lf
