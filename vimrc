@@ -350,7 +350,7 @@ map <SPACE>p :w<CR>:!ga %:t<CR>
 
 " use gitAutomator to push, use the 'w' flag to open the GitHub Actions job 
 " status after pushing
-map <SPACE>w :w<CR>:!ga -w %:t<CR>
+map <SPACE>W :w<CR>:!ga -w %:t<CR>
 
 " --------------------------------------------------------
 " 			Config for markdown files
