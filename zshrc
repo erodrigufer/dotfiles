@@ -20,6 +20,10 @@ ZSH_THEME="apple"
 # Uncomment the following line to disable bi-weekly auto-update checks.
 DISABLE_AUTO_UPDATE="true"
 
+# Fix bug: output shows executed command, see:
+# https://stackoverflow.com/questions/30940299/zsh-repeats-command-in-output
+DISABLE_AUTO_TITLE="true"
+
 # Theme used by bat.
 export BAT_THEME="gruvbox-light"
 
