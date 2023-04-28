@@ -111,6 +111,10 @@ alias ll='ls -lp'
 # Add alias to open Hacker News in Lynx in the terminal
 alias hn='lynx https://news.ycombinator.com'
 
+# Catalan dictionary; execute the js file that finds catalan definition of a 
+# word with node.
+alias cdic='node ${HOME}/jsCmdLine/catDict/scrape.js'
+
 # Sadly this is only working on bash and not on zsh
 # Customize the shell prompt
 #PS1="\u@[ESX]-\A- \W \$ "
