@@ -1,6 +1,9 @@
 # Dotfiles
 I am currently still trying to make the installation of the dotfiles as automatic as possible (real plug-and-play).
 
+## Boot-up
+* If you are setting up a computer for the first time, install `brew` and then run `boot-up.sh`.
+
 ## Plug-and-play integration
 * The installation of gitAutomator into the path should still be automated.
 
