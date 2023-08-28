@@ -95,8 +95,11 @@ alias e=vim
 # Open file in VSC.
 alias vsc='open -a Visual\ Studio\ Code'
 
+# Git aliases
 alias gg='git diff'
 alias gss='git status'
+alias gc='git checkout'
+
 # ls should output only one element per row and display a '/' if element is a folder
 alias ls='ls -p'
 
@@ -128,6 +131,8 @@ alias cdic='node ${HOME}/jsCmdLine/catDict/scrape.js'
 
 # Automatically added fzf keybindings during installation of fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+eval "$(direnv hook zsh)"
 
 # Environment variables to configure difft. 
 # Check the usage of difft `difft --help` for more information.
