@@ -1,7 +1,7 @@
 #!/bin/sh
 # Eduardo Rodriguez [@erodrigufer] 2023 (c) 
 
-PACKAGES="tmux go gh neovim lf difftastic node yarn direnv"
+PACKAGES="tmux go gh neovim lf difftastic node yarn direnv fzf"
 
 # Basic apps.
 brew install $(PACKAGES) && "The following packages were properly installed: $(PACKAGES)"
