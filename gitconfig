@@ -27,3 +27,6 @@
 	# `git se` instead of `git show --ext-diff`.
 	se = show --ext-diff
 	df = diff
+[user]
+	email = erodrigufer@gmail.com
+	name = erodrigufer

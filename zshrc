@@ -2,7 +2,7 @@
 export PATH=$HOME/bin:/usr/local/bin:$HOME/bin:$HOME/bin/shellUtilities:$PATH:$HOME/go/bin
 
 # Standard file editor
-export VISUAL=vim
+export VISUAL=nvim
 export EDITOR="$VISUAL"
 
 # Solve color problems when using vim-airline with tmux
@@ -88,9 +88,9 @@ bindkey -s '^ ' 'git status --short\n'
 # 2. running the shell-utility script fuzzyFile
 bindkey -s '^v' '^ufuzzyFile\n'
 
-alias v=vim
+alias v=nvim
 # e for edit
-alias e=vim
+alias e=nvim
 
 # Open file in VSC.
 alias vsc='open -a Visual\ Studio\ Code'

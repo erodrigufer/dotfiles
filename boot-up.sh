@@ -15,5 +15,9 @@ npm install --global typescript && echo "typescript was properly installed!"
 # Install oh-my-zsh.
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" && echo "oh-my-zsh was properly installed!"
 
+## Requirements for nvim
 # Install nerd font
 brew tap homebrew/cask-fonts && brew install font-hack-nerd-font
+# Install packer
+git clone --depth 1 https://github.com/wbthomason/packer.nvim \
+	 ~/.local/share/nvim/site/pack/packer/start/packer.nvim
