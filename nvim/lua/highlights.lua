@@ -9,3 +9,5 @@ vim.opt.termguicolors = true
 -- it tells Nvim what the "inherited" (terminal/GUI) 
 -- background looks like.
 vim.opt.background = 'dark'
+-- Set pseudo-transparency of pop-up menus.
+vim.opt.pumblend = 15
