@@ -132,6 +132,11 @@ alias cdic='node ${HOME}/jsCmdLine/catDict/scrape.js'
 
 # Automatically added fzf keybindings during installation of fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# Use fd instead of find with fzf
+export FZF_DEFAULT_COMMAND="fd --type f"
+export FZF_CONTROL_T_COMMAND="${FZF_DEFAULT_COMMAND}"
+# Enable regex in fzf
+export FZF_DEFAULT_OPS="--extended"
 
 # Integrate direnv into zsh.
 # direnv automatically detects env variables in .envrc files and loads them into
