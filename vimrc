@@ -106,6 +106,9 @@ nnoremap N Nzzzv
 " `z=move
 " back to where you put the mark originally
 nnoremap J mzJ`z
+" S[ubstitute]: delete the word over the cursor and paste the last yanked
+" text.
+nnoremap S diw"0P
 
 " --------------------------------------------------------
 " 				Remaps for buffers
