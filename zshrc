@@ -99,6 +99,7 @@ alias vsc='open -a Visual\ Studio\ Code'
 alias gg='git diff'
 alias gss='git status'
 alias gc='git checkout'
+alias gb='git --no-pager branch'
 
 # ls should output only one element per row and display a '/' if element is a folder
 alias ls='ls -p'
@@ -132,6 +133,9 @@ alias cdic='node ${HOME}/jsCmdLine/catDict/scrape.js'
 # Automatically added fzf keybindings during installation of fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+# Integrate direnv into zsh.
+# direnv automatically detects env variables in .envrc files and loads them into
+# the working environment.
 eval "$(direnv hook zsh)"
 
 # Environment variables to configure difft. 
