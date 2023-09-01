@@ -1,5 +1,3 @@
-print('highlights loaded!')
-
 -- Highlight the cursor line.
 vim.opt.cursorline = true
 

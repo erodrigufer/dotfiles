@@ -1,7 +1,6 @@
 -- @erodrigufer
 -- General config options --
 
-print('base loaded!')
 -- Turn the bell off for all events.
 vim.opt.belloff = 'all'
 

@@ -1,5 +1,3 @@
-print('keymappings')
-
 local keymap = vim.keymap
 
 -- Do not yank when deleting with 'x'.
