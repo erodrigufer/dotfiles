@@ -19,7 +19,7 @@
 	external = difft
 
 [diff "difft"]
-	command = difft --background light --display side-by-side-show-both
+	command = difft --background dark --display side-by-side-show-both
 
 [alias]
 	# `git le` instead of `git log -p --ext-diff`.

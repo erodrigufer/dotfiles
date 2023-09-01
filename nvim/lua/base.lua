@@ -11,3 +11,4 @@ vim.opt.belloff = 'all'
 -- cursor line shows the absolute line number.
 vim.opt.number = true
 vim.opt.relativenumber = true
+

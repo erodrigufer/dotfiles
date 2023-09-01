@@ -14,7 +14,7 @@ cmd open ${{
 	# ('test -L'), if so readlink, update f
 	test -L $f && f=$(readlink -f $f)
 	case $(file --mime-type $f -b) in
-		text/*|application/json) vim $fx;;
+		text/*|application/json) nvim $fx;;
 		*) for f in $fx; do open $f; done;;
 	esac
 }}
