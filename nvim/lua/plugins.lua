@@ -9,6 +9,7 @@ vim.cmd [[packadd packer.nvim]]
 
 packer.startup(function(use)
   use 'wbthomason/packer.nvim'
+  use 'nvim-tree/nvim-web-devicons'
   use {
   'nvim-lualine/lualine.nvim',
   requires = { 'nvim-tree/nvim-web-devicons', opt = true }
@@ -20,6 +21,9 @@ packer.startup(function(use)
   -- LSP
   use 'neovim/nvim-lspconfig'
   use "folke/trouble.nvim"
+  use { "folke/todo-comments.nvim",
+  requires = { "nvim-lua/plenary.nvim" },
+  }
   use {
   'akinsho/bufferline.nvim', tag = "*", 
   requires = { {'nvim-tree/nvim-web-devicons'} }

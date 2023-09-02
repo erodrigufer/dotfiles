@@ -88,6 +88,9 @@ bindkey -s '^ ' 'git status --short\n'
 # 2. running the shell-utility script fuzzyFile
 bindkey -s '^v' '^ufuzzyFile\n'
 
+# Killing vim.
+alias vim=nvim
+
 alias v=nvim
 # e for edit
 alias e=nvim
