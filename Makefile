@@ -20,6 +20,9 @@ link:
 	@ln -sf $(REPO)/yabairc ~/.yabairc
 	@# skhd
 	@ln -sf $(REPO)/skhdrc ~/.skhdrc
+	@# nvim
+	@mkdir -p ~/.config
+	@ln -sf $(REPO)/nvim ~/.config/nvim
 	@# lfrc
 	@# Create file directory if it does not exist
 	@mkdir -p ~/.config/lf
