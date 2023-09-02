@@ -1,7 +1,8 @@
 -- Setup language servers.
-local lspconfig = require('lspconfig')
-lspconfig.tsserver.setup {}
-lspconfig.gopls.setup{}
+local status, nvim_lsp = pcall(require, "lspconfig")
+if (not status) then return end
+nvim_lsp.tsserver.setup {}
+nvim_lsp.gopls.setup{}
 
 -- Global mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions

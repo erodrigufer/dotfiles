@@ -17,7 +17,13 @@ packer.startup(function(use)
   'nvim-telescope/telescope.nvim', tag = '0.1.2',
   requires = { {'nvim-lua/plenary.nvim'} }
   }
-  use 'neovim/nvim-lspconfig' -- LSP
+  -- LSP
+  use 'neovim/nvim-lspconfig'
+  use "folke/trouble.nvim"
+  use {
+  'akinsho/bufferline.nvim', tag = "*", 
+  requires = { {'nvim-tree/nvim-web-devicons'} }
+  }
   -- Plugins go here!!
 end)
 
