@@ -30,4 +30,6 @@ keymap.set('n', '<leader>[', ':bp<CR>')
 keymap.set('n', '<leader>]', ':bn<CR>')
 
 -- Close all buffers.
-keymap.set('n', '<S-d>', ':qa!')
+keymap.set('n', '<S-k>', ':qa!')
+-- Write all buffers and close them.
+keymap.set('n', '<S-e>', ':wqa<CR>')
