@@ -10,6 +10,9 @@ vim.cmd [[packadd packer.nvim]]
 packer.startup(function(use)
   use 'wbthomason/packer.nvim'
   use 'nvim-tree/nvim-web-devicons'
+  -- General functions for neovim 
+  -- (required by many packages).
+  use 'nvim-lua/plenary.nvim'
   use {
   'nvim-lualine/lualine.nvim',
   requires = { 'nvim-tree/nvim-web-devicons', opt = true }
@@ -20,15 +23,22 @@ packer.startup(function(use)
   }
   -- LSP
   use 'neovim/nvim-lspconfig'
+  -- Show Errors, diagnostics.
   use "folke/trouble.nvim"
+  -- Find TODOs, FIX and BUGs in repo.
   use { "folke/todo-comments.nvim",
   requires = { "nvim-lua/plenary.nvim" },
   }
+  -- Line with opened buffers on top of window.
   use {
   'akinsho/bufferline.nvim', tag = "*", 
   requires = { {'nvim-tree/nvim-web-devicons'} }
   }
+  -- Show git changes on left-side of window, 
+  -- git blame and git diff functions.
   use 'lewis6991/gitsigns.nvim'
-  -- Plugins go here!!
+  --
+  -- Post-install/update hook with neovim command.
+  use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
 end)
 
