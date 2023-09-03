@@ -18,8 +18,13 @@ packer.startup(function(use)
   requires = { 'nvim-tree/nvim-web-devicons', opt = true }
   }
   use {
-  'nvim-telescope/telescope.nvim', tag = '0.1.2',
+  'nvim-telescope/telescope.nvim', branch = '0.1.x',
   requires = { {'nvim-lua/plenary.nvim'} }
+  }
+  -- File browser.
+  use {
+    "nvim-telescope/telescope-file-browser.nvim",
+    requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
   }
   -- LSP
   use 'neovim/nvim-lspconfig'
