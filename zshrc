@@ -75,10 +75,10 @@ lfcd () {
 # 2. opening lf in last-dir-path mode, using lfcd()
 bindkey -s '^o' '^ulfcd\n'
 
-# bind '^h' = Control + h to:
+# bind '^h' = Control + f to:
 # 1. clearing the line '^u' = Control + u 
 # 2. running the shell-utility script fuzzyDirectory
-bindkey -s '^f' '^ufuzzyDirectory\n'
+# bindkey -s '^f' '^ufuzzyDirectory\n'
 
 # Ctrl+space: print Git status
 bindkey -s '^ ' 'git status --short\n'
@@ -88,12 +88,21 @@ bindkey -s '^ ' 'git status --short\n'
 # 2. running the shell-utility script fuzzyFile
 bindkey -s '^v' '^ufuzzyFile\n'
 
+# bind '^h' = Control + f to:
+# 1. clearing the line '^u' = Control + u 
+# 2. running 'nvim +Telescope file_browser'
+# Opens a new nvim window inside an unnamed file
+# with the Telescope file browser extension.
+bindkey -s '^f' '^unvim +"Telescope file_browser"\n'
+
 # Killing vim.
 alias vim=nvim
 
 alias v=nvim
 # e for edit
 alias e=nvim
+
+alias fb='nvim +"Telescope file_browser"'
 
 # Open file in VSC.
 alias vsc='open -a Visual\ Studio\ Code'

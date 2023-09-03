@@ -28,3 +28,6 @@ keymap.set('', 'sl', '<C-w>l')
 -- Switch to next or previous buffer.
 keymap.set('n', '<leader>[', ':bp<CR>')
 keymap.set('n', '<leader>]', ':bn<CR>')
+
+-- Close all buffers.
+keymap.set('n', '<S-d>', ':qa!')
