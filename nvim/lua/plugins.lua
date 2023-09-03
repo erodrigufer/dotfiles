@@ -28,6 +28,7 @@ packer.startup(function(use)
   'akinsho/bufferline.nvim', tag = "*", 
   requires = { {'nvim-tree/nvim-web-devicons'} }
   }
+  use 'lewis6991/gitsigns.nvim'
   -- Plugins go here!!
 end)
 
