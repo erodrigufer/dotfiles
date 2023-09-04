@@ -38,6 +38,9 @@ packer.startup(function(use)
   -- Comments.
   use 'numToStr/Comment.nvim'
 
+  -- HTML colors.
+  use 'norcalli/nvim-colorizer.lua'
+
   -- Line with opened buffers on top of window.
   use {
   'akinsho/bufferline.nvim', tag = '*', 
