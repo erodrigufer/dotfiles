@@ -25,7 +25,7 @@ DISABLE_AUTO_UPDATE="true"
 DISABLE_AUTO_TITLE="true"
 
 # Theme used by bat.
-export BAT_THEME="gruvbox"
+export BAT_THEME="gruvbox-dark"
 
 # source is a shell built-in command that executes the content of the file 
 # passed as argument in the current shell.
