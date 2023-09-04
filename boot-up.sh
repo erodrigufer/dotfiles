@@ -24,3 +24,7 @@ git clone --depth 1 https://github.com/wbthomason/packer.nvim \
 
 # Install TS language server.
 npm install -g typescript-language-server typescript
+
+## tmux
+# Install tmux plugin manager.
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
