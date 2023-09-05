@@ -8,7 +8,7 @@ vim.keymap.set('n', '<Space>f', builtin.git_files, {})
 
 -- Lists files in your current working directory, 
 -- respects .gitignore
-vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
+vim.keymap.set('n', '<leader>f', builtin.find_files, {})
 
 -- vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
 
@@ -18,4 +18,4 @@ vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
 -- Load the file_browser extension for telescope.
 telescope.load_extension "file_browser"
 -- Open file_browser with the path of the current buffer.
-vim.keymap.set('n', '<Space>n', ':Telescope file_browser path=%:p:h select_buffer=true<CR>', { noremap = true })
+vim.keymap.set('n', '<Space>t', ':Telescope file_browser path=%:p:h select_buffer=true<CR>', { noremap = true })
