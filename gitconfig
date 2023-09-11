@@ -30,3 +30,5 @@
 [user]
 	email = erodrigufer@gmail.com
 	name = erodrigufer
+[push]
+	default = upstream
