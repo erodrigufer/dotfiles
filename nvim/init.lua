@@ -14,3 +14,7 @@ local is_wsl = has "wsl"
 if is_mac == 1 then
   require('macos')
 end
+
+if is_linux == 1 then
+  require('linux')
+end
