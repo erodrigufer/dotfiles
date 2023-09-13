@@ -9,9 +9,6 @@ brew install $(PACKAGES) && "The following packages were properly installed: $(P
 # To install useful key bindings and fuzzy completion for fzf:
 $(brew --prefix)/opt/fzf/install
 
-# Install typescript globally.
-npm install --global typescript && echo "typescript was properly installed!"
-
 # Install oh-my-zsh.
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" && echo "oh-my-zsh was properly installed!"
 
@@ -22,8 +19,8 @@ brew tap homebrew/cask-fonts && brew install font-hack-nerd-font
 git clone --depth 1 https://github.com/wbthomason/packer.nvim \
 	 ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 
-# Install TS language server.
-npm install -g typescript-language-server typescript
+# Install TS tools.
+npm install -g typescript-language-server typescript prettier
 
 ## tmux
 # Install tmux plugin manager.

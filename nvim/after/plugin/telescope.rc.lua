@@ -8,7 +8,7 @@ vim.keymap.set('n', '<Space>f', builtin.git_files, {})
 
 -- Lists files in your current working directory, 
 -- respects .gitignore
-vim.keymap.set('n', '<leader>f', builtin.find_files, {})
+vim.keymap.set('n', '<leader>t', builtin.find_files, {})
 
 -- vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
 

@@ -55,5 +55,8 @@ packer.startup(function(use)
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
   -- Color and theme.
   use { 'catppuccin/nvim', as = 'catppuccin' }
+
+  use('jose-elias-alvarez/null-ls.nvim') -- Required for prettier.
+  use('MunifTanjim/prettier.nvim')
 end)
 
