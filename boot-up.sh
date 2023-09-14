@@ -3,6 +3,11 @@
 
 PACKAGES="tmux go gh neovim lf difftastic node yarn direnv fzf act glow fd ripgrep bat"
 
+which brew > /dev/null || { echo "brew must be installed in the system!"; exit 1 }
+
+# Update the information about packages and brew itself.
+brew update
+
 # Basic apps.
 brew install $(PACKAGES) && "The following packages were properly installed: $(PACKAGES)"
 
