@@ -10,16 +10,16 @@ vim.cmd [[packadd packer.nvim]]
 packer.startup(function(use)
   use 'wbthomason/packer.nvim'
   use 'nvim-tree/nvim-web-devicons'
-  -- General functions for neovim 
+  -- General functions for neovim
   -- (required by many packages).
   use 'nvim-lua/plenary.nvim'
   use {
-  'nvim-lualine/lualine.nvim',
-  requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+    'nvim-lualine/lualine.nvim',
+    requires = { 'nvim-tree/nvim-web-devicons', opt = true }
   }
   use {
-  'nvim-telescope/telescope.nvim', branch = '0.1.x',
-  requires = { {'nvim-lua/plenary.nvim'} }
+    'nvim-telescope/telescope.nvim', branch = '0.1.x',
+    requires = { { 'nvim-lua/plenary.nvim' } }
   }
   -- File browser.
   use {
@@ -28,10 +28,10 @@ packer.startup(function(use)
   }
   -- LSP
   use 'neovim/nvim-lspconfig'
-  use 'onsails/lspkind-nvim' -- vscode-like pictograms
-  use 'hrsh7th/cmp-buffer' -- nvim-cmp source for buffer words
-  use 'hrsh7th/cmp-nvim-lsp' -- nvim-cmp source for neovim's built-in LSP
-  use 'hrsh7th/nvim-cmp' -- Completion
+  use 'onsails/lspkind-nvim'            -- vscode-like pictograms
+  use 'hrsh7th/cmp-buffer'              -- nvim-cmp source for buffer words
+  use 'hrsh7th/cmp-nvim-lsp'            -- nvim-cmp source for neovim's built-in LSP
+  use 'hrsh7th/nvim-cmp'                -- Completion
   use 'jose-elias-alvarez/null-ls.nvim' -- Use Neovim as a language server to inject LSP diagnostics, code actions, and more via Lua
   use 'williamboman/mason.nvim'
   use 'williamboman/mason-lspconfig.nvim'
@@ -39,7 +39,7 @@ packer.startup(function(use)
   use 'folke/trouble.nvim'
   -- Find TODOs, FIX and BUGs in repo.
   use { 'folke/todo-comments.nvim',
-  requires = { 'nvim-lua/plenary.nvim' },
+    requires = { 'nvim-lua/plenary.nvim' },
   }
 
   -- Comments.
@@ -50,11 +50,11 @@ packer.startup(function(use)
 
   -- Line with opened buffers on top of window.
   use {
-  'akinsho/bufferline.nvim', tag = '*', 
-  requires = { {'nvim-tree/nvim-web-devicons'} }
+    'akinsho/bufferline.nvim', tag = '*',
+    requires = { { 'nvim-tree/nvim-web-devicons' } }
   }
 
-  -- Show git changes on left-side of window, 
+  -- Show git changes on left-side of window,
   -- git blame and git diff functions.
   use 'lewis6991/gitsigns.nvim'
   --
@@ -67,5 +67,6 @@ packer.startup(function(use)
 
   use 'L3MON4D3/LuaSnip'
 
-  end)
-
+  -- TS type-checking throughout a project.
+  use('dmmulroy/tsc.nvim')
+end)
