@@ -69,4 +69,7 @@ packer.startup(function(use)
 
   -- TS type-checking throughout a project.
   use('dmmulroy/tsc.nvim')
+
+  -- Useful TS functions.
+  use('jose-elias-alvarez/typescript.nvim')
 end)
