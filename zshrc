@@ -112,6 +112,7 @@ alias gg='git diff'
 alias gss='git status'
 alias gc='git checkout'
 alias gb='git --no-pager branch'
+alias gl='ga -l'
 
 # ls should output only one element per row and display a '/' if element is a folder
 alias ls='ls -p'
