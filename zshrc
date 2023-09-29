@@ -155,3 +155,11 @@ eval "$(direnv hook zsh)"
 export DFT_DISPLAY="side-by-side-show-both"
 # Use a light background.
 export DFT_BACKGROUND="dark"
+
+# z - replacement for cd.
+source /opt/homebrew/etc/profile.d/z.sh
+
+# Chage colors by eza (see `man eza_colors`).
+# da = date 
+# gm = git-modified flag
+export EZA_COLORS="da=90:gm=32"
