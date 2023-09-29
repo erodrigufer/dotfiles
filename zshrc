@@ -107,34 +107,19 @@ alias fb='nvim +"Telescope file_browser"'
 # Open file in VSC.
 alias vsc='open -a Visual\ Studio\ Code'
 
-# Git aliases
+# Git aliases.
 alias gg='git diff'
 alias gss='git status'
 alias gc='git checkout'
 alias gb='git --no-pager branch'
 alias gl='ga -l'
 
-# ls should output only one element per row and display a '/' if element is a folder
-alias ls='ls -p'
-
-# The next 2 alias were created using the book "The Linux Command Line"
-# Creates the new command l. to display only files starting with "."
-alias l.='ls -d .*'
-
-# Creates the new command ll to display a long list of the files
-# If an element is a folder, then the name will have a '/' at the end [-p flag]
-alias ll='ls -lp'
-
-# Sadly this is only working on bash and not on zsh
-# Customize the shell prompt
-#PS1="\u@[ESX]-\A- \W \$ "
-# \u gives the current user name
-# ESX stands for Eduardo Shell eXtension
-# \A gives the time in 24 hour format \W
-# gives the last part of the working directory and 
-# \$ prints a $ if not super-user
-# Export variable to make it available in the personal shell
-#export PS1
+# eza aliases.
+alias l.='eza -l --icons -I .*'
+alias ls='eza --icons --oneline'
+alias ll='eza --long --icons --git'
+alias lt='eza --icons --tree'
+alias la='eza --icons --long --all'
 
 # Automatically added fzf keybindings during installation of fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
