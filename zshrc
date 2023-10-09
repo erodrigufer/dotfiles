@@ -5,7 +5,7 @@ export PATH=$HOME/bin:/usr/local/bin:$HOME/bin:$HOME/bin/shellUtilities:$PATH:$H
 export VISUAL=nvim
 export EDITOR="$VISUAL"
 
-# Solve color problems when using vim-airline with tmux
+# Solve color problems when using vim-airline with tmux.
 export TERM="screen-256color"
 
 # Path to your oh-my-zsh installation.
