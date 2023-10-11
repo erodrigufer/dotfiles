@@ -31,17 +31,6 @@ export BAT_THEME="gruvbox-dark"
 # passed as argument in the current shell.
 source $ZSH/oh-my-zsh.sh
 
-# source is a shell built-in command that executes the content of the file 
-# passed as argument in the current shell.
-# store personal aliases, with sensitive server and username information in this
-# file, so that it is not pushed to the open repo.
-source $HOME/.personalAliases
-
-# store personal aliases, with sensitive server and username information in this
-# file, so that it is not pushed to the open repo, e.g. the email in the git
-# config file.
-source $HOME/.secrets
-
 # Configure email used by git (requires sourcing `~/.secrets` file).
 # By running this command I am not exposing my email publically in the repo,
 # since otherwise I would have to explicitly write the email in the `.gitconfig`
