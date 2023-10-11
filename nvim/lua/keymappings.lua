@@ -1,5 +1,8 @@
 local keymap = vim.keymap
 
+-- Change leader (if desired).
+-- vim.g.mapleader = ','
+
 -- Do not yank when deleting with 'x'.
 keymap.set('n', 'x', '"_x')
 
@@ -29,6 +32,27 @@ keymap.set('n', '<leader>[', ':bp<CR>', { silent = true })
 keymap.set('n', '<leader>]', ':bn<CR>', { silent = true })
 
 -- Close all buffers.
-keymap.set('n', '<S-z>', ':qa!')
+-- <S> : Shift
+-- keymap.set('n', '<S-z>', ':qa!')
 -- Write all buffers and close them.
-keymap.set('n', '<S-e>', ':wqa<CR>')
+-- keymap.set('n', '<S-e>', ':wqa<CR>')
+-- Store current buffer.
+keymap.set('n', '<Space><Space>', ':w<CR>')
+
+-- Remove search highlight.
+keymap.set('n', '<Leader><space>', ':nohlsearch<CR>', { silent = true })
+
+-- Search mappings: These will make it so that going to the next one in a
+-- search will center on the line it's found in.
+keymap.set('n', 'n', 'nzzzv', { noremap = true })
+keymap.set('n', 'N', 'Nzzzv', { noremap = true })
+
+-- Terminal
+-- Switch to normal mode with ESC in terminal mode.
+keymap.set('t', '<ESC>', '<C-\\><C-n>', { noremap = true })
+
+-- Diagnostics.
+keymap.set('n', '<leader>do', vim.diagnostic.open_float)
+keymap.set('n', '<leader>dp', vim.diagnostic.goto_prev)
+keymap.set('n', '<leader>dn', vim.diagnostic.goto_next)
+keymap.set('n', '<leader>ds', vim.diagnostic.setqflist)
