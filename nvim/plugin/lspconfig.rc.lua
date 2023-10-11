@@ -155,6 +155,8 @@ for type, icon in pairs(signs) do
   vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
 end
 
+
+local _border = "single"
 vim.diagnostic.config({
   virtual_text = {
     prefix = '●'
@@ -162,5 +164,22 @@ vim.diagnostic.config({
   update_in_insert = true,
   float = {
     source = "always", -- Or "if_many"
+    border = _border,
   },
+  -- severity_sort = true,
 })
+
+-- Add border to hover floats.
+vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
+  vim.lsp.handlers.hover, {
+    border = _border
+  }
+)
+vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
+  vim.lsp.handlers.signature_help, {
+    border = _border
+  }
+)
+require('lspconfig.ui.windows').default_options = {
+  border = _border
+}
