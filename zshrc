@@ -1,7 +1,6 @@
-# If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin:$HOME/bin:$HOME/bin/shellUtilities:$PATH:$HOME/go/bin
+export PATH=$HOME/bin:/usr/local/bin:$HOME/go/bin:$PATH
 
-# Standard file editor
+# Standard file editor.
 export VISUAL=nvim
 export EDITOR="$VISUAL"
 
@@ -64,18 +63,8 @@ lfcd () {
 # 2. opening lf in last-dir-path mode, using lfcd()
 bindkey -s '^o' '^ulfcd\n'
 
-# bind '^h' = Control + f to:
-# 1. clearing the line '^u' = Control + u 
-# 2. running the shell-utility script fuzzyDirectory
-# bindkey -s '^f' '^ufuzzyDirectory\n'
-
 # Ctrl+space: print Git status
 bindkey -s '^ ' 'git status --short\n'
-
-# bind '^v' = Control + v to:
-# 1. clearing the line '^u' = Control + u 
-# 2. running the shell-utility script fuzzyFile
-bindkey -s '^v' '^ufuzzyFile\n'
 
 # bind '^h' = Control + f to:
 # 1. clearing the line '^u' = Control + u 
@@ -104,11 +93,20 @@ alias gb='git --no-pager branch'
 alias gl='ga -l'
 
 # eza aliases.
+# TODO: at ${HOME} the command 'l.' is not showing the dotfiles.
 alias l.='eza -l --icons -I .*'
 alias ls='eza --icons --oneline'
 alias ll='eza --long --icons --git'
 alias lt='eza --icons --tree'
 alias la='eza --icons --long --all'
+
+# Fetch weather information.
+# Use the first user input as the city for which the weather information
+# is desired. 
+# No user input defaults to the city that wttr.in determines through your IP.
+clima() {
+  curl "v2.wttr.in/$1" | less
+}
 
 # Automatically added fzf keybindings during installation of fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
