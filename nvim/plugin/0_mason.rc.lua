@@ -1,6 +1,6 @@
 local status, mason = pcall(require, "mason")
 if (not status) then return end
-local status2, lspconfig = pcall(require, "mason-lspconfig")
+local status2, masonLspconfig = pcall(require, "mason-lspconfig")
 if (not status2) then return end
 
 mason.setup({
@@ -13,6 +13,9 @@ mason.setup({
   }
 })
 
-lspconfig.setup {
-  automatic_installation = true
+-- prettier cannot be installed with this command, it must still be install manually!!
+masonLspconfig.setup {
+  automatic_installation = true,
+  ensure_installed = { "awk_ls", "bashls", "arduino_language_server", "astro", "cssls", "dockerls",
+    "docker_compose_language_service", "eslint", "gopls", "jsonls", "tsserver", "lua_ls", "html", "sqls", "terraformls" }
 }
