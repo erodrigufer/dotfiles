@@ -88,9 +88,18 @@ alias vsc='open -a Visual\ Studio\ Code'
 # Git aliases.
 alias gg='git diff'
 alias gss='git status'
-alias gc='git checkout'
 alias gb='git --no-pager branch'
 alias gl='ga -l'
+# fzf through local branches.
+function git_checkout() {
+  if [ $# -eq 0 ]
+  then
+    git checkout $(git branch | fzf)
+  else
+    git checkout $@
+  fi
+};
+alias gc="git_checkout"
 
 # eza aliases.
 # TODO: at ${HOME} the command 'l.' is not showing the dotfiles.
@@ -105,6 +114,9 @@ alias tf='terraform'
 alias tfw='terraform workspace'
 alias tfa='terraform apply'
 alias tfd='terraform destroy'
+
+# brew aliases.
+alias update="brew update && brew upgrade && brew upgrade --cask --greedy"
 
 # Fetch weather information.
 # Use the first user input as the city for which the weather information
