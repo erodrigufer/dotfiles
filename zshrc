@@ -141,3 +141,7 @@ source /opt/homebrew/etc/profile.d/z.sh
 # da = date 
 # gm = git-modified flag
 export EZA_COLORS="da=90:gm=32"
+
+# Fish-like syntax highlighting for zsh.
+# Must be sourced at the end as of installation guide!
+source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
