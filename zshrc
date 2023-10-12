@@ -100,6 +100,12 @@ alias ll='eza --long --icons --git'
 alias lt='eza --icons --tree'
 alias la='eza --icons --long --all'
 
+# Terraform aliases.
+alias tf='terraform'
+alias tfw='terraform workspace'
+alias tfa='terraform apply'
+alias tfd='terraform destroy'
+
 # Fetch weather information.
 # Use the first user input as the city for which the weather information
 # is desired. 
