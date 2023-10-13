@@ -16,10 +16,10 @@ link:
 	@ln -sf $(REPO)/tmux.conf ~/.tmux.conf
 	@# vimrc
 	@ln -sf $(REPO)/vimrc ~/.vimrc
-	@# yabairc
-	@ln -sf $(REPO)/yabairc ~/.yabairc
-	@# skhd
-	@ln -sf $(REPO)/skhdrc ~/.skhdrc
+	# @# yabairc
+	# @ln -sf $(REPO)/yabairc ~/.yabairc
+	# @# skhd
+	# @ln -sf $(REPO)/skhdrc ~/.skhdrc
 	@# nvim
 	@mkdir -p ~/.config
 	@ln -sf $(REPO)/nvim ~/.config/nvim
@@ -27,10 +27,5 @@ link:
 	@# Create file directory if it does not exist
 	@mkdir -p ~/.config/lf
 	@ln -sf $(REPO)/lfrc ~/.config/lf/lfrc
-	@# Create file directory if it does not exist
-	@mkdir -p ~/bin/shellUtilities
-	@ln -sf $(REPO)/bin/shellUtilities/fuzzyDirectory ~/bin/shellUtilities/fuzzyDirectory
-	@ln -sf $(REPO)/bin/shellUtilities/fuzzyFile ~/bin/shellUtilities/fuzzyFile
-	@ln -sf $(REPO)/bin/shellUtilities/directories.secrets ~/bin/shellUtilities/directories.secrets
 
 .PHONY : link
