@@ -102,12 +102,11 @@ function git_checkout() {
 alias gc="git_checkout"
 
 # eza aliases.
-# TODO: at ${HOME} the command 'l.' is not showing the dotfiles.
-alias l.='eza -l --icons -I .*'
+alias l.='eza --long --all --list-dirs --icons --git .*'
 alias ls='eza --icons --oneline'
 alias ll='eza --long --icons --git'
 alias lt='eza --icons --tree'
-alias la='eza --icons --long --all'
+alias la='eza --long --all --icons --git'
 
 # Terraform aliases.
 alias tf='terraform'
