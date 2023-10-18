@@ -17,5 +17,6 @@ mason.setup({
 masonLspconfig.setup {
   automatic_installation = true,
   ensure_installed = { "awk_ls", "bashls", "arduino_language_server", "astro", "cssls", "dockerls",
-    "docker_compose_language_service", "eslint", "gopls", "jsonls", "tsserver", "lua_ls", "html", "terraformls" }
+    "docker_compose_language_service", "eslint_d", "eslint", "gopls", "jsonls", "tsserver", "lua_ls", "html",
+    "terraformls" }
 }
