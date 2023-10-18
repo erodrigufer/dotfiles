@@ -85,4 +85,7 @@ packer.startup(function(use)
       "nvim-telescope/telescope.nvim"
     }
   })
+
+  -- Work on zip files directly with vim.
+  use('lbrayner/vim-rzip')
 end)
