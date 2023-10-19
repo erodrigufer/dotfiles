@@ -9,7 +9,7 @@ which brew > /dev/null || { echo "brew must be installed in the system!"; exit 1
 brew update
 
 # Basic apps.
-brew install "${PACKAGES}" && "The following packages were properly installed: ${PACKAGES}"
+brew install ${PACKAGES} && echo "The following packages were properly installed: ${PACKAGES}"
 
 # To install useful key bindings and fuzzy completion for fzf:
 $(brew --prefix)/opt/fzf/install
@@ -32,4 +32,5 @@ npm install -g typescript-language-server typescript prettier
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 # Install config files of this repo with make.
-make
+echo "Linking configuration files at HOME directory..."
+make 
