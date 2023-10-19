@@ -73,6 +73,9 @@ bindkey -s '^ ' 'git status --short\n'
 # with the Telescope file browser extension.
 bindkey -s '^f' '^unvim +"Telescope file_browser"\n'
 
+# Home 
+alias h='cd'
+
 # Killing vim.
 alias vim=nvim
 
@@ -128,10 +131,15 @@ clima() {
 # Automatically added fzf keybindings during installation of fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 # Use fd instead of find with fzf
-export FZF_DEFAULT_COMMAND="fd --type f"
-export FZF_CONTROL_T_COMMAND="${FZF_DEFAULT_COMMAND}"
+export FZF_DEFAULT_COMMAND="fd --type f --color=never" 
 # Enable regex in fzf
-export FZF_DEFAULT_OPS="--extended"
+export FZF_DEFAULT_OPS="--extended --no-height"
+export FZF_CONTROL_T_COMMAND="${FZF_DEFAULT_COMMAND}"
+export FZF_CTRL_T_OPTS="--no-height --preview 'bat --color=always --line-range :50 {}'"
+# Alt key is <Esc+C> in Mac OS X.
+# See: https://github.com/junegunn/fzf/issues/164
+export FZF_ALT_C_COMMAND='fd --type d . --color=never'
+export FZF_ALT_C_OPTS="--no-height --preview 'tree -C {} | head -50'"
 
 # Integrate direnv into zsh.
 # direnv automatically detects env variables in .envrc files and loads them into
@@ -153,6 +161,17 @@ source /opt/homebrew/etc/profile.d/z.sh
 # gm = git-modified flag
 export EZA_COLORS="da=90:gm=32"
 
+# Integrate z with fzf.
+unalias z 2> /dev/null
+z() {
+  [ $# -gt 0 ] && _z "$*" && return
+  cd "$(_z -l 2>&1 | fzf --height 40% --nth 2.. --reverse --inline-info +s --tac --query "${*##-* }" | sed 's/^[0-9,.]* *//')"
+}
+# Remap z aliases.
+alias j=z
+
+# -------------------------------------------------------------------------------------
+# -------------------------------------------------------------------------------------
 # Fish-like syntax highlighting for zsh.
 # Must be sourced at the end as of installation guide!
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
