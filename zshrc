@@ -116,6 +116,7 @@ alias tf='terraform'
 alias tfw='terraform workspace'
 alias tfa='terraform apply'
 alias tfd='terraform destroy'
+alias tfp='terraform plan'
 
 # brew aliases.
 alias update="brew update && brew upgrade && brew upgrade --cask --greedy"
