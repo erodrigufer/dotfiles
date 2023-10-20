@@ -107,9 +107,9 @@ alias gc="git_checkout"
 # eza aliases.
 alias l.='eza --long --all --list-dirs --icons --git .*'
 alias ls='eza --icons --oneline'
-alias ll='eza --long --icons --git'
+alias ll='eza --long --group --icons --git'
 alias lt='eza --icons --tree'
-alias la='eza --long --all --icons --git'
+alias la='eza --long --all --group --icons --git'
 
 # Terraform aliases.
 alias tf='terraform'
