@@ -1,7 +1,7 @@
 #!/bin/sh
 # Eduardo Rodriguez [@erodrigufer] 2023 (c) 
 
-PACKAGES="tmux go gh neovim lf difftastic node yarn direnv fzf act glow fd ripgrep bat tree z eza tfenv awscli urlview zsh-syntax-highlighting shellcheck"
+PACKAGES="tmux go gh neovim lf difftastic node yarn direnv fzf act glow fd ripgrep bat tree z eza tfenv awscli urlview zsh-syntax-highlighting shellcheck azure-cli"
 
 which brew > /dev/null || { echo "brew must be installed in the system!"; exit 1 ; }
 
