@@ -91,6 +91,7 @@ alias vsc='open -a Visual\ Studio\ Code'
 # Git aliases.
 alias gg='git diff'
 alias gss='git status'
+# 'gb': Output the current local branches without accessing a pager.
 alias gb='git --no-pager branch'
 alias gl='ga -l'
 # fzf through local branches.
@@ -103,6 +104,7 @@ function git_checkout() {
   fi
 };
 alias gc="git_checkout"
+alias gp="git pull"
 
 # eza aliases.
 alias l.='eza --long --all --list-dirs --icons --git .*'
