@@ -85,8 +85,8 @@ alias e=nvim
 
 alias fb='nvim +"Telescope file_browser"'
 
-# Open file in VSC.
-alias vsc='open -a Visual\ Studio\ Code'
+# Send notification as banner and audio message.
+alias n='terminal-notifier -title "Terminal" -message "Done with task! Exit status: $?"; say "Done with command line task"'
 
 # Git aliases.
 alias gg='git diff'
