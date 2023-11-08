@@ -17,5 +17,3 @@ Any changes in the local repository will be automatically reflected in the prope
 
 - Requires a file at `${HOME}/.chatgpt.vim.env` with the OpenAI API token.
   So that the `ChatGPT.nvim` plugins works.
-
-  --
