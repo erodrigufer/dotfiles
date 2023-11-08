@@ -116,8 +116,11 @@ alias la='eza --long --all --group --icons --git'
 # Terraform aliases.
 alias tf='terraform'
 alias tfw='terraform workspace'
+alias tfl='terraform workspace list'
 alias tfa='terraform apply'
+alias tfaa='terraform apply -auto-approve'
 alias tfd='terraform destroy'
+alias tfda='terraform apply -destroy -auto-approve'
 alias tfp='terraform plan'
 
 # brew aliases.
