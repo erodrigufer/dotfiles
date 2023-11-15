@@ -134,6 +134,11 @@ clima() {
   curl "v2.wttr.in/$1" | less
 }
 
+# Print help pages with bat.
+help() {
+    "$@" --help 2>&1 | bat --plain --language=help
+}
+
 # Automatically added fzf keybindings during installation of fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 # Use fd instead of find with fzf
