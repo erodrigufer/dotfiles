@@ -73,21 +73,12 @@ packer.startup(function(use)
   -- Useful TS functions.
   use('jose-elias-alvarez/typescript.nvim')
 
-  -- ChatGPT.
-  use({
-    "jackMort/ChatGPT.nvim",
-    config = function()
-      require("chatgpt").setup()
-    end,
-    requires = {
-      "MunifTanjim/nui.nvim",
-      "nvim-lua/plenary.nvim",
-      "nvim-telescope/telescope.nvim"
-    }
-  })
-
   -- Work on zip files directly with vim.
   use('lbrayner/vim-rzip')
 
+  -- Moving around effectively.
   use('ggandor/leap.nvim')
+
+  -- Manage keymappings.
+  use('folke/which-key.nvim')
 end)
