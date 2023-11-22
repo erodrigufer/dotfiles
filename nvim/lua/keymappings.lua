@@ -4,32 +4,30 @@ local keymap = vim.keymap
 -- vim.g.mapleader = ','
 
 -- Do not yank when deleting with 'x'.
-keymap.set('n', 'x', '"_x')
+-- keymap.set('n', 'x', '"_x')
 
 -- S[ubstitute]: delete the word over the cursor and paste the last yanked text.
-keymap.set('n', 'S', 'diw"0P')
+-- keymap.set('n', 'S', 'diw"0P')
 
 -- Select all.
 keymap.set('n', '<C-a>', 'gg<S-v>G')
 
 -- Split window (horizontal/vertical),
--- and switch to new window (<C-w>w).
-keymap.set('n', 'ss', ':vsplit<Return><C-w>w', { silent = true })
-keymap.set('n', 'sv', ':split<Return><C-w>w', { silent = true })
+keymap.set('n', ',s', ':vsplit<CR>', { silent = true })
 
 -- Move window.
 -- Switch to next window.
 keymap.set('n', '<Tab>', '<C-w>w')
-keymap.set('', 'sh', '<C-w>h')
-keymap.set('', 'sk', '<C-w>k')
-keymap.set('', 'sj', '<C-w>j')
-keymap.set('', 'sl', '<C-w>l')
-
+-- keymap.set('', 'sh', '<C-w>h')
+-- keymap.set('', 'sk', '<C-w>k')
+-- keymap.set('', 'sj', '<C-w>j')
+-- keymap.set('', 'sl', '<C-w>l')
+--
 -- Buffers.
 -- TODO: maybe there is a more elegant way in nvim
 -- Switch to next or previous buffer.
-keymap.set('n', '<leader>[', ':bp<CR>', { silent = true })
-keymap.set('n', '<leader>]', ':bn<CR>', { silent = true })
+keymap.set('n', '<Leader>[', ':bp<CR>', { silent = true })
+keymap.set('n', '<Leader>]', ':bn<CR>', { silent = true })
 
 -- Close all buffers.
 -- <S> : Shift
@@ -52,7 +50,7 @@ keymap.set('n', 'N', 'Nzzzv', { noremap = true })
 keymap.set('t', '<ESC>', '<C-\\><C-n>', { noremap = true })
 
 -- Diagnostics.
-keymap.set('n', '<leader>do', vim.diagnostic.open_float)
-keymap.set('n', '<leader>dp', vim.diagnostic.goto_prev)
-keymap.set('n', '<leader>dn', vim.diagnostic.goto_next)
-keymap.set('n', '<leader>ds', vim.diagnostic.setqflist)
+keymap.set('n', '<Leader>do', vim.diagnostic.open_float)
+keymap.set('n', '<Leader>dp', vim.diagnostic.goto_prev)
+keymap.set('n', '<Leader>dn', vim.diagnostic.goto_next)
+keymap.set('n', '<Leader>ds', vim.diagnostic.setqflist)

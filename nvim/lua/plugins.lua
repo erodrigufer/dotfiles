@@ -88,4 +88,6 @@ packer.startup(function(use)
 
   -- Work on zip files directly with vim.
   use('lbrayner/vim-rzip')
+
+  use('ggandor/leap.nvim')
 end)
