@@ -1,4 +1,5 @@
 local keymap = vim.keymap
+local options = { silent = true, noremap = true }
 
 -- Change leader (if desired).
 -- vim.g.mapleader = ','
@@ -12,8 +13,8 @@ local keymap = vim.keymap
 -- Select all.
 keymap.set('n', '<C-a>', 'gg<S-v>G')
 
--- Split window (horizontal/vertical),
-keymap.set('n', ',s', ':vsplit<CR>', { silent = true })
+-- Split window.
+keymap.set('n', ',,', ':vsplit<CR>', options)
 
 -- Move window.
 -- Switch to next window.

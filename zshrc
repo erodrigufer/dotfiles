@@ -76,11 +76,14 @@ bindkey -s '^f' '^unvim +"Telescope file_browser"\n'
 # Home 
 alias h='cd'
 
+# Copy to clipboard.
+alias clip=pbcopy
+
 # Killing vim.
 alias vim=nvim
 
 alias v=nvim
-# e for edit
+# e for edit.
 alias e=nvim
 
 alias fb='nvim +"Telescope file_browser"'
