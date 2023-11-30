@@ -10,12 +10,14 @@ link:
 	@# link can be made again.
 	@# Config file for zsh
 	@ln -sf $(REPO)/zshrc ~/.zshrc
+	@# File with zsh aliases.
+	@ln -sf $(REPO)/aliases.zsh ~/.aliases.zsh
 	@# .gitconfig
 	@ln -sf $(REPO)/gitconfig ~/.gitconfig
 	@# tmux.conf
 	@ln -sf $(REPO)/tmux.conf ~/.tmux.conf
-	@# vimrc
-	@ln -sf $(REPO)/vimrc ~/.vimrc
+	# @# vimrc
+	# @ln -sf $(REPO)/vimrc ~/.vimrc
 	# @# yabairc
 	# @ln -sf $(REPO)/yabairc ~/.yabairc
 	# @# skhd
