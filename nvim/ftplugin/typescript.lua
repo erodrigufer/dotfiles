@@ -1,6 +1,11 @@
--- nvim_buf_set_keymap({buffer}, {mode}, {lhs}, {rhs}, {*opts}) Sets a buffer-local mapping for the given mode.
--- Parameters:
--- {buffer} Buffer handle, or 0 for current buffer.
-vim.api.nvim_buf_set_keymap(0, 'n', ',t', ':TSC<CR>', { noremap = true, silent = true })
-vim.api.nvim_buf_set_keymap(0, 'n', ',m', ':TypescriptAddMissingImports<CR>', { noremap = true, silent = true })
-vim.api.nvim_buf_set_keymap(0, 'n', ',,', ':TypescriptRemoveUnused<CR>', { noremap = true, silent = true })
+local status, wk = pcall(require, "which-key")
+if (not status) then return end
+
+wk.register({
+  t = {
+    name = "Typescript commands",
+    t = { "<cmd>TSC<cr>", "Transpile TS" },
+    m = { "<cmd>TypescriptAddMissingImports<cr>", "Add missing imports" },
+    r = { "<cmd>TypescriptRemoveUnused<cr>", "Remove unused symbols" }
+  },
+}, { prefix = "<Leader>" })
