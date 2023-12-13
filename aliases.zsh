@@ -53,6 +53,7 @@ alias tfd='terraform destroy'
 alias tfda='terraform apply -destroy -auto-approve'
 alias tfp='terraform plan'
 alias tff='terraform fmt'
+alias tfi='terraform init -upgrade'
 
 # brew aliases.
 alias update="brew update && brew upgrade && brew upgrade --cask --greedy"
