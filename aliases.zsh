@@ -3,8 +3,8 @@ alias h='cd'
 
 alias ..='cd ..'
 
-# Copy to clipboard.
-alias clip=pbcopy
+# Copy to clipboard (Mac OS X).
+alias copy=pbcopy
 
 # Killing vim.
 alias vim=nvim
