@@ -30,6 +30,11 @@
 [user]
 	email = erodrigufer@gmail.com
 	name = erodrigufer
+	signingkey = /Users/eduardo/.ssh/github_erodrigufer_ed25519.pub
 [push]
 	default = upstream
 	autoSetupRemote = true
+[gpg]
+	format = ssh
+[commit]
+	gpgsign = true
