@@ -1,5 +1,5 @@
 #!/bin/sh
-# Eduardo Rodriguez [@erodrigufer] 2023 (c) 
+# Eduardo Rodriguez [@erodrigufer] 2024 (c) 
 
 PACKAGES="tmux go gh neovim lf difftastic node direnv fzf act glow fd ripgrep bat tree z eza tfenv awscli urlview zsh-syntax-highlighting shellcheck azure-cli corepack terminal-notifier"
 
