@@ -73,6 +73,8 @@ bindkey -s '^ ' 'git status --short\n'
 # with the Telescope file browser extension.
 bindkey -s '^f' '^unvim +"Telescope file_browser"\n'
 
+bindkey -s '^u' 'clear\n'
+
 source ~/.aliases.zsh
 
 # Fetch weather information.
