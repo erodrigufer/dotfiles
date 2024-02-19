@@ -1,9 +1,7 @@
 # This is Git's per-user configuration file.
 [merge]
-	tool = diffmerge
-[mergetool "diffmerge"]
-	trustExitCode = true
-	cmd = /usr/local/bin/diffmerge --merge --result=\"$MERGED\" \"$LOCAL\" \"$BASE\" \"$REMOTE\"
+	tool = nvimdiff
+	conflictStyle = zdiff3
 [filter "lfs"]
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
@@ -17,7 +15,6 @@
 	defaultBranch = main
 [diff]
 	external = difft
-
 [diff "difft"]
 	command = difft --background dark --display side-by-side-show-both
 
