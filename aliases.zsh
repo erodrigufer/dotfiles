@@ -35,6 +35,7 @@ function git_checkout() {
 };
 alias gc="git_checkout"
 alias gp="git pull"
+alias lg="lazygit"
 
 # eza aliases.
 alias l.='eza --long --all --list-dirs --icons --git .*'
