@@ -37,6 +37,9 @@ alias gc="git_checkout"
 alias gp="git pull"
 alias lg="lazygit"
 
+# Docker aliases.
+alias ldr="lazydocker"
+
 # eza aliases.
 alias l.='eza --long --all --list-dirs --icons --git .*'
 alias ls='eza --icons --oneline'
