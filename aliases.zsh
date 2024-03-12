@@ -16,7 +16,19 @@ alias e=nvim
 alias fb='nvim +"Telescope file_browser"'
 
 # Send notification as banner and audio message.
-alias n='terminal-notifier -title "Terminal" -message "Done with task! Exit status: $?"; say "Done with command line task"'
+# Audio message changed depending on returned status code.
+function create_notification() {
+  RETURNED_CODE=$?
+  if [ ${RETURNED_CODE} -eq 0 ]
+  then 
+    SPEECH="Successfully done with command line task."
+  else
+    SPEECH="An error occured."
+  fi
+
+  terminal-notifier -title "Terminal" -message "Done with CLI task! Exit status: ${RETURNED_CODE}"; say ${SPEECH}
+}
+alias n='create_notification'
 
 # Git aliases.
 alias gg='git diff'
