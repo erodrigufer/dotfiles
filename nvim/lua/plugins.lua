@@ -81,4 +81,6 @@ packer.startup(function(use)
 
   -- Manage keymappings.
   use('folke/which-key.nvim')
+
+  use { "akinsho/toggleterm.nvim", tag = 'v2.*' }
 end)
