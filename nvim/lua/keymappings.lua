@@ -15,6 +15,7 @@ keymap.set('n', '<C-a>', 'gg<S-v>G')
 
 -- Split window.
 keymap.set('n', ',,', ':vsplit<CR>', options)
+keymap.set('n', ',<', ':split<CR>', options)
 
 -- Move window.
 -- Switch to next window.
