@@ -48,6 +48,7 @@ function git_checkout() {
 alias gc="git_checkout"
 alias gp="git pull"
 alias lg="lazygit"
+alias gm="git checkout main && git pull"
 
 # Docker aliases.
 alias ldr="lazydocker"
