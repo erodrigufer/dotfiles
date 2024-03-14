@@ -18,4 +18,8 @@ wk.register({
     name = "Git integrations",
     g = { "<cmd> lua _lazygit_toggle()<cr>", "Open LazyGit in floating Terminal window", { noremap = true, silent = true } },
   },
+  t = {
+    name = "Testing",
+    g = { "<cmd> TermExec dir='%:p:h' cmd='gotest -v' direction='float' name='gotest'<cr>", "Run gotest in buffer's current directory", { noremap = true, silent = true } },
+  },
 }, { prefix = "<Space>" })
