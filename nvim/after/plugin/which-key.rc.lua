@@ -14,9 +14,11 @@ wk.register({
     b = { "<cmd> Telescope file_browser path=%:p:h select_buffer=true<cr>", "Open the Telescope file browser at path of current buffer", noremap = true },
     j = { "<cmd> Telescope buffers <cr>", "Select opened buffer" }
   },
-  g = {
-    name = "Git integrations",
-    g = { "<cmd> lua _lazygit_toggle()<cr>", "Open LazyGit in floating Terminal window", { noremap = true, silent = true } },
+  l = {
+    name = "Lazy integrations",
+    g = { "<cmd> lua _lazygit_toggle()<cr>", "Open lazygit in floating Terminal window", { noremap = true, silent = true } },
+
+    d = { "<cmd> lua _lazydocker_toggle()<cr>", "Open lazydocker in floating Terminal window", { noremap = true, silent = true } },
   },
   t = {
     name = "Testing",
