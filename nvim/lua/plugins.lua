@@ -82,5 +82,11 @@ packer.startup(function(use)
   -- Manage keymappings.
   use('folke/which-key.nvim')
 
+  -- Toggleterm, to create floating windows with terminals.
   use { "akinsho/toggleterm.nvim", tag = 'v2.*' }
+
+  -- DAP for debugging (works with v0.7.0).
+  -- DAP-UI (works with v4.0.0).
+  -- See as reference: https://www.youtube.com/watch?v=oYzZxi3SSnM&list=PLsz00TDipIffreIaUNk64KxTIkQaGguqn&index=7
+  use { "mfussenegger/nvim-dap", requires = { "rcarriga/nvim-dap-ui", "nvim-neotest/nvim-nio", "leoluz/nvim-dap-go" } }
 end)

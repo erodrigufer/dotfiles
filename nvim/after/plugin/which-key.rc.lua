@@ -24,4 +24,15 @@ wk.register({
     name = "Testing",
     g = { "<cmd> TermExec dir='%:p:h' cmd='gotest -v' direction='float' name='gotest'<cr>", "Run gotest in buffer's current directory", { noremap = true, silent = true } },
   },
+  d = {
+    name = "Debugger",
+    d = { "<cmd> lua _dap_toggle_breakpoint()<cr>", "Toggle breakpoint" },
+    c = { "<cmd> lua _dap_continue()<cr>", "Continue" },
+    o = { "<cmd> lua _dap_step_over()<cr>", "Step over" },
+    i = { "<cmd> lua _dap_step_into()<cr>", "Step into" },
+    u = { "<cmd> lua _dap_step_out()<cr>", "Step out" },
+    r = { "<cmd> lua _dap_repl_open()<cr>", "REPL open" },
+
+
+  },
 }, { prefix = "<Space>" })
