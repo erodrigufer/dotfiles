@@ -56,3 +56,6 @@ keymap.set('n', '<Leader>do', vim.diagnostic.open_float)
 keymap.set('n', '<Leader>dp', vim.diagnostic.goto_prev)
 keymap.set('n', '<Leader>dn', vim.diagnostic.goto_next)
 keymap.set('n', '<Leader>ds', vim.diagnostic.setqflist)
+
+-- Floating command line.
+keymap.set('n', '<CR>', '<cmd>FineCmdline<CR>', { noremap = true })

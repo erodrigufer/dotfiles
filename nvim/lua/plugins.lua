@@ -89,4 +89,7 @@ packer.startup(function(use)
   -- DAP-UI (works with v4.0.0).
   -- See as reference: https://www.youtube.com/watch?v=oYzZxi3SSnM&list=PLsz00TDipIffreIaUNk64KxTIkQaGguqn&index=7
   use { "mfussenegger/nvim-dap", requires = { "rcarriga/nvim-dap-ui", "nvim-neotest/nvim-nio", "leoluz/nvim-dap-go" } }
+
+  -- Floating command line.
+  use { 'VonHeikemen/fine-cmdline.nvim', requires = { 'MunifTanjim/nui.nvim' } }
 end)
