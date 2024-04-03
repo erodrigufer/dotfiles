@@ -18,6 +18,6 @@ end
 
 local termWithoutCmd = Terminal:new({ hidden = true, close_on_exit = false, direction = "float" })
 
-function _termWithCmd_toggle()
+function _termWithoutCmd_toggle()
   termWithoutCmd:toggle()
 end

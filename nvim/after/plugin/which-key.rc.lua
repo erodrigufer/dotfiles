@@ -32,7 +32,9 @@ wk.register({
     i = { "<cmd> lua _dap_step_into()<cr>", "Step into" },
     u = { "<cmd> lua _dap_step_out()<cr>", "Step out" },
     r = { "<cmd> lua _dap_repl_open()<cr>", "REPL open" },
-
-
+  },
+  j = {
+    name = "Terminal integrations",
+    j = { "<cmd> lua _termWithoutCmd_toggle()<cr>", "Open floating terminal window" },
   },
 }, { prefix = "<Space>" })
