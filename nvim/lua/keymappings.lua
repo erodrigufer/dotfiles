@@ -49,7 +49,7 @@ keymap.set('n', 'N', 'Nzzzv', { noremap = true })
 
 -- Terminal
 -- Switch to normal mode with ESC in terminal mode.
-keymap.set('t', '<ESC>', '<C-\\><C-n>', { noremap = true })
+-- keymap.set('t', '<ESC>', '<C-\\><C-n>', { noremap = true })
 
 -- Diagnostics.
 keymap.set('n', '<Leader>do', vim.diagnostic.open_float)
@@ -58,4 +58,4 @@ keymap.set('n', '<Leader>dn', vim.diagnostic.goto_next)
 keymap.set('n', '<Leader>ds', vim.diagnostic.setqflist)
 
 -- Floating command line.
-keymap.set('n', '<CR>', '<cmd>FineCmdline<CR>', { noremap = true })
+keymap.set('n', ':', '<cmd>FineCmdline<CR>', { noremap = true })
