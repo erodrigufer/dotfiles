@@ -2,7 +2,7 @@ local status, bufferline = pcall(require, "bufferline")
 if (not status) then return end
 
 local frappe = require("catppuccin.palettes").get_palette "frappe"
-bufferline.setup {
+bufferline.setup({
   highlights = require("catppuccin.groups.integrations.bufferline").get {
     styles = { "italic", "bold" },
     custom = {
@@ -18,4 +18,4 @@ bufferline.setup {
       },
     },
   },
-}
+})
