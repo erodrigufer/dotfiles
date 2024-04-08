@@ -12,7 +12,9 @@ wk.register({
     l = { "<cmd> Telescope live_grep <cr>", "Grep a string in the files of a repo" },
     r = { "<cmd> Telescope registers <cr>", "Find string stored in registers" },
     b = { "<cmd> Telescope file_browser path=%:p:h select_buffer=true<cr>", "Open the Telescope file browser at path of current buffer", noremap = true },
-    j = { "<cmd> Telescope buffers <cr>", "Select opened buffer" }
+    j = { "<cmd> Telescope buffers <cr>", "Select opened buffer" },
+    k = { "<cmd> Telescope oldfiles <cr>", "Search for recently opened files" },
+    v = { "<cmd> Telescope current_buffer_fuzzy_find <cr>", "Search for a pattern in current buffer" }
   },
   l = {
     name = "Lazy integrations",
