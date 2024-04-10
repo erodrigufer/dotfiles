@@ -1,4 +1,5 @@
-export PATH=$HOME/bin:/usr/local/bin:$HOME/go/bin:$PATH
+POSTGRES_PATH="/opt/homebrew/opt/postgresql@15/bin"
+export PATH=$HOME/bin:/usr/local/bin:$HOME/go/bin:${POSTGRES_PATH}:$PATH
 
 # Standard file editor.
 export VISUAL=nvim
