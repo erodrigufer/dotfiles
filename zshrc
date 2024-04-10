@@ -83,7 +83,7 @@ source ~/.aliases.zsh
 # is desired. 
 # No user input defaults to the city that wttr.in determines through your IP.
 clima() {
-  curl "v2.wttr.in/$1" | less
+  curl "v2.wttr.in/$1"
 }
 
 # Print help pages with bat.
