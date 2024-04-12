@@ -39,4 +39,8 @@ wk.register({
     name = "Terminal integrations",
     j = { "<cmd> lua _termWithoutCmd_toggle()<cr>", "Open floating terminal window" },
   },
+  g = {
+    name = "General integrations",
+    t = { "<cmd> TodoTelescope <cr>", "Open ToDo in Telescope view" }
+  },
 }, { prefix = "<Space>" })
