@@ -29,5 +29,6 @@ link:
 	@# Create file directory if it does not exist
 	@mkdir -p ~/.config/lf
 	@ln -sf $(REPO)/lfrc ~/.config/lf/lfrc
+	@ln -sf $(REPO)/psqlrc ~/.psqlrc
 
 .PHONY : link
