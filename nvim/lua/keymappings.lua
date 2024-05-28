@@ -59,3 +59,6 @@ keymap.set('n', '<Leader>ds', vim.diagnostic.setqflist)
 
 -- Floating command line.
 keymap.set('n', ':', '<cmd>FineCmdline<CR>', { noremap = true })
+
+-- Close quickfix list.
+keymap.set('n', '<Leader>c', ':ccl<CR>', options)
