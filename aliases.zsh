@@ -72,33 +72,7 @@ alias tfp='terraform plan'
 alias tff='terraform fmt'
 alias tfi='terraform init -upgrade'
 
-# tmux aliases.
-function create_new_tmux_session() {
-  session_name="$@"
-  if [[ -z "$session_name" ]]; then
-    echo "No name was provided for the new tmux session!"
-    return 1
-  fi
-
-  # Check if a tmux session exists with a given name.
-  tmux has-session -t=$session_name 2> /dev/null
-
-  # Create the session if it doesn't exists.
-  if [[ $? -ne 0 ]]; then
-    TMUX='' tmux new-session -d -s "$session_name"
-  else
-    echo "A tmux session with the provided name already exists!"
-    return 1
-  fi
-
-  # Attach if outside of tmux, switch if you're in tmux.
-  if [[ -z "$TMUX" ]]; then
-    tmux attach -t "$session_name"
-  else
-    tmux switch-client -t "$session_name"
-  fi
-}
-alias tmn="create_new_tmux_session"
-
 # brew aliases.
 alias update="brew update && brew upgrade && brew upgrade --cask --greedy"
+# Show what would be updated without updating anything.
+alias fetch_update="brew update && brew upgrade --dry-run"
