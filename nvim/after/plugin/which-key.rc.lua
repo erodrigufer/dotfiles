@@ -49,11 +49,26 @@ wk.register({
   noremap = true,
 })
 
+-- Keymappings without prefix.
 wk.register({
     ['-'] = { "<cmd> Oil <cr>", "Open parent directory with Oil" },
+    ['<C-a>'] = { "ggvG$y", "Yank all the content of the current buffer" },
+    [',,'] = { "<cmd> vsplit<cr>", "Vertical split" },
+    [',<'] = { "<cmd> vsplit<cr>", "Horizontal split" },
   },
   {
     silent = true,
     noremap = true,
+  })
 
+-- Keymappings for <leader> key.
+wk.register({
+    w = { "<cmd> WhichKey '' n<cr>", "Show all NORMAL mode keymappings" },
+    ['<Space>'] = { "<cmd> nohlsearch<cr>", "Remove search highlight" },
+    c = { "<cmd> ccl<cr>", "Close quickfix list" },
+  },
+  {
+    prefix = "<leader>",
+    silent = true,
+    noremap = true,
   })
