@@ -1,7 +1,7 @@
 local status, lualine = pcall(require, "lualine")
 if (not status) then return end
 
-lualine.setup {
+lualine.setup({
   options = {
     icons_enabled = true,
     theme = 'catppuccin',
@@ -24,7 +24,7 @@ lualine.setup {
     lualine_a = { 'mode' },
     lualine_b = { 'branch', 'diff', 'diagnostics' },
     lualine_c = { 'filename' },
-    lualine_x = { 'encoding', 'fileformat', 'filetype' },
+    lualine_x = { 'encoding', 'fileformat', 'filetype', 'aerial' },
     lualine_y = { 'progress' },
     lualine_z = { 'location' }
   },
@@ -40,4 +40,4 @@ lualine.setup {
   winbar = {},
   inactive_winbar = {},
   extensions = {}
-}
+})

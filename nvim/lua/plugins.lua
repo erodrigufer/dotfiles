@@ -94,5 +94,8 @@ packer.startup(function(use)
   use { 'VonHeikemen/fine-cmdline.nvim', requires = { 'MunifTanjim/nui.nvim' } }
 
   -- Directory/file manager in a buffer.
-  use({ "stevearc/oil.nvim", })
+  use({ "stevearc/oil.nvim" })
+
+  -- Navigate the symbols of a buffer effectively.
+  use({ "stevearc/aerial.nvim" })
 end)
