@@ -92,4 +92,7 @@ packer.startup(function(use)
 
   -- Floating command line.
   use { 'VonHeikemen/fine-cmdline.nvim', requires = { 'MunifTanjim/nui.nvim' } }
+
+  -- Directory/file manager in a buffer.
+  use({ "stevearc/oil.nvim", })
 end)

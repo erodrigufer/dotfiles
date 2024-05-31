@@ -1,7 +1,7 @@
 local status, wk = pcall(require, "which-key")
 if (not status) then return end
 
-wk.setup {}
+wk.setup()
 
 wk.register({
   f = {
@@ -11,20 +11,20 @@ wk.register({
     g = { "<cmd> Telescope git_files <cr>", "Find tracked files in current git repo" },
     l = { "<cmd> Telescope live_grep <cr>", "Grep a string in the files of a repo" },
     r = { "<cmd> Telescope registers <cr>", "Find string stored in registers" },
-    b = { "<cmd> Telescope file_browser path=%:p:h select_buffer=true<cr>", "Open the Telescope file browser at path of current buffer", noremap = true },
+    b = { "<cmd> Telescope file_browser path=%:p:h select_buffer=true<cr>", "Open the Telescope file browser at path of current buffer" },
     j = { "<cmd> Telescope buffers <cr>", "Select opened buffer" },
     k = { "<cmd> Telescope oldfiles <cr>", "Search for recently opened files" },
     v = { "<cmd> Telescope current_buffer_fuzzy_find <cr>", "Search for a pattern in current buffer" }
   },
   l = {
     name = "Lazy integrations",
-    g = { "<cmd> lua _lazygit_toggle()<cr>", "Open lazygit in floating Terminal window", { noremap = true, silent = true } },
+    g = { "<cmd> lua _lazygit_toggle()<cr>", "Open lazygit in floating Terminal window" },
 
-    d = { "<cmd> lua _lazydocker_toggle()<cr>", "Open lazydocker in floating Terminal window", { noremap = true, silent = true } },
+    d = { "<cmd> lua _lazydocker_toggle()<cr>", "Open lazydocker in floating Terminal window" },
   },
   t = {
     name = "Testing",
-    g = { "<cmd> TermExec dir='%:p:h' cmd='gotest -v' direction='float' name='gotest'<cr>", "Run gotest in buffer's current directory", { noremap = true, silent = true } },
+    g = { "<cmd> TermExec dir='%:p:h' cmd='gotest -v' direction='float' name='gotest'<cr>", "Run gotest in buffer's current directory" },
   },
   d = {
     name = "Debugger",
@@ -43,4 +43,17 @@ wk.register({
     name = "General integrations",
     t = { "<cmd> TodoTelescope <cr>", "Open ToDo in Telescope view" }
   },
-}, { prefix = "<Space>" })
+}, {
+  prefix = "<Space>",
+  silent = true,
+  noremap = true,
+})
+
+wk.register({
+    ['-'] = { "<cmd> Oil <cr>", "Open parent directory with Oil" },
+  },
+  {
+    silent = true,
+    noremap = true,
+
+  })
