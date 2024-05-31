@@ -64,6 +64,7 @@ wk.register({
     w = { "<cmd> WhichKey '' n<cr>", "Show all NORMAL mode keymappings" },
     ['<Space>'] = { "<cmd> nohlsearch<cr>", "Remove search highlight" },
     c = { "<cmd> ccl<cr>", "Close quickfix list" },
+    d = { vim.diagnostic.setqflist, "Open quickfix list with diagnostics" },
   },
   {
     prefix = "<leader>",
