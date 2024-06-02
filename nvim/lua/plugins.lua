@@ -1,98 +1,118 @@
--- Install packer.
-local status, packer = pcall(require, 'packer')
-if (not status) then
-  print('Packer is not installed')
-  return
+-- Bootstrap lazy.nvim
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not (vim.uv or vim.loop).fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
 end
+vim.opt.rtp:prepend(lazypath)
 
-vim.cmd [[packadd packer.nvim]]
+-- Make sure to set `mapleader` before lazy so your mappings are correct
+vim.g.mapleader = "\\"
+vim.g.maplocalleader = "\\"
 
-packer.startup(function(use)
-  use 'wbthomason/packer.nvim'
-  use 'nvim-tree/nvim-web-devicons'
+require("lazy").setup({
+  { 'nvim-tree/nvim-web-devicons' },
   -- General functions for neovim
   -- (required by many packages).
-  use 'nvim-lua/plenary.nvim'
-  use {
+  { 'nvim-lua/plenary.nvim' },
+  {
     'nvim-lualine/lualine.nvim',
-    requires = { 'nvim-tree/nvim-web-devicons', opt = true }
-  }
-  use {
-    'nvim-telescope/telescope.nvim', branch = '0.1.x',
-    requires = { { 'nvim-lua/plenary.nvim' } }
-  }
+    dependencies = { 'nvim-tree/nvim-web-devicons', lazy = true }
+  },
+  {
+    'nvim-telescope/telescope.nvim',
+    branch = '0.1.x',
+    dependencies = { { 'nvim-lua/plenary.nvim' } }
+  },
   -- File browser.
-  use {
+  {
     'nvim-telescope/telescope-file-browser.nvim',
-    requires = { 'nvim-telescope/telescope.nvim', 'nvim-lua/plenary.nvim' }
-  }
+    dependencies = { 'nvim-telescope/telescope.nvim', 'nvim-lua/plenary.nvim' }
+  },
   -- LSP
-  use 'neovim/nvim-lspconfig'
-  use 'onsails/lspkind-nvim'            -- vscode-like pictograms
-  use 'hrsh7th/cmp-buffer'              -- nvim-cmp source for buffer words
-  use 'hrsh7th/cmp-nvim-lsp'            -- nvim-cmp source for neovim's built-in LSP
-  use 'hrsh7th/nvim-cmp'                -- Completion
-  use 'jose-elias-alvarez/null-ls.nvim' -- Use Neovim as a language server to inject LSP diagnostics, code actions, and more via Lua
-  use 'williamboman/mason.nvim'
-  use 'williamboman/mason-lspconfig.nvim'
+  { 'neovim/nvim-lspconfig' },
+  -- vscode-like pictograms
+  { 'onsails/lspkind-nvim' },
+  -- nvim-cmp source for buffer words_table
+  { 'hrsh7th/cmp-buffer' },
+  -- nvim-cmp source for neovim's built-in LSP
+  { 'hrsh7th/cmp-nvim-lsp' },
+  -- Completion
+  { 'hrsh7th/nvim-cmp' },
+  -- Use Neovim as a language server to inject LSP diagnostics, code actions, and more via Lua
+  { 'jose-elias-alvarez/null-ls.nvim' },
+  { 'williamboman/mason.nvim' },
+  { 'williamboman/mason-lspconfig.nvim' },
   -- Show Errors, diagnostics.
-  use 'folke/trouble.nvim'
+  { 'folke/trouble.nvim' },
   -- Find TODOs, FIX and BUGs in repo.
-  use { 'folke/todo-comments.nvim',
-    requires = { 'nvim-lua/plenary.nvim' },
-  }
+  {
+    'folke/todo-comments.nvim',
+    dependencies = { 'nvim-lua/plenary.nvim' },
+  },
 
   -- HTML colors.
-  use 'norcalli/nvim-colorizer.lua'
+  { 'norcalli/nvim-colorizer.lua' },
 
   -- Line with opened buffers on top of window.
-  use {
-    'akinsho/bufferline.nvim', tag = '*',
-    requires = { { 'nvim-tree/nvim-web-devicons' } }
-  }
+  {
+    'akinsho/bufferline.nvim',
+    version = '*',
+    dependencies = { { 'nvim-tree/nvim-web-devicons' } }
+  },
 
   -- Show git changes on left-side of window,
   -- git blame and git diff functions.
-  use 'lewis6991/gitsigns.nvim'
+  { 'lewis6991/gitsigns.nvim' },
   --
   -- Post-install/update hook with neovim command.
-  use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+  {
+    'nvim-treesitter/nvim-treesitter',
+    build = ':TSUpdate',
+  },
   -- Color and theme.
-  use { 'catppuccin/nvim', as = 'catppuccin' }
+  { 'catppuccin/nvim',                   name = 'catppuccin' },
 
-  use('MunifTanjim/prettier.nvim')
+  { 'MunifTanjim/prettier.nvim' },
 
-  use 'L3MON4D3/LuaSnip'
+  { 'L3MON4D3/LuaSnip' },
 
   -- TS type-checking throughout a project.
-  use('dmmulroy/tsc.nvim')
+  { 'dmmulroy/tsc.nvim' },
 
   -- Useful TS functions.
-  use('jose-elias-alvarez/typescript.nvim')
+  { 'jose-elias-alvarez/typescript.nvim' },
 
   -- Work on zip files directly with vim.
-  use('lbrayner/vim-rzip')
+  { 'lbrayner/vim-rzip' },
 
   -- Moving around effectively.
-  use('ggandor/leap.nvim')
+  { 'ggandor/leap.nvim' },
 
   -- Manage keymappings.
-  use('folke/which-key.nvim')
+  { 'folke/which-key.nvim' },
 
   -- Toggleterm, to create floating windows with terminals.
-  use { "akinsho/toggleterm.nvim", tag = 'v2.*' }
+  { 'akinsho/toggleterm.nvim',           version = 'v2.*' },
 
   -- DAP for debugging (works with v0.7.0).
   -- DAP-UI (works with v4.0.0).
   -- See as reference: https://www.youtube.com/watch?v=oYzZxi3SSnM&list=PLsz00TDipIffreIaUNk64KxTIkQaGguqn&index=7
-  use { "mfussenegger/nvim-dap", requires = { "rcarriga/nvim-dap-ui", "nvim-neotest/nvim-nio", "leoluz/nvim-dap-go" } }
+  { 'mfussenegger/nvim-dap',             dependencies = { 'rcarriga/nvim-dap-ui', 'nvim-neotest/nvim-nio', 'leoluz/nvim-dap-go' } },
 
   -- Floating command line.
-  use { 'VonHeikemen/fine-cmdline.nvim', requires = { 'MunifTanjim/nui.nvim' } }
+  { 'VonHeikemen/fine-cmdline.nvim',     dependencies = { 'MunifTanjim/nui.nvim' } },
 
   -- Directory/file manager in a buffer.
-  use({ "stevearc/oil.nvim" })
+  { 'stevearc/oil.nvim' },
 
   -- Navigate the symbols of a buffer effectively.
-  use({ "stevearc/aerial.nvim" })
-end)
+  { 'stevearc/aerial.nvim' },
+
+})
