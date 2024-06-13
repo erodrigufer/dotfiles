@@ -9,19 +9,27 @@
 # set hiddenfiles ".*"
 
 cmd open ${{
-	# $f is selected file
-	# test if file exists and is a symbolic link 
-	# ('test -L'), if so readlink, update f
-	test -L $f && f=$(readlink -f $f)
-	case $(file --mime-type $f -b) in
-		text/*|application/json) nvim $fx;;
-		*) for f in $fx; do open $f; done;;
-	esac
-}}
+  # $f is selected file
+  # test if file exists and is a symbolic link
+  # ('test -L'), if so readlink, update f
+  test -L $f && f=$(readlink -f $f)
 
-map <enter> shell-wait # shell-wait equals to using '!'
-# just defining it as 'shell', would mean the shell command would run
-# without prompting a new window outside of lf
+  # Get the file extension
+  ext="${f##*.}"
+
+  case $(file --mime-type $f -b) in
+    text/*|application/json)
+      if [ "$ext" = "md" ] || [ "$ext" = "markdown" ]; then
+        glow $f
+      else
+        nvim $f
+      fi
+      ;;
+    *)
+      for f in $fx; do open $f; done
+      ;;
+  esac
+}}
 
 cmd fzf_jump ${{
     res="$(fd . | fzf --reverse --header='Jump to location')"
@@ -35,4 +43,4 @@ cmd fzf_jump ${{
         lf -remote "send $id $cmd \"$res\""
     fi
 }}
-map <c-f> :fzf_jump
+map <enter> :fzf_jump
