@@ -1,6 +1,6 @@
 # Dotfiles
 
-I am currently still trying to make the installation of the dotfiles as automatic as possible (real plug-and-play).
+The installation of the dotfiles should be as automatic as possible (real _plug-and-play_).
 
 ## Boot-up
 
@@ -10,10 +10,3 @@ I am currently still trying to make the installation of the dotfiles as automati
 
 `make` will link the local dotfiles repository to `$HOME`.
 Any changes in the local repository will be automatically reflected in the proper config files.
-
-### nvim
-
-#### Requirements
-
-- Requires a file at `${HOME}/.chatgpt.vim.env` with the OpenAI API token.
-  So that the `ChatGPT.nvim` plugins works.
