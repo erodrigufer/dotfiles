@@ -76,7 +76,7 @@ bindkey -s '^f' '^unvim +"Telescope file_browser"\n'
 
 bindkey -s '^n' 'clear\n'
 
-source ~/.aliases.zsh
+source ~/.aliases.sh
 
 # Fetch weather information.
 # Use the first user input as the city for which the weather information
