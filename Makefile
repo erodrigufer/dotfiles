@@ -11,7 +11,7 @@ link:
 	@# Config file for zsh
 	@ln -sf $(REPO)/zshrc ~/.zshrc
 	@# File with zsh aliases.
-	@ln -sf $(REPO)/aliases.zsh ~/.aliases.zsh
+	@ln -sf $(REPO)/aliases.sh ~/.aliases.sh
 	@# .gitconfig
 	@ln -sf $(REPO)/gitconfig ~/.gitconfig
 	@# tmux.conf
@@ -24,6 +24,7 @@ link:
 	# @ln -sf $(REPO)/skhdrc ~/.skhdrc
 	@# nvim
 	@mkdir -p ~/.config
+	@rm -rf ~/.config/nvim
 	@ln -sf $(REPO)/nvim ~/.config/nvim
 	@# lfrc
 	@# Create file directory if it does not exist
