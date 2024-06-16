@@ -115,4 +115,7 @@ require("lazy").setup({
   -- Navigate the symbols of a buffer effectively.
   { 'stevearc/aerial.nvim' },
 
+  -- Startup dashboard.
+  { 'nvimdev/dashboard-nvim',            event = { 'VimEnter' },                                                                  dependencies = { 'nvim-tree/nvim-web-devicons' } },
+
 })
