@@ -27,6 +27,9 @@ git clone --depth 1 https://github.com/wbthomason/packer.nvim \
 # Install TS tools.
 npm install -g typescript-language-server typescript prettier
 
+# ncu to manage npm updates.
+npm install -g npm-check-updates
+
 ## tmux
 # Install tmux plugin manager.
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
