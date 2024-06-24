@@ -12,6 +12,7 @@ link:
 	@ln -sf $(REPO)/zshrc ~/.zshrc
 	@# File with zsh aliases.
 	@ln -sf $(REPO)/aliases.sh ~/.aliases.sh
+	@ln -sf $(REPO)/nvm.sh ~/.nvm.sh
 	@# .gitconfig
 	@ln -sf $(REPO)/gitconfig ~/.gitconfig
 	@# tmux.conf
