@@ -119,6 +119,6 @@ require("lazy").setup({
   { 'nvimdev/dashboard-nvim',            event = { 'VimEnter' },                                                                  dependencies = { 'nvim-tree/nvim-web-devicons' } },
 
   -- nvim surround.
-  { "kylechui/nvim-surround",            version = "*",                                                                           event = "VeryLazy" },
+  { 'kylechui/nvim-surround',            event = 'VeryLazy' },
 
 })
