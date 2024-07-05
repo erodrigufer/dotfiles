@@ -8,12 +8,11 @@ alias copy=pbcopy
 
 # Killing vim.
 alias vim=nvim
-
 alias v=nvim
 # e for edit.
 alias e=nvim
 
-alias fb='nvim +"Telescope file_browser"'
+alias i='nvim $(fzf --multi --preview "bat --color=always --style=plain {}")'
 
 # Send notification as banner and audio message.
 # Audio message changed depending on returned status code.

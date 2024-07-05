@@ -65,14 +65,7 @@ lfcd () {
 bindkey -s '^o' '^ulfcd\n'
 
 # Ctrl+space: print Git status
-bindkey -s '^ ' 'git status --short\n'
-
-# bind '^h' = Control + f to:
-# 1. clearing the line '^u' = Control + u 
-# 2. running 'nvim +Telescope file_browser'
-# Opens a new nvim window inside an unnamed file
-# with the Telescope file browser extension.
-bindkey -s '^f' '^unvim +"Telescope file_browser"\n'
+bindkey -s '^ ' 'nvim $(fzf --multi --preview "bat --color=always --style=plain {}")\n'
 
 bindkey -s '^n' 'clear\n'
 
