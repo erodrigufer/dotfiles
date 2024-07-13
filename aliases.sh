@@ -71,6 +71,8 @@ alias tfp='terraform plan'
 alias tff='terraform fmt'
 alias tfi='terraform init -upgrade'
 
+# direnv aliases.
+alias de='direnv edit'
 # brew aliases.
 alias update="brew update && brew upgrade && brew upgrade --cask --greedy"
 # Show what would be updated without updating anything.
