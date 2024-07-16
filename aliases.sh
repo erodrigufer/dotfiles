@@ -12,10 +12,15 @@ alias v=nvim
 # e for edit.
 alias e=nvim
 
+# Interactively search for a file with fzf.
+# File is then opened by nvim.
 alias i='nvim $(fzf --multi --preview "bat --color=always --style=plain {}")'
 
+# ChatGPT command line integration.
+alias c='maguet c -p'
+
 # Send notification as banner and audio message.
-# Audio message changed depending on returned status code.
+# Audio message changes depending on returned status code.
 function create_notification() {
   RETURNED_CODE=$?
   if [ ${RETURNED_CODE} -eq 0 ]
@@ -73,6 +78,7 @@ alias tfi='terraform init -upgrade'
 
 # direnv aliases.
 alias de='direnv edit'
+
 # brew aliases.
 alias update="brew update && brew upgrade && brew upgrade --cask --greedy"
 # Show what would be updated without updating anything.
