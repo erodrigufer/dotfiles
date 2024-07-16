@@ -51,8 +51,9 @@ wk.register({
 wk.register({
     ['-'] = { "<cmd> Oil <cr>", "Open parent directory with Oil" },
     ['<C-a>'] = { "ggvG$y", "Yank all the content of the current buffer" },
-    [',,'] = { "<cmd> vsplit<cr>", "Vertical split" },
-    [',<'] = { "<cmd> vsplit<cr>", "Horizontal split" },
+    [',,'] = { "<cmd> vsplit<cr><cmd>wincmd l<cr><cmd> Telescope git_files<cr>", "Vertical split, move to new window and use Telescope to open new file in current repo" },
+    [',l'] = { "<cmd> vsplit<cr><cmd>wincmd l<cr><cmd> Telescope live_grep<cr>", "Vertical split, move to new window and use Telescope to search for a string with grep" },
+    [',<'] = { "<cmd> vsplit<cr><cmd>wincmd l<cr>", "Vertical split and move to new window" },
   },
   {
     silent = true,
