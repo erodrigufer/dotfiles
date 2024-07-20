@@ -137,4 +137,9 @@ require("lazy").setup({
     end,
   },
 
+  -- ChatGPT integration.
+  {
+    "robitx/gp.nvim"
+  },
+
 })
