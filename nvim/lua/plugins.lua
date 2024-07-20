@@ -96,7 +96,7 @@ require("lazy").setup({
   { 'ggandor/leap.nvim' },
 
   -- Manage keymappings.
-  { 'folke/which-key.nvim' },
+  { 'folke/which-key.nvim',              dependencies = { 'nvim-tree/nvim-web-devicons' } },
 
   -- Toggleterm, to create floating windows with terminals.
   { 'akinsho/toggleterm.nvim',           version = 'v2.*' },
