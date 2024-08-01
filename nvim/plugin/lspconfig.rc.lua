@@ -29,7 +29,6 @@ local on_attach = function(client, bufnr)
   buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
   buf_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
   buf_set_keymap('n', '<Space>r', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
-  buf_set_keymap('n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>', opts)
 end
 
 protocol.CompletionItemKind = {
@@ -169,10 +168,9 @@ vim.diagnostic.config({
   },
   update_in_insert = true,
   float = {
-    source = "always", -- Or "if_many"
+    source = "if_many",
     border = _border,
   },
-  -- severity_sort = true,
 })
 
 -- Add border to hover floats.
