@@ -138,6 +138,8 @@ nvim_lsp.terraformls.setup {
   capabilities = capabilities
 }
 
+nvim_lsp.htmx.setup {}
+
 -- Bash LSP.
 nvim_lsp.bashls.setup {
   on_attach = on_attach,
