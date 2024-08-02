@@ -127,11 +127,17 @@ nvim_lsp.astro.setup {
   capabilities = capabilities
 }
 
--- Terraform LSP (don't forget to install LSP with Mason).
 nvim_lsp.terraformls.setup {
   on_attach = on_attach,
   capabilities = capabilities
 }
+-- Auto-format Terraform code before buffer write.
+vim.api.nvim_create_autocmd({ "BufWritePre" }, {
+  pattern = { "*.tf", "*.tfvars" },
+  callback = function()
+    vim.lsp.buf.format()
+  end,
+})
 
 nvim_lsp.htmx.setup {}
 
