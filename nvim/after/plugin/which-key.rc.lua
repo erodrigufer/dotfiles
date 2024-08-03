@@ -34,6 +34,10 @@ wk.add({
   { ",.",              "<cmd> vsplit<cr><cmd>wincmd l<cr><cmd> Telescope git_files<cr>",                                     desc = "Vertical split, move to new window and use Telescope to open new file in current repo", remap = false },
   { ",<",              "<cmd> vsplit<cr><cmd>wincmd l<cr>",                                                                  desc = "Vertical split and move to new window",                                                 remap = false },
   { ",l",              "<cmd> vsplit<cr><cmd>wincmd l<cr><cmd> Telescope live_grep<cr>",                                     desc = "Vertical split, move to new window and use Telescope to search for a string with grep", remap = false },
+  { "<C-l>",           "<cmd>wincmd l<cr>",                                                                                  desc = "Move to right window",                                                                  remap = false },
+  { "<C-h>",           "<cmd>wincmd h<cr>",                                                                                  desc = "Move to left window",                                                                   remap = false },
+  { "<C-j>",           "<cmd>wincmd j<cr>",                                                                                  desc = "Move to lower window",                                                                  remap = false },
+  { "<C-k>",           "<cmd>wincmd k<cr>",                                                                                  desc = "Move to upper window",                                                                  remap = false },
   { "-",               "<cmd> Oil <cr>",                                                                                     desc = "Open parent directory with Oil",                                                        remap = false },
   { "<C-a>",           "ggvG$y",                                                                                             desc = "Yank all the content of the current buffer",                                            remap = false },
 
