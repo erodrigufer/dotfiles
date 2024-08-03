@@ -4,26 +4,93 @@ if (not status) then return end
 wk.setup()
 
 wk.add({
-  { "<Space>d",        group = "Debugger",                                                                                   remap = false },
-  { "<Space>dc",       "<cmd> lua _dap_continue()<cr>",                                                                      desc = "Continue",                                                                              remap = false },
-  { "<Space>dd",       "<cmd> lua _dap_toggle_breakpoint()<cr>",                                                             desc = "Toggle breakpoint",                                                                     remap = false },
-  { "<Space>di",       "<cmd> lua _dap_step_into()<cr>",                                                                     desc = "Step into",                                                                             remap = false },
-  { "<Space>do",       "<cmd> lua _dap_step_over()<cr>",                                                                     desc = "Step over",                                                                             remap = false },
-  { "<Space>dr",       "<cmd> lua _dap_repl_open()<cr>",                                                                     desc = "REPL open",                                                                             remap = false },
-  { "<Space>du",       "<cmd> lua _dap_step_out()<cr>",                                                                      desc = "Step out",                                                                              remap = false },
-  { "<Space>f",        group = "Telescope commands",                                                                         remap = false },
-  { "<Space>fd",       "<cmd> Telescope diagnostics <cr>",                                                                   desc = "List diagnostics of current buffer",                                                    remap = false },
-  { "<Space>ff",       "<cmd> Telescope git_files <cr>",                                                                     desc = "Find tracked files in current git repo",                                                remap = false },
-  { "<Space>fg",       "<cmd> Telescope lsp_document_symbols<cr>",                                                           desc = "List document's symbols",                                                               remap = false },
-  { "<Space>fh",       "<cmd> Telescope buffers <cr>",                                                                       desc = "Select opened buffer",                                                                  remap = false },
-  { "<Space>fj",       "<cmd> Telescope file_browser path=%:p:help select_buffer=true<cr>",                                  desc = "Open the Telescope file browser at path of current buffer",                             remap = false },
-  { "<Space>fk",       "<cmd> Telescope oldfiles <cr>",                                                                      desc = "Search for recently opened files",                                                      remap = false },
-  { "<Space>fl",       "<cmd> Telescope live_grep <cr>",                                                                     desc = "Grep a string in the files of a repo",                                                  remap = false },
-  { "<Space>fr",       "<cmd> Telescope registers <cr>",                                                                     desc = "Find string stored in registers",                                                       remap = false },
-  { "<Space>fv",       "<cmd> Telescope current_buffer_fuzzy_find <cr>",                                                     desc = "Search for a pattern in current buffer",                                                remap = false },
-  { "<Space>g",        group = "General integrations",                                                                       remap = false },
-  { "<Space>gj",       "<cmd> lua _termWithoutCmd_toggle()<cr>",                                                             desc = "Open floating terminal window",                                                         remap = false },
-  { "<Space>gt",       "<cmd> TodoTelescope <cr>",                                                                           desc = "Open ToDo in Telescope view",                                                           remap = false },
+  { "<Space>d",  group = "Debugger",                                                  remap = false },
+  { "<Space>dc", "<cmd> lua _dap_continue()<cr>",                                     desc = "Continue",                                                  remap = false },
+  { "<Space>dd", "<cmd> lua _dap_toggle_breakpoint()<cr>",                            desc = "Toggle breakpoint",                                         remap = false },
+  { "<Space>di", "<cmd> lua _dap_step_into()<cr>",                                    desc = "Step into",                                                 remap = false },
+  { "<Space>do", "<cmd> lua _dap_step_over()<cr>",                                    desc = "Step over",                                                 remap = false },
+  { "<Space>dr", "<cmd> lua _dap_repl_open()<cr>",                                    desc = "REPL open",                                                 remap = false },
+  { "<Space>du", "<cmd> lua _dap_step_out()<cr>",                                     desc = "Step out",                                                  remap = false },
+  { "<Space>f",  group = "Telescope commands",                                        remap = false },
+  { "<Space>fd", "<cmd> Telescope diagnostics <cr>",                                  desc = "List diagnostics of current buffer",                        remap = false },
+  { "<Space>ff", "<cmd> Telescope git_files <cr>",                                    desc = "Find tracked files in current git repo",                    remap = false },
+  { "<Space>fg", "<cmd> Telescope lsp_document_symbols<cr>",                          desc = "List document's symbols",                                   remap = false },
+  { "<Space>fh", "<cmd> Telescope buffers <cr>",                                      desc = "Select opened buffer",                                      remap = false },
+  { "<Space>fj", "<cmd> Telescope file_browser path=%:p:help select_buffer=true<cr>", desc = "Open the Telescope file browser at path of current buffer", remap = false },
+  { "<Space>fk", "<cmd> Telescope oldfiles <cr>",                                     desc = "Search for recently opened files",                          remap = false },
+  { "<Space>fl", "<cmd> Telescope live_grep <cr>",                                    desc = "Grep a string in the files of a repo",                      remap = false },
+  { "<Space>fr", "<cmd> Telescope registers <cr>",                                    desc = "Find string stored in registers",                           remap = false },
+  { "<Space>fv", "<cmd> Telescope current_buffer_fuzzy_find <cr>",                    desc = "Search for a pattern in current buffer",                    remap = false },
+  { "<Space>h",  group = "General integrations",                                      remap = false },
+  { "<Space>hj", "<cmd> lua _termWithoutCmd_toggle()<cr>",                            desc = "Open floating terminal window",                             remap = false },
+  { "<Space>hy", "<cmd> TodoTelescope <cr>",                                          desc = "Open ToDo in Telescope view",                               remap = false },
+  { "<Space>g",  group = "ChatGPT",                                                   remap = false },
+  {
+    "<Space>gg",
+    "<cmd>GpChatNew vsplit<cr>",
+    desc = "New Chat vsplit",
+    nowait = true,
+    remap = false
+  },
+  {
+    "<Space>gj",
+    "<cmd>GpChatToggle<cr>",
+    desc = "Toggle Chat",
+    nowait = true,
+    remap = false
+  },
+  {
+    "<Space>gf",
+    "<cmd>GpChatFinder<cr>",
+    desc = "Chat Finder",
+    nowait = true,
+    remap = false
+  },
+  {
+    "<Space>ga",
+    "<cmd>GpAppend<cr>",
+    desc = "Append",
+    nowait = true,
+    remap = false
+  },
+  {
+    "<Space>gb",
+    "<cmd>GpPrepend<cr>",
+    desc = "Prepend",
+    nowait = true,
+    remap = false
+  },
+  {
+    "<Space>gn",
+    "<cmd>GpNextAgent<cr>",
+    desc = "Next Agent",
+    nowait = true,
+    remap = false
+  },
+  {
+    "<C-g>r",
+    ":<C-u>'<,'>GpRewrite<cr>",
+    desc = "Visual rewrite",
+    nowait = true,
+    remap = false,
+    mode = "v"
+  },
+  {
+    "<C-g>a",
+    ":<C-u>'<,'>GpAppend<cr>",
+    desc = "Visual append",
+    nowait = true,
+    remap = false,
+    mode = "v"
+  },
+  {
+    "<C-g>g",
+    ":<C-u>'<,'>GpChatNew<cr>",
+    desc = "New Chat",
+    nowait = true,
+    remap = false,
+    mode = "v"
+  },
   { "<Space>j",        "<cmd> AerialToggle<cr>",                                                                             desc = "Toggle Aerial window",                                                                  remap = false },
   { "<Space>l",        group = "Lazy integrations",                                                                          remap = false },
   { "<Space>ld",       "<cmd> lua _lazydocker_toggle()<cr>",                                                                 desc = "Open lazydocker in floating Terminal window",                                           remap = false },
