@@ -64,10 +64,11 @@ lfcd () {
 # 2. opening lf in last-dir-path mode, using lfcd()
 bindkey -s '^o' '^ulfcd\n'
 
-# Ctrl+space: print Git status
-bindkey -s '^ ' 'nvim $(fzf --multi --preview "bat --color=always --style=plain {}")\n'
+bindkey -s '^ ' '^unvim $(fzf --multi --preview "bat --color=always --style=plain {}")\n'
 
 bindkey -s '^n' 'clear\n'
+
+bindkey -s '^k' 'lazygit\n'
 
 source ~/.aliases.sh
 
