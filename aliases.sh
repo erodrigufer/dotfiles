@@ -53,6 +53,20 @@ alias gc="git_checkout"
 alias gp="git pull"
 alias lg="lazygit"
 alias gm="git checkout main && git pull"
+# Turn GPG for local git repo on or off.
+# Sometimes it is required to turn GPG off to 
+# use some functionality of lazygit that only works 
+# with no GPG.
+function turn_off_gpg(){
+  git config tag.gpgSign false
+  git config commit.gpgSign false
+};
+function turn_on_gpg(){
+  git config tag.gpgSign true
+  git config commit.gpgSign true
+};
+alias gpg_off="turn_off_gpg"
+alias gpg_on="turn_on_gpg"
 
 # Docker aliases.
 alias ldr="lazydocker"
