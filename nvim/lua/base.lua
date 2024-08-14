@@ -20,3 +20,7 @@ vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2
 -- How many columns of whitespace is a tab keypress or a backspace keypress worth?
 vim.opt.softtabstop = 2
+-- Case insensitive search.
+-- It integrates very nicely with flash.nvim, so that flash can also work in a
+-- case-insensitive manner.
+vim.opt.ignorecase = true
