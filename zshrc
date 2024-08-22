@@ -1,6 +1,9 @@
 POSTGRES_PATH="/opt/homebrew/opt/postgresql@16/bin"
 export PATH=$HOME/bin:/usr/local/bin:$HOME/go/bin:${POSTGRES_PATH}:$PATH
 
+# Add homebrew zsh completions.
+export FPATH=/opt/homebrew/share/zsh/site-functions:$FPATH
+
 # Standard file editor.
 export VISUAL=nvim
 export EDITOR="$VISUAL"
