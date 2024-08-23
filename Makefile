@@ -17,12 +17,6 @@ link:
 	@ln -sf $(REPO)/gitconfig ~/.gitconfig
 	@# tmux.conf
 	@ln -sf $(REPO)/tmux.conf ~/.tmux.conf
-	# @# vimrc
-	# @ln -sf $(REPO)/vimrc ~/.vimrc
-	# @# yabairc
-	# @ln -sf $(REPO)/yabairc ~/.yabairc
-	# @# skhd
-	# @ln -sf $(REPO)/skhdrc ~/.skhdrc
 	@# nvim
 	@mkdir -p ~/.config
 	@rm -rf ~/.config/nvim
