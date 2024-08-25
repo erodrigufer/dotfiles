@@ -91,6 +91,7 @@ wk.add({
     remap = false,
     mode = "v"
   },
+  { "<Space>o",        "<cmd> Octo<cr>",                                                                                     desc = "Open Octo command list",                                                                remap = false },
   { "<Space>a",        "<cmd> AerialToggle<cr>",                                                                             desc = "Toggle Aerial window",                                                                  remap = false },
   { "<Space>l",        group = "Lazy integrations",                                                                          remap = false },
   { "<Space>ld",       "<cmd> lua _lazydocker_toggle()<cr>",                                                                 desc = "Open lazydocker in floating Terminal window",                                           remap = false },
