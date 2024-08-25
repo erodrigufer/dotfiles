@@ -76,6 +76,11 @@ require("lazy").setup({
     'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate',
   },
+  -- Show the function and/or context name if cursor and
+  -- context name are not in the same view.
+  {
+    'nvim-treesitter/nvim-treesitter-context'
+  },
   -- Color and theme.
   { 'catppuccin/nvim',                   name = 'catppuccin' },
 
