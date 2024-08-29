@@ -153,6 +153,13 @@ require("lazy").setup({
       'nvim-tree/nvim-web-devicons',
     },
   },
+  {
+    "lukas-reineke/indent-blankline.nvim",
+    main = "ibl",
+    ---@module "ibl"
+    ---@type ibl.config
+    opts = {},
+  },
 
   -- Moving around effectively.
   {
