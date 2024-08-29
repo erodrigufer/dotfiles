@@ -108,7 +108,7 @@ wk.add({
   { "<C-k>",           "<cmd>wincmd k<cr>",                                                                                  desc = "Move to upper window",                                                                  remap = false },
   { "-",               "<cmd> Oil <cr>",                                                                                     desc = "Open parent directory with Oil",                                                        remap = false },
   { "<C-a>",           "ggvG$y",                                                                                             desc = "Yank all the content of the current buffer",                                            remap = false },
-
+  { "<C-Space>",       "<cmd> Telescope git_files <cr>",                                                                     desc = "Find tracked files in current git repo",                                                remap = false },
   { "<leader><Space>", "<cmd> nohlsearch<cr>",                                                                               desc = "Remove search highlight",                                                               remap = false },
   { "<leader>c",       "<cmd> ccl<cr>",                                                                                      desc = "Close quickfix list",                                                                   remap = false },
   { "<leader>d",       vim.diagnostic.setqflist,                                                                             desc = "Open quickfix list with diagnostics",                                                   remap = false },
