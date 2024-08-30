@@ -20,6 +20,7 @@ configs.setup({
     "elixir",
     "make",
     "javascript",
+    "just",
     "css",
     "dockerfile",
     "awk",
@@ -46,6 +47,7 @@ configs.setup({
     "svelte",
     "terraform",
     "tmux",
+    "templ",
     "toml",
     "yaml"
 
