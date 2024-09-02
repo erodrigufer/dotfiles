@@ -23,14 +23,20 @@ alias c='maguet c -p'
 # Audio message changes depending on returned status code.
 function create_notification() {
   RETURNED_CODE=$?
+  repo_name="$(basename "$(git rev-parse --show-toplevel)")" 2> /dev/null
+  ERROR_IN_REPO_NAME=$?
+  if [ ${ERROR_IN_REPO_NAME} -ne 0 ]
+  then
+    repo_name=""
+  fi
   if [ ${RETURNED_CODE} -eq 0 ]
   then 
-    SPEECH="Successfully done with command line task."
+    SPEECH="${repo_name} Successfully done with command line task."
   else
-    SPEECH="An error occured."
+    SPEECH="${repo_name} An error occured."
   fi
 
-  terminal-notifier -title "Terminal" -message "Done with CLI task! Exit status: ${RETURNED_CODE}"; say ${SPEECH}
+  terminal-notifier -title "Terminal" -message "Done with CLI task! Exit status: ${RETURNED_CODE}"; say "${SPEECH}"
 }
 alias n='create_notification'
 
