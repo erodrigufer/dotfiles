@@ -141,16 +141,16 @@ nvim_lsp.tailwindcss.setup {
   capabilities = capabilities
 }
 
-nvim_lsp.cssls.setup {
+nvim_lsp.cssls.setup({
   on_attach = on_attach,
   capabilities = capabilities
-}
+})
 
 
-nvim_lsp.terraformls.setup {
+nvim_lsp.terraformls.setup({
   on_attach = on_attach,
   capabilities = capabilities
-}
+})
 -- Auto-format Terraform code before buffer write.
 vim.api.nvim_create_autocmd({ "BufWritePre" }, {
   pattern = { "*.tf", "*.tfvars" },
@@ -162,10 +162,10 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
 nvim_lsp.htmx.setup {}
 
 -- Bash LSP.
-nvim_lsp.bashls.setup {
+nvim_lsp.bashls.setup({
   on_attach = on_attach,
   capabilities = capabilities
-}
+})
 
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
   vim.lsp.diagnostic.on_publish_diagnostics, {
