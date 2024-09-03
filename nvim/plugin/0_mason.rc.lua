@@ -16,7 +16,7 @@ mason.setup({
 -- prettier cannot be installed with this command, it must still be install manually!!
 masonLspconfig.setup {
   automatic_installation = true,
-    "docker_compose_language_service", "eslint", "gopls", "jsonls", "tsserver", "lua_ls", "html",
   ensure_installed = { "awk_ls", "bashls", "arduino_language_server", "cssls", "dockerls",
+    "docker_compose_language_service", "eslint", "gopls", "jsonls", "tsserver", "lua_ls", "html", "htmx", "templ",
     "terraformls" }
 }

@@ -146,7 +146,6 @@ nvim_lsp.cssls.setup({
   capabilities = capabilities
 })
 
-
 nvim_lsp.terraformls.setup({
   on_attach = on_attach,
   capabilities = capabilities
@@ -159,7 +158,30 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
   end,
 })
 
-nvim_lsp.htmx.setup {}
+nvim_lsp.htmx.setup({
+  on_attach = on_attach,
+  capabilities = capabilities,
+  filetypes = { "html", "templ" },
+})
+
+nvim_lsp.html.setup({
+  on_attach = on_attach,
+  capabilities = capabilities,
+  filetypes = { "html", "templ" },
+})
+
+nvim_lsp.templ.setup({
+  on_attach = on_attach,
+  capabilities = capabilities,
+})
+
+-- Auto-format templ code before buffer write.
+vim.api.nvim_create_autocmd({ "BufWritePre" }, {
+  pattern = { "*.templ" },
+  callback = function()
+    vim.lsp.buf.format()
+  end,
+})
 
 -- Bash LSP.
 nvim_lsp.bashls.setup({
