@@ -175,6 +175,44 @@ nvim_lsp.templ.setup({
   capabilities = capabilities,
 })
 
+nvim_lsp.jsonls.setup({
+  on_attach = on_attach,
+  capabilities = capabilities,
+})
+
+nvim_lsp.dockerls.setup({
+  on_attach = on_attach,
+  capabilities = capabilities,
+})
+
+nvim_lsp.docker_compose_language_service.setup({
+  on_attach = on_attach,
+  capabilities = capabilities,
+})
+
+nvim_lsp.yamlls.setup({
+  on_attach = on_attach,
+  capabilities = capabilities,
+})
+
+-- sqls is still not working great,
+-- not all the features of an LSP
+-- are working on SQL files.
+nvim_lsp.sqls.setup({
+  on_attach = on_attach,
+  capabilities = capabilities,
+})
+
+nvim_lsp.elixirls.setup({
+  on_attach = on_attach,
+  capabilities = capabilities,
+})
+
+nvim_lsp.marksman.setup({
+  on_attach = on_attach,
+  capabilities = capabilities,
+})
+
 -- Auto-format templ code before buffer write.
 vim.api.nvim_create_autocmd({ "BufWritePre" }, {
   pattern = { "*.templ" },
