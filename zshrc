@@ -62,17 +62,6 @@ lfcd () {
 	fi
 }
 
-# bind '^o' = Control + o to:
-# 1. clearing the line '^u' = Control + u 
-# 2. opening lf in last-dir-path mode, using lfcd()
-bindkey -s '^o' '^ulfcd\n'
-
-bindkey -s '^ ' '^unvim $(fzf --multi --preview "bat --color=always --style=plain {}")\n'
-
-bindkey -s '^n' 'clear\n'
-
-bindkey -s '^k' 'lazygit\n'
-
 source ~/.aliases.sh
 
 # Fetch weather information.
@@ -87,19 +76,6 @@ clima() {
 help() {
     "$@" --help 2>&1 | bat --plain --language=help
 }
-
-# Automatically added fzf keybindings during installation of fzf
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-# Use fd instead of find with fzf
-export FZF_DEFAULT_COMMAND="fd --type f --color=never" 
-# Enable regex in fzf
-export FZF_DEFAULT_OPS="--extended --no-height"
-export FZF_CONTROL_T_COMMAND="${FZF_DEFAULT_COMMAND}"
-export FZF_CTRL_T_OPTS="--no-height --preview 'bat --color=always --line-range :50 {}'"
-# Alt key is <Esc+C> in Mac OS X.
-# See: https://github.com/junegunn/fzf/issues/164
-export FZF_ALT_C_COMMAND='fd --type d . --color=never'
-export FZF_ALT_C_OPTS="--no-height --preview 'tree -C {} | head -50'"
 
 # Integrate direnv into zsh.
 # direnv automatically detects env variables in .envrc files and loads them into
@@ -131,6 +107,39 @@ z() {
 alias j=z
 
 source ~/.nvm.sh
+
+# Source zsh-vi-mode plugin.
+source $(brew --prefix)/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+
+# zsh-vi-mode will auto execute this zvm_after_init function
+# Since the default initialization mode, this plugin will overwrite the previous key bindings, 
+# this causes the key bindings of other plugins (i.e. fzf, zsh-autocomplete, etc.) to fail.
+function zvm_after_init() {
+  # bind '^o' = Control + o to:
+  # 1. clearing the line '^u' = Control + u 
+  # 2. opening lf in last-dir-path mode, using lfcd()
+  bindkey -s '^o' '^ulfcd\n'
+
+  bindkey -s '^ ' '^unvim $(fzf --multi --preview "bat --color=always --style=plain {}")\n'
+
+  bindkey -s '^n' 'clear\n'
+
+  bindkey -s '^k' 'lazygit\n'
+
+  # Automatically added fzf keybindings during installation of fzf
+  [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+  # Use fd instead of find with fzf
+  export FZF_DEFAULT_COMMAND="fd --type f --color=never" 
+  # Enable regex in fzf
+  export FZF_DEFAULT_OPS="--extended --no-height"
+  export FZF_CONTROL_T_COMMAND="${FZF_DEFAULT_COMMAND}"
+  export FZF_CTRL_T_OPTS="--no-height --preview 'bat --color=always --line-range :50 {}'"
+  # Alt key is <Esc+C> in Mac OS X.
+  # See: https://github.com/junegunn/fzf/issues/164
+  export FZF_ALT_C_COMMAND='fd --type d . --color=never'
+  export FZF_ALT_C_OPTS="--no-height --preview 'tree -C {} | head -50'"
+
+}
 
 # -------------------------------------------------------------------------------------
 # -------------------------------------------------------------------------------------
