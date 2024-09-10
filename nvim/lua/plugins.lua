@@ -82,7 +82,7 @@ require("lazy").setup({
     'nvim-treesitter/nvim-treesitter-context'
   },
   -- Color and theme.
-  { 'catppuccin/nvim',                   name = 'catppuccin' },
+  { 'catppuccin/nvim',               name = 'catppuccin' },
 
   { 'MunifTanjim/prettier.nvim' },
 
@@ -91,25 +91,22 @@ require("lazy").setup({
   -- TS type-checking throughout a project.
   { 'dmmulroy/tsc.nvim' },
 
-  -- Useful TS functions.
-  { 'jose-elias-alvarez/typescript.nvim' },
-
   -- Work on zip files directly with vim.
   { 'lbrayner/vim-rzip' },
 
   -- Manage keymappings.
-  { 'folke/which-key.nvim',              dependencies = { 'nvim-tree/nvim-web-devicons' } },
+  { 'folke/which-key.nvim',          dependencies = { 'nvim-tree/nvim-web-devicons' } },
 
   -- Toggleterm, to create floating windows with terminals.
-  { 'akinsho/toggleterm.nvim',           version = 'v2.*' },
+  { 'akinsho/toggleterm.nvim',       version = 'v2.*' },
 
   -- DAP for debugging (works with v0.7.0).
   -- DAP-UI (works with v4.0.0).
   -- See as reference: https://www.youtube.com/watch?v=oYzZxi3SSnM&list=PLsz00TDipIffreIaUNk64KxTIkQaGguqn&index=7
-  { 'mfussenegger/nvim-dap',             dependencies = { 'rcarriga/nvim-dap-ui', 'nvim-neotest/nvim-nio', 'leoluz/nvim-dap-go' } },
+  { 'mfussenegger/nvim-dap',         dependencies = { 'rcarriga/nvim-dap-ui', 'nvim-neotest/nvim-nio', 'leoluz/nvim-dap-go' } },
 
   -- Floating command line.
-  { 'VonHeikemen/fine-cmdline.nvim',     dependencies = { 'MunifTanjim/nui.nvim' } },
+  { 'VonHeikemen/fine-cmdline.nvim', dependencies = { 'MunifTanjim/nui.nvim' } },
 
   -- Directory/file manager in a buffer.
   { 'stevearc/oil.nvim' },
@@ -118,10 +115,10 @@ require("lazy").setup({
   { 'stevearc/aerial.nvim' },
 
   -- Startup dashboard.
-  { 'nvimdev/dashboard-nvim',            event = { 'VimEnter' },                                                                  dependencies = { 'nvim-tree/nvim-web-devicons' } },
+  { 'nvimdev/dashboard-nvim',        event = { 'VimEnter' },                                                                  dependencies = { 'nvim-tree/nvim-web-devicons' } },
 
   -- nvim surround.
-  { 'kylechui/nvim-surround',            event = 'VeryLazy' },
+  { 'kylechui/nvim-surround',        event = 'VeryLazy' },
 
   -- SQL client.
   {
