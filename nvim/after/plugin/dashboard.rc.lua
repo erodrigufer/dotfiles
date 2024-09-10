@@ -31,6 +31,15 @@ dashboard.setup({
         action = 'Telescope live_grep',
         key = 'l',
       },
+      {
+        icon = 'o ',
+        icon_hl = '@variable',
+        desc = 'Octo',
+        group = 'Label',
+        action = 'Octo',
+        key = 'o',
+      },
+
     },
     footer = false,
   },
