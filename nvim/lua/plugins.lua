@@ -171,5 +171,10 @@ require("lazy").setup({
       { "<c-e>", mode = { "c" },           function() require("flash").toggle() end,            desc = "Toggle Flash Search" },
     },
   },
+  -- Completions for git (especially to integrate with octo).
+  {
+    "petertriho/cmp-git",
+    dependencies = { 'hrsh7th/nvim-cmp' },
+  },
 
 })

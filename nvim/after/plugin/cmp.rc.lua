@@ -2,6 +2,9 @@ local status, cmp = pcall(require, "cmp")
 if (not status) then return end
 local lspkind = require 'lspkind'
 
+local statusGit, cmp_git = pcall(require, "cmp_git")
+if (not statusGit) then return end
+
 local function formatForTailwindCSS(entry, vim_item)
   if vim_item.kind == 'Color' and entry.completion_item.documentation then
     local _, _, r, g, b = string.find(entry.completion_item.documentation, '^rgb%((%d+), (%d+), (%d+)')
@@ -42,6 +45,7 @@ cmp.setup({
     { name = 'nvim_lsp' },
     { name = 'luasnip' },
     { name = 'buffer' },
+    { name = 'git' },
   }),
   formatting = {
     format = lspkind.cmp_format({
@@ -53,6 +57,8 @@ cmp.setup({
     })
   }
 })
+
+cmp_git.setup()
 
 vim.cmd [[
   set completeopt=menuone,noinsert,noselect

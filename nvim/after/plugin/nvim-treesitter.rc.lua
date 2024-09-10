@@ -66,3 +66,6 @@ configs.setup({
   indent = { enable = true },
 
 })
+
+-- Use treesitter markdown parser with octo buffers.
+vim.treesitter.language.register('markdown', 'octo')
