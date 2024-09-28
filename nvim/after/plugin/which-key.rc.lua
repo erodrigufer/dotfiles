@@ -111,4 +111,5 @@ wk.add({
   { "<leader>c",       "<cmd> ccl<cr>",                                                                                      desc = "Close quickfix list",                                                                   remap = false },
   { "<leader>d",       vim.diagnostic.setqflist,                                                                             desc = "Open quickfix list with diagnostics",                                                   remap = false },
   { "<leader>w",       "<cmd> WhichKey '' n<cr>",                                                                            desc = "Show all NORMAL mode keymappings",                                                      remap = false },
+  { "<leader>g",       "<cmd>!gh b<cr>",                                                                                     desc = "Execute gh b in the background",                                                        remap = false },
 })
