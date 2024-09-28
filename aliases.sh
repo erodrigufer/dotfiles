@@ -41,7 +41,7 @@ function create_notification() {
 alias n='create_notification'
 
 # Git aliases.
-alias gg='git diff'
+alias gg='gh action ; n'
 alias gss='git status'
 # 'gb': Output the current local branches without accessing a pager.
 alias gb='git --no-pager branch'
