@@ -120,22 +120,6 @@ require("lazy").setup({
   -- nvim surround.
   { 'kylechui/nvim-surround',        event = 'VeryLazy' },
 
-  -- SQL client.
-  {
-    'tpope/vim-dadbod',
-    dependencies = { 'kristijanhusak/vim-dadbod-ui', 'kristijanhusak/vim-dadbod-completion' },
-    cmd = {
-      'DBUI',
-      'DBUIToggle',
-      'DBUIAddConnection',
-      'DBUIFindBuffer',
-    },
-    init = function()
-      -- Use nerd fonts for DBUI.
-      vim.g.db_ui_use_nerd_fonts = 1
-    end,
-  },
-
   -- ChatGPT integration.
   {
     "robitx/gp.nvim"
