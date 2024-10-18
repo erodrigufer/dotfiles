@@ -198,10 +198,10 @@ nvim_lsp.yamlls.setup({
 -- sqls is still not working great,
 -- not all the features of an LSP
 -- are working on SQL files.
-nvim_lsp.sqls.setup({
-  on_attach = on_attach,
-  capabilities = capabilities,
-})
+-- nvim_lsp.sqls.setup({
+--   on_attach = on_attach,
+--   capabilities = capabilities,
+-- })
 
 nvim_lsp.elixirls.setup({
   on_attach = on_attach,
