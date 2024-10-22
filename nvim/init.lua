@@ -11,6 +11,7 @@ local is_linux = has "unix"
 -- local is_win = has "win32"
 -- local is_wsl = has "wsl"
 
+vim.cmd("language en_US")
 vim.g.sql_type_default = 'postgresql'
 
 if is_mac == 1 then
