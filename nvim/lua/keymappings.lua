@@ -11,7 +11,7 @@ local keymap = vim.keymap
 
 -- Move window.
 -- Switch to next window.
-keymap.set('n', '<Tab>', '<C-w>w')
+-- keymap.set('n', '<Tab>', '<C-w>w')
 -- keymap.set('', 'sh', '<C-w>h')
 -- keymap.set('', 'sk', '<C-w>k')
 -- keymap.set('', 'sj', '<C-w>j')
