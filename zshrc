@@ -44,22 +44,15 @@ source $ZSH/oh-my-zsh.sh
 # that file instead of the one at $HOME.
 # git config --global user.email ${EMAIL_GIT}
 
-# Use lf to switch directories and bind it to ctrl-o
-lfcd () {
-	# Store a temp file name
-	tmp="$(mktemp)"
-	# run lf with the option to store pwd at end of lf program on tmp file
-	# this will store in tmp the last path inside lf, when exiting lf
-	lf -last-dir-path="$tmp" "$@"
-	# if the temporary file exists
-	if [ -f "$tmp" ]; then
-		# store the contents of tmp into the variable dir, this will be 
-		dir="$(cat "$tmp")"
-		# forcefully remove tmp file
-		rm -f "$tmp" >/dev/null
-		# if dir is a directory and it is not pwd, change to it
-		[ -d "$dir" ] && [ "$dir" != "$(pwd)" ] && cd "$dir"
+# Shell wrapper that provides the ability to change the current 
+# working directory when exiting Yazi.
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		builtin cd -- "$cwd"
 	fi
+	rm -f -- "$tmp"
 }
 
 source ~/.aliases.sh
@@ -117,8 +110,8 @@ source $(brew --prefix)/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 function zvm_after_init() {
   # bind '^o' = Control + o to:
   # 1. clearing the line '^u' = Control + u 
-  # 2. opening lf in last-dir-path mode, using lfcd()
-  bindkey -s '^o' '^ulfcd\n'
+  # 2. opening yazi in last-dir-path mode, using y()
+  bindkey -s '^o' '^uy\n'
 
   bindkey -s '^ ' '^unvim $(fzf --multi --preview "bat --color=always --style=plain {}")\n'
 
