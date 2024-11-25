@@ -10,6 +10,8 @@ link:
 	@# link can be made again.
 	@# Config file for zsh
 	@ln -sf $(REPO)/zshrc ~/.zshrc
+	@# Aerospace config.
+	@ln -sf $(REPO)/aerospace.toml ~/.aerospace.toml
 	@# File with zsh aliases.
 	@ln -sf $(REPO)/aliases.sh ~/.aliases.sh
 	@ln -sf $(REPO)/nvm.sh ~/.nvm.sh
