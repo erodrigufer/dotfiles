@@ -21,8 +21,6 @@ link:
 	@mkdir -p ~/.config
 	@rm -rf ~/.config/nvim
 	@ln -sf $(REPO)/nvim ~/.config/nvim
-	@# lfrc
-	@# Create file directory if it does not exist
 	@ln -sf $(REPO)/psqlrc ~/.psqlrc
 
 .PHONY : link
