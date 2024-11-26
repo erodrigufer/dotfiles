@@ -14,6 +14,9 @@ brew install ${PACKAGES} && echo "The following packages were properly installed
 # To install useful key bindings and fuzzy completion for fzf:
 $(brew --prefix)/opt/fzf/install
 
+# Install AeroSpace tiling/workspace manager.
+brew install --cask nikitabobko/tap/aerospace && echo "AeroSpace was properly installed!"
+
 # Install oh-my-zsh.
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" && echo "oh-my-zsh was properly installed!"
 
