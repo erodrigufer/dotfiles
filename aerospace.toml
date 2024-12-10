@@ -206,3 +206,4 @@ alt-shift-l = ['join-with right', 'mode main']
 
 [workspace-to-monitor-force-assignment]
 Q = 'dell'
+R = 'LG'
