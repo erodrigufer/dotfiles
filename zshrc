@@ -104,6 +104,9 @@ alias j=z
 
 source ~/.nvm.sh
 
+# Anthropic API key for avante.nvim plugin.
+source ~/.anthropic.env
+
 # Source zsh-vi-mode plugin.
 source $(brew --prefix)/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 
