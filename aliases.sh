@@ -19,6 +19,9 @@ alias i='nvim $(fzf --multi --preview "bat --color=always --style=plain {}")'
 # ChatGPT command line integration.
 alias c='maguet c -p'
 
+# xh - curl replacement
+alias http='xh'
+
 # Send notification as banner and audio message.
 # Audio message changes depending on returned status code.
 function create_notification() {
