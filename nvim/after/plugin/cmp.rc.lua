@@ -47,6 +47,7 @@ cmp.setup({
     { name = 'luasnip' },
     { name = 'buffer' },
     { name = 'git' },
+    { name = 'cmp_yanky' },
   }),
   formatting = {
     format = lspkind.cmp_format({
