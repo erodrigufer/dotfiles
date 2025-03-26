@@ -5,6 +5,7 @@ configs.setup({
   -- A list of parser names, or "all" (the listed parsers should always be installed)
   ensure_installed = {
     "c",
+    "caddy",
     "lua",
     "vim",
     "vimdoc",
