@@ -1,4 +1,3 @@
-POSTGRES_PATH="/opt/homebrew/opt/postgresql@16/bin"
 export PATH=$HOME/bin:/usr/local/bin:$HOME/go/bin:${POSTGRES_PATH}:$PATH
 
 export LC_ALL=en_US.UTF-8
