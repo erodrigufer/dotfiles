@@ -252,29 +252,9 @@ for type, icon in pairs(signs) do
 end
 
 
-local _border = "single"
 vim.diagnostic.config({
   virtual_text = {
     prefix = '●'
   },
   update_in_insert = true,
-  float = {
-    source = "if_many",
-    border = _border,
-  },
 })
-
--- Add border to hover floats.
-vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
-  vim.lsp.handlers.hover, {
-    border = _border
-  }
-)
-vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
-  vim.lsp.handlers.signature_help, {
-    border = _border
-  }
-)
-require('lspconfig.ui.windows').default_options = {
-  border = _border
-}
