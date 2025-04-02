@@ -205,6 +205,6 @@ alt-shift-k = ['join-with up', 'mode main']
 alt-shift-l = ['join-with right', 'mode main']
 
 [workspace-to-monitor-force-assignment]
-Q = 'dell'
+R = 'dell'
 E = 'dell'
-R = 'LG'
+# R = 'LG'
