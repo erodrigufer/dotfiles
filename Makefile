@@ -24,5 +24,6 @@ link:
 	@rm -rf ~/.config/nvim
 	@ln -sf $(REPO)/nvim ~/.config/nvim
 	@ln -sf $(REPO)/psqlrc ~/.psqlrc
+	@ln -sf $(REPO)/sqliterc ~/.sqliterc
 
 .PHONY : link
