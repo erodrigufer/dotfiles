@@ -21,3 +21,16 @@ end
 if is_linux == 1 then
   require('linux')
 end
+
+-- Diagnostics
+vim.diagnostic.config({
+  virtual_lines = true,
+  update_in_insert = true,
+})
+
+-- Diagnostic symbols in the sign column (gutter).
+local signs = { Error = "✖ ", Warn = " ", Hint = "⌘ ", Info = " " }
+for type, icon in pairs(signs) do
+  local hl = "DiagnosticSign" .. type
+  vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
+end
