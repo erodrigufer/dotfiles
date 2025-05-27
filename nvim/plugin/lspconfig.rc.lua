@@ -52,25 +52,6 @@ nvim_lsp.ts_ls.setup {
   capabilities = capabilities
 }
 
-nvim_lsp.gopls.setup {
-  capabilities = capabilities,
-  cmd = { "gopls" },
-  filetypes = { "go", "gomod", "gotmpl", "gowork" },
-  settings = {
-    gopls = {
-      completeUnimported = true,
-      usePlaceholders = true,
-      analyses = {
-        unusedparams = true,
-      },
-      staticcheck = true,
-      gofumpt = true,
-    },
-  },
-  on_attach = function(client, bufnr)
-    enable_format_on_save(client, bufnr)
-  end,
-}
 -- Imports get organized on save using the logic of `goimports` and the code formatted.
 -- Source: https://github.com/golang/tools/blob/master/gopls/doc/vim.md#neovim
 vim.api.nvim_create_autocmd({ "BufWritePre" }, {
