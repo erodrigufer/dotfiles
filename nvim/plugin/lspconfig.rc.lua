@@ -15,22 +15,6 @@ local enable_format_on_save = function(_, bufnr)
   })
 end
 
--- Use an on_attach function to only map the following keys
--- after the language server attaches to the current buffer
-local on_attach = function(_, bufnr)
-  local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
-
-  -- Mappings.
-  local opts = { noremap = true, silent = true }
-
-  -- See `:help vim.lsp.*` for documentation on any of the below functions
-  buf_set_keymap('n', 'gD', '<Cmd>lua vim.lsp.buf.declaration()<CR>', opts)
-  buf_set_keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
-  buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
-  buf_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
-  buf_set_keymap('n', '<Space>r', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
-end
-
 protocol.CompletionItemKind = {
   '', -- Text
   '', -- Method
@@ -63,7 +47,6 @@ protocol.CompletionItemKind = {
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 nvim_lsp.ts_ls.setup {
-  on_attach = on_attach,
   filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
   cmd = { "typescript-language-server", "--stdio" },
   capabilities = capabilities
@@ -85,7 +68,6 @@ nvim_lsp.gopls.setup {
     },
   },
   on_attach = function(client, bufnr)
-    on_attach(client, bufnr)
     enable_format_on_save(client, bufnr)
   end,
 }
@@ -117,7 +99,6 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
 nvim_lsp.lua_ls.setup {
   capabilities = capabilities,
   on_attach = function(client, bufnr)
-    on_attach(client, bufnr)
     enable_format_on_save(client, bufnr)
   end,
   settings = {
@@ -137,7 +118,6 @@ nvim_lsp.lua_ls.setup {
 }
 
 nvim_lsp.postgres_lsp.setup {
-  on_attach = on_attach,
   capabilities = capabilities,
   cmd = { "postgrestools", "lsp-proxy" },
   filetypes = { "sql" },
@@ -145,17 +125,14 @@ nvim_lsp.postgres_lsp.setup {
 }
 
 nvim_lsp.tailwindcss.setup {
-  on_attach = on_attach,
   capabilities = capabilities
 }
 
 nvim_lsp.cssls.setup({
-  on_attach = on_attach,
   capabilities = capabilities
 })
 
 nvim_lsp.terraformls.setup({
-  on_attach = on_attach,
   capabilities = capabilities
 })
 -- Auto-format Terraform code before buffer write.
@@ -167,39 +144,32 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
 })
 
 nvim_lsp.htmx.setup({
-  on_attach = on_attach,
   capabilities = capabilities,
   filetypes = { "html", "templ" },
 })
 
 nvim_lsp.html.setup({
-  on_attach = on_attach,
   capabilities = capabilities,
   filetypes = { "html", "templ" },
 })
 
 nvim_lsp.templ.setup({
-  on_attach = on_attach,
   capabilities = capabilities,
 })
 
 nvim_lsp.jsonls.setup({
-  on_attach = on_attach,
   capabilities = capabilities,
 })
 
 nvim_lsp.dockerls.setup({
-  on_attach = on_attach,
   capabilities = capabilities,
 })
 
 nvim_lsp.docker_compose_language_service.setup({
-  on_attach = on_attach,
   capabilities = capabilities,
 })
 
 nvim_lsp.yamlls.setup({
-  on_attach = on_attach,
   capabilities = capabilities,
 })
 
@@ -212,12 +182,10 @@ nvim_lsp.yamlls.setup({
 -- })
 
 nvim_lsp.elixirls.setup({
-  on_attach = on_attach,
   capabilities = capabilities,
 })
 
 nvim_lsp.marksman.setup({
-  on_attach = on_attach,
   capabilities = capabilities,
 })
 
@@ -231,30 +199,5 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
 
 -- Bash LSP.
 nvim_lsp.bashls.setup({
-  on_attach = on_attach,
   capabilities = capabilities
-})
-
-vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
-  vim.lsp.diagnostic.on_publish_diagnostics, {
-    underline = true,
-    update_in_insert = false,
-    virtual_text = { spacing = 4, prefix = "\u{ea71}" },
-    severity_sort = true,
-  }
-)
-
--- Diagnostic symbols in the sign column (gutter).
-local signs = { Error = "✖ ", Warn = " ", Hint = "⌘ ", Info = " " }
-for type, icon in pairs(signs) do
-  local hl = "DiagnosticSign" .. type
-  vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
-end
-
-
-vim.diagnostic.config({
-  virtual_text = {
-    prefix = '●'
-  },
-  update_in_insert = true,
 })
