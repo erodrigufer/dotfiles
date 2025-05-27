@@ -50,8 +50,6 @@ require("lazy").setup({
       "chrisgrieser/cmp_yanky",
     },
   },
-  -- Use Neovim as a language server to inject LSP diagnostics, code actions, and more via Lua
-  { 'jose-elias-alvarez/null-ls.nvim' },
   { 'williamboman/mason.nvim' },
   { 'williamboman/mason-lspconfig.nvim' },
   -- Show Errors, diagnostics.
