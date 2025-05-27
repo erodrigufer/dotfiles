@@ -125,11 +125,6 @@ require("lazy").setup({
   -- nvim surround.
   { 'kylechui/nvim-surround',        event = 'VeryLazy' },
 
-  -- ChatGPT integration.
-  {
-    "robitx/gp.nvim"
-  },
-
   -- Handle GitHub Issues, PRs, etc. within nvim.
   {
     "pwntester/octo.nvim",
