@@ -34,3 +34,5 @@ vim.diagnostic.config({
     },
   },
 })
+
+vim.lsp.enable({'gopls', 'bashls', 'cssls', 'html', 'htmx', 'marksman', 'postgres_lsp', 'templ', 'terraformls', 'ts_ls'})
