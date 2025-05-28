@@ -1,7 +1,6 @@
 -- File with general config options.
 require('base')
 require('plugins')
-
 require('highlights')
 require('keymappings')
 
@@ -26,11 +25,12 @@ end
 vim.diagnostic.config({
   virtual_lines = true,
   update_in_insert = true,
+  signs = {
+    text = {
+      [vim.diagnostic.severity.ERROR] = '✖',
+      [vim.diagnostic.severity.WARN] = '',
+      [vim.diagnostic.severity.INFO] = '',
+      [vim.diagnostic.severity.HINT] = '⌘',
+    },
+  },
 })
-
--- Diagnostic symbols in the sign column (gutter).
-local signs = { Error = "✖ ", Warn = " ", Hint = "⌘ ", Info = " " }
-for type, icon in pairs(signs) do
-  local hl = "DiagnosticSign" .. type
-  vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
-end
