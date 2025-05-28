@@ -109,20 +109,6 @@ nvim_lsp.tailwindcss.setup {
   capabilities = capabilities
 }
 
-nvim_lsp.htmx.setup({
-  capabilities = capabilities,
-  filetypes = { "html", "templ" },
-})
-
-nvim_lsp.html.setup({
-  capabilities = capabilities,
-  filetypes = { "html", "templ" },
-})
-
-nvim_lsp.templ.setup({
-  capabilities = capabilities,
-})
-
 nvim_lsp.jsonls.setup({
   capabilities = capabilities,
 })
@@ -153,12 +139,4 @@ nvim_lsp.elixirls.setup({
 
 nvim_lsp.marksman.setup({
   capabilities = capabilities,
-})
-
--- Auto-format templ code before buffer write.
-vim.api.nvim_create_autocmd({ "BufWritePre" }, {
-  pattern = { "*.templ" },
-  callback = function()
-    vim.lsp.buf.format()
-  end,
 })
