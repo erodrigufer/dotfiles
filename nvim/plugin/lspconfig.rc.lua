@@ -173,8 +173,3 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
     vim.lsp.buf.format()
   end,
 })
-
--- Bash LSP.
-nvim_lsp.bashls.setup({
-  capabilities = capabilities
-})
