@@ -67,13 +67,6 @@ nvim_lsp.lua_ls.setup {
   },
 }
 
-nvim_lsp.postgres_lsp.setup {
-  capabilities = capabilities,
-  cmd = { "postgrestools", "lsp-proxy" },
-  filetypes = { "sql" },
-  single_file_support = true
-}
-
 nvim_lsp.tailwindcss.setup {
   capabilities = capabilities
 }
