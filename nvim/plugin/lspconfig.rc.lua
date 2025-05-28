@@ -109,17 +109,6 @@ nvim_lsp.tailwindcss.setup {
   capabilities = capabilities
 }
 
-nvim_lsp.terraformls.setup({
-  capabilities = capabilities
-})
--- Auto-format Terraform code before buffer write.
-vim.api.nvim_create_autocmd({ "BufWritePre" }, {
-  pattern = { "*.tf", "*.tfvars" },
-  callback = function()
-    vim.lsp.buf.format()
-  end,
-})
-
 nvim_lsp.htmx.setup({
   capabilities = capabilities,
   filetypes = { "html", "templ" },
