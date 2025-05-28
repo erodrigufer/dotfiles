@@ -97,7 +97,3 @@ nvim_lsp.yamlls.setup({
 nvim_lsp.elixirls.setup({
   capabilities = capabilities,
 })
-
-nvim_lsp.marksman.setup({
-  capabilities = capabilities,
-})
