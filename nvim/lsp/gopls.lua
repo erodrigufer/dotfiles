@@ -12,7 +12,7 @@ end
 return {
   cmd = { "gopls" },
   filetypes = { "go", "gomod", "gotmpl", "gowork" },
-  root_markers = { "go.mod"},
+  root_markers = { "go.mod" },
   settings = {
     gopls = {
       completeUnimported = true,
@@ -28,4 +28,3 @@ return {
     enable_format_on_save(client, bufnr)
   end,
 }
-
