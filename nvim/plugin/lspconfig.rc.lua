@@ -109,10 +109,6 @@ nvim_lsp.tailwindcss.setup {
   capabilities = capabilities
 }
 
-nvim_lsp.cssls.setup({
-  capabilities = capabilities
-})
-
 nvim_lsp.terraformls.setup({
   capabilities = capabilities
 })
