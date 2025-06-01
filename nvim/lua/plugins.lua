@@ -35,8 +35,6 @@ require("lazy").setup({
     'nvim-telescope/telescope-file-browser.nvim',
     dependencies = { 'nvim-telescope/telescope.nvim', 'nvim-lua/plenary.nvim' }
   },
-  -- LSP
-  { 'neovim/nvim-lspconfig' },
   -- vscode-like pictograms
   { 'onsails/lspkind-nvim' },
   -- nvim-cmp source for buffer words_table
@@ -87,15 +85,11 @@ require("lazy").setup({
   -- Color and theme.
   { 'catppuccin/nvim',               name = 'catppuccin' },
 
-  { 'MunifTanjim/prettier.nvim' },
 
   { 'L3MON4D3/LuaSnip' },
 
   -- TS type-checking throughout a project.
   { 'dmmulroy/tsc.nvim' },
-
-  -- Work on zip files directly with vim.
-  { 'lbrayner/vim-rzip' },
 
   -- Manage keymappings.
   { 'folke/which-key.nvim',          dependencies = { 'nvim-tree/nvim-web-devicons' } },
