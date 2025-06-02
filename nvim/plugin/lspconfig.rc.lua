@@ -67,10 +67,6 @@ nvim_lsp.lua_ls.setup {
   },
 }
 
-nvim_lsp.tailwindcss.setup {
-  capabilities = capabilities
-}
-
 nvim_lsp.jsonls.setup({
   capabilities = capabilities,
 })
@@ -84,9 +80,5 @@ nvim_lsp.docker_compose_language_service.setup({
 })
 
 nvim_lsp.yamlls.setup({
-  capabilities = capabilities,
-})
-
-nvim_lsp.elixirls.setup({
   capabilities = capabilities,
 })
