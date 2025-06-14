@@ -1,4 +1,4 @@
-export PATH=$HOME/bin:/usr/local/bin:$HOME/go/bin:${POSTGRES_PATH}:$PATH
+export PATH="$HOME/bin:/usr/local/bin:$HOME/go/bin:$PATH"
 
 export LC_ALL=en_US.UTF-8
 export LC_CTYPE=en_US.UTF-8
