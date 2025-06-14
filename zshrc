@@ -137,6 +137,7 @@ function zvm_after_init() {
   export FZF_ALT_C_COMMAND='fd --type d . --color=never'
   export FZF_ALT_C_OPTS="--no-height --preview 'tree -C {} | head -50'"
 
+  eval "$(atuin init zsh)"
 }
 
 # -------------------------------------------------------------------------------------
