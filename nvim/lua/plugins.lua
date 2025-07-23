@@ -218,5 +218,6 @@ require("lazy").setup({
       { "=P",       "<Plug>(YankyPutBeforeFilter)",                                               desc = "Put before applying a filter" },
     },
   },
+  { 'augmentcode/augment.vim' },
 
 })
