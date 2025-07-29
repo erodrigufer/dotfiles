@@ -45,23 +45,7 @@ alias n='create_notification'
 
 # Git aliases.
 alias gg='gh action ; n'
-alias gss='git status'
-# 'gb': Output the current local branches without accessing a pager.
-alias gb='git --no-pager branch'
-alias gl='ga -l'
-# fzf through local branches.
-function git_checkout() {
-  if [ $# -eq 0 ]
-  then
-    git checkout $(git branch | fzf)
-  else
-    git checkout $@
-  fi
-};
-alias gc="git_checkout"
-alias gp="git pull"
 alias lg="lazygit"
-alias gm="git checkout main && git pull"
 # Turn GPG for local git repo on or off.
 # Sometimes it is required to turn GPG off to 
 # use some functionality of lazygit that only works 
