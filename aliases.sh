@@ -90,3 +90,14 @@ alias de='direnv edit'
 alias update="brew update && brew upgrade && brew upgrade --cask --greedy"
 # Show what would be updated without updating anything.
 alias fetch_update="brew update && brew upgrade --dry-run"
+
+function backup() {
+  # Use parenthesis to run backups in a subshell and prevent leaking
+  # env. variables into the current shell and maintaining
+  # the current working directory.
+  (
+  cd ${HOME}/personal/code/restic
+  just backup && just list
+  )
+  echo "Backup done!"
+}
