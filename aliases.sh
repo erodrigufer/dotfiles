@@ -96,7 +96,7 @@ function backup() {
   # env. variables into the current shell and maintaining
   # the current working directory.
   (
-  cd ${HOME}/personal/code/restic
+  cd "${HOME}"/personal/code/restic || return
   just backup && just list
   )
   echo "Backup done!"
